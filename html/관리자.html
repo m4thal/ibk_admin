@@ -2,157 +2,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
     <title>관리자</title>
-    <style>
-       /* reset 변경해도 됩니다. */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-
-        ol, ul, li {
-            list-style: none;
-        }
-
-        blockquote, q {
-            quotes: none;
-        }
-
-        blockquote:before, blockquote:after, q:before, q:after {
-            content: '';
-            content: none;
-        }
-
-        table {
-            table-layout: fixed;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
-
-        #container {
-            display: flex;
-            width: 100%;
-        }
-
-        #header {
-            display:flex;
-            align-items:center;
-            justify-content:space-between
-            ;}
-        .header_menu {
-            display:flex;
-            align-items:center;
-        }
-        .header_login {
-            display:flex;
-            align-items:center;
-        }
-
-        .left-panel {
-            width: 200px;
-        }
-
-        .left-panel button {
-            margin: 5px 0;
-            padding: 10px;
-            width: 100%;
-            cursor: pointer;
-            user-select: none;
-            touch-action: none;
-        }
-        .left-panel button.is_active {
-            background-color: #ddd;
-            font-weight: bold;
-        }
-
-
-        .right-panel {
-            flex-grow: 1;
-            padding: 10px;
-        }
-       
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #ddd;
-            min-height: 40px;
-            flex-wrap: nowrap;
-        }
-
-        .tab {
-            padding: 10px 15px;
-            cursor: grab;
-            border: 1px solid #ddd;
-            border-bottom: none;
-            background: #f9f9f9;
-            margin-right: 5px;
-            display: flex;
-            align-items: center;
-            user-select: none;
-        }
-        .tab.is_active {
-            background: white;
-            font-weight: bold;
-        }
-        .tab .btn_tab_close {
-            margin-left: 10px;
-            cursor: pointer;
-        }
-
-        .tab-content {
-            display: none;
-        }
-        .tab-content.is_active {
-            display: block;
-        }
-
-        .dragging {
-            opacity: 0.5;
-            color: red;
-        }
-
-        .right-panel .side-button {
-            display:block;
-        }
-        
-        .side_menu_dep2 {
-            margin:20px 0 0 20px;
-        }
-        .side_menu_dep3 {
-            margin:20px 0 0 20px;
-        }
-        .side_menu_dep4 {
-            margin:20px 0 0 20px;
-        }
-        .side-button + .side-button {
-            margin-top:10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div id="wrap">
@@ -203,7 +55,7 @@
                     <button id="close-all-tabs" style="display: none; margin-top: 10px;">전체 탭 닫기</button>
                     <div class="content-container">
                         <!-- 첫번째 탭 보여주기 위해 생성 -->
-                         <!-- test -->
+                         <!-- test2-->
                         <div class="tab-content is_active" data-name="아이폰관리">
                             <h2>아이폰 관리</h2>
                             <div class="contents">
