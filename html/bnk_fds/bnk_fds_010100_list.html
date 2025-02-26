@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title>관리자</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0 10px 0;
+        }
+        .content_container1{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0 10px 0;
+        }
+
+        .search_bar{
+            width: 50%;
+        }
+
+        .search_bar input{
+            width: 80%;
+            height: 40px;
+            border: 1px solid #D3D6DE;
+        }
+
+        .search_bar input::placeholder{
+            color: #D3D6DE;
+        }
+        
+        .search_bar button{
+            width: 80px;
+            height: 40px;
+            border: 1px solid #D3D6DE;
+            border-radius: 5px;
+        }
+
+        .file_io{
+            display: flex;
+        }
+
+        .file_io button{
+            display: flex;
+            width: 120px;
+            height: 40px;
+            text-align: left;
+            padding: 0 10px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            border: 0.1px solid #D3D6DE;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .file_io button img{
+            width: 20px;
+        }
+
+        .content_container2{
+            width: 100%;
+            min-height: 500px;
+        }
+        
+        .table_list{
+            display: grid;
+            grid-template-columns: 5% 20% 30% 15% 30%;
+            grid-template-rows: repeat(3, 30px);
+            line-height: 30px;
+            border-top: 0.1px solid black;
+            align-items: center;
+            text-align: center;
+            
+        }
+
+        .table_list .grid_header{
+            background-color: #F3F4F7;
+        }
+
+        .content_container3{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+        .pagination li {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .pagination li.active {
+            color: #1A71E5;
+            font-weight: bold;
+        }
+        .pagination li.disabled {
+            color: #979BAA;
+        }
+        
+        .content_container3 button{
+            width: 120px;
+            height: 50px;
+            background-color: #1A71E5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="tab-content is_active" data-name="FDS 관리">
+        <div class="header">
+            <h2>FDS 관리</h2>
+            <span>뱅킹관리>약관관리</span>
+        </div>
+        <div class="contents">
+            <div class="content_container1">
+                <div class="search_bar">
+                    <input type="text" placeholder="메뉴ID, 메뉴명">
+                    <button type="submit" onclick="select_list()">검색</button>
+                </div>
+                <div class="file_io">
+                    <button type="button"> <span>일괄<br>Download</span> <img src="../../img/download.svg"></button>
+                    <button type="button"> <span>일괄<br>Upload</span> <img src="../../img/upload.svg"></button>
+                </div>
+            </div>
+        </div>
+        <div class="content_container2">
+            <div class="table_list">
+                <div class="grid_header">번호</div>
+                <div class="grid_header">메뉴ID</div>
+                <div class="grid_header">메뉴명</div>
+                <div class="grid_header">최종 수정자</div>
+                <div class="grid_header">최종 수정일</div>
+            </div>
+        </div>
+        
+        <div class="content_container3">
+            <ul class="pagination"></ul>
+            <button type="submit">등록</button>
+        </div>
+    </div>
+
+    <script>
+        let totalPages = 13; // 총 페이지 개수 (검색후 초기화)
+        let currentPage = 1; // 현재 페이지
+        let showPage = 5 // 보여질 페이지 수
+        let startPage = Math.max(1, currentPage - (showPage-1)); // 페이지 시작번호 (검색후 초기화)
+        let endPage = Math.min(totalPages, startPage + (showPage-1)); // 페이지 끝번호 (검색후 초기화)
+        let fdsList; // 샘플데이터
+
+        window.onload = function() {
+            fdsList = [
+                {"number":1, "menu_id":"bit_trn_000000_1", "menu_name":"이체",                 "user":"admin",     "date":"2025.02.05 14:35:19"},
+                {"number":2, "menu_id":"cmc_bcs_010000_1", "menu_name":"뱅크사인 이용신청",     "user":"admin",     "date":"2025.02.05 14:35:19"},
+                {"number":4, "menu_id":"cmc_bcs_040000_1", "menu_name":"뱅크사인 인증수단관리",  "user":"admin",     "date":"2025.02.05 14:35:19"},
+                {"number":5, "menu_id":"cmc_bio_010200_1", "menu_name":"뱅크사인 이용해지",     "user":"S22599",    "date":"2025.02.05 14:35:19"},
+                {"number":6, "menu_id":"cmc_bio_010300_1", "menu_name":"바이오 홍채인증 등록",  "user":"admin",     "date":"2025.02.05 14:35:19"},
+                {"number":7, "menu_id":"cmc_bio_020200_1", "menu_name":"바이오 홍채인증 해지",  "user":"S22599",    "date":"2025.02.05 14:35:19"},
+                {"number":3, "menu_id":"cmc_bcs_030000_1", "menu_name":"바이오 얼굴인증 등록",  "user":"admin",     "date":"2025.02.05 14:35:19"}
+            ]
+        }
+
+        function select_list(){
+            console.log("fdsList #############");
+            console.log(fdsList);
+
+            const grd_list = document.querySelector(".grd_list");
+        }
+
+       
+
+        function renderPagination() {
+            
+            const pagination = document.querySelector(".pagination");
+
+            pagination.innerHTML='';
+
+            pagination.innerHTML += `<li class="first ${endPage <= showPage ? 'disabled' : ''}" onclick="firstPage(currentPage)"> <img src="../../img/Much Less-Than.svg"> </li>`;
+            pagination.innerHTML += `<li class="prev ${startPage <= showPage ? 'disabled' : ''}" onclick="prevPage(currentPage)"> <img src="../../img/Less-Than Sign.svg"> </li>`;
+
+            for (let i = startPage; i <= endPage; i++) {
+                pagination.innerHTML += `<li class="${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</li>`;
+            }
+
+            pagination.innerHTML += `<li class="next ${endPage >= totalPages ? 'disabled' : ''}" onclick="nextPage(currentPage)"> <img src="../../img/Greater-Than Sign.svg"> </li>`;
+            pagination.innerHTML += `<li class="last ${endPage >= totalPages ? 'disabled' : ''}" onclick="lastPage(currentPage)"> <img src="../../img/Much Greater-Than.svg"> </li>`;
+
+        }
+
+        function changePage(page) {
+            if(page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderPagination();
+        }
+
+
+        function firstPage(page){
+            if(startPage > 1 && page > showPage)
+            {
+                startPage = 1;
+                endPage = startPage + showPage - 1;
+                currentPage = startPage;
+                renderPagination();
+            }
+        }
+
+        function prevPage(page){
+            if(startPage > 1 && page > showPage)
+            {
+                startPage -= showPage;
+                endPage = startPage + showPage - 1;
+                currentPage = startPage;
+                console.log("startPage : " + startPage);
+                console.log("endPage : " + endPage);
+                console.log("currentPage : " + currentPage);
+                renderPagination();
+            }
+        }
+
+        function nextPage(page){
+            if(page <= endPage && page < totalPages)
+            {
+                startPage += showPage;
+                endPage += showPage;
+                currentPage = startPage;
+
+                if(endPage > totalPages)
+                {
+                    endPage = totalPages;
+                }
+                renderPagination();
+            }
+        }
+
+        function lastPage(page){
+            if(showPage < totalPages && (startPage + showPage) <= totalPages)
+            {
+                startPage = totalPages - ((totalPages%showPage)-1);
+                endPage = totalPages;
+                currentPage = startPage;
+
+                if(endPage > totalPages)
+                {
+                    endPage = totalPages;
+                }
+                renderPagination();
+            }
+        }
+
+        renderPagination(); // 초기 페이징
+    </script>
+
+</body>
+</html>
