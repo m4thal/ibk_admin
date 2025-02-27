@@ -127,6 +127,7 @@
 
                 position: absolute;
                 right: 24px;
+                bottom: 8px;
 
                 /* position: absolute;
                 right: 24px;
@@ -232,6 +233,18 @@
                 align-self: stretch;
 
                 background: var(--blue-admin_primary, #2D3443);
+            }
+
+            .content-container{
+                display: flex;
+                height: 929px;
+                padding: 40px 32px 80px 32px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                align-self: stretch;
+
+                background: var(--gray-0, #FFF);
             }
 
 
@@ -541,10 +554,12 @@
 
         const dummyData = {
         '뱅킹관리': {
-            dept2: ['계좌관리', '대출관리'],
+            dept2: ['계좌관리', '대출관리','개인관리','기업관리', '대출관리','개인관리','기업관리'],
             dept3: {
                 '계좌관리': ['약관관리', '법인계좌'],
-                '대출관리': ['주택대출', '신용대출']
+                '대출관리': ['주택대출', '신용대출'],
+                '개인관리': ['개인관리1', '개인관리2222222222222'],
+                '기업관리': ['기업관리', '기업계좌']
             }
         },
         '배포관리': {
