@@ -2,61 +2,309 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #menuList {
+            list-style-type: none; /* 기본 리스트 스타일 제거 */
+            padding: 0; /* 패딩 제거 */
+            margin: 0; /* 마진 제거 */
+        }
+
+        .dept2_toggle, .dept3_toggle {
+            display: flex;
+            /* margin: 5px 0; */
+            /* padding: 10px; */
+            width: 100%;
+            cursor: pointer;
+            user-select: none;
+            touch-action: none;
+            background: none; /* 배경 제거 */
+            border: none; /* 테두리 제거 */
+            color: white; /* 텍스트 색상 */
+            text-decoration: none; /* 밑줄 추가 */
+            cursor: pointer; /* 커서 모양 변경 */
+            padding: 0; /* 패딩 제거 */
+            color: var(--gray-0, #FFF);
+
+            /* 14_20/semibold */
+            font-family: "Noto Sans CJK KR";
+            font-size: 14px; 
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px; /* 142.857% */
+            }
+
+            .dept3_toggle{
+            margin-left: 15px !important;
+            }
+
+            .dept_menu img{
+                display: flex;
+                margin: auto 10px;
+            }
+            
+            .top_logo{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .top_info {
+                display: flex;
+                height: 24px;               
+                padding: 3px 8px 4px 8px;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 6px;
+                background: var(--blue-500, #1A71E5);
+
+                color: var(--gray-0, #FFF);
+                text-align: center;
+
+                /* 12_16/semibold */
+                font-family: "Noto Sans CJK KR";
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px; /* 133.333% */
+            }
+
+            .left_top_menu{
+                display: flex;
+                height: 60px;
+                padding: 0px 35px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+            }
+
+            .top_logo img{
+                display: flex;
+                width: 100px;
+                height: 15.703px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            strong{
+                color: var(--gray-800, #30323B);
+                text-align: right;
+
+                /* 14_20/medium */
+                font-family: "Noto Sans CJK KR";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 20px; /* 142.857% */
+
+            }
+
+            .vertical-line{
+                width: 1px; /* 세로줄의 너비 */
+                height: 16px; /* 세로줄의 높이 */
+                background: var(--gray-200, #C5C8D3);
+            }
+
+            .btn_tab_close img{
+                display: flex;
+                width: 14px;
+                height: 14px;
+                padding: 1.866px 1.866px 1.868px 1.867px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #close-all-tabs{
+                display: flex;
+                padding: 4px 6px;
+                align-items: center;
+                gap: 4px;
+
+                position: absolute;
+                right: 24px;
+
+                /* position: absolute;
+                right: 24px;
+                bottom: 8px; */
+
+                border-radius: 4px;
+                background: var(--gray-50, #F3F4F7);
+
+                color: var(--gray-850, #1F2128);
+
+                /* 12_16/regular */
+                font-family: "Noto Sans CJK KR";
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px; /* 133.333% */
+
+                border: none;
+            }
+
+            #close-all-tabs img {
+                /* display: flex; */
+                width: 13px;
+                height: 13px;
+                padding: 1.733px 1.733px 1.734px 1.734px;
+                justify-content: center;
+                align-items: center;
+                aspect-ratio: 1/1;
+            }
+
+            .dept_menu{
+                display: flex;
+                width: 180px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            #menuList {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .guide-panel{
+                display: flex;
+                padding: 16px 24px 26px 24px;
+                justify-content: center;
+                align-items: center;
+                align-self: stretch;
+
+                background: var(--blue-admin_primary, #2D3443);
+            }
+
+            .guide_button {
+                display: flex;
+                width: 180px;
+                padding: 4px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+                align-self: stretch;
+
+                border-radius: 6px;
+                border: 1px solid var(--gray-500, #737684);
+                background: rgba(255, 255, 255, 0.10);
+
+                color: var(--gray-0, #FFF);
+
+                /* 13_16/regular */
+                font-family: "Noto Sans CJK KR";
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px; /* 123.077% */
+            }
+
+            .menu-title{
+                align-self: stretch;
+
+                color: var(--gray-150, #D3D6DE);
+
+                /* 13_16/semibold */
+                font-family: "Noto Sans CJK KR";
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px; /* 123.077% */
+            }
+
+            .menu-group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .guide_panel{
+                display: flex;
+                padding: 16px 24px 26px 24px;
+                justify-content: center;
+                align-items: center;
+                align-self: stretch;
+
+                background: var(--blue-admin_primary, #2D3443);
+            }
+
+
+
+    </style>
 </head>
 <body>
     <div id="wrap">
         <div id="container">
             <!-- 왼쪽 영역 -->
             <div class="left-panel">
-                <div>
-                    사이트메뉴관리
-                    <ul>
-                        <li><button type="button" data-name="아이폰관리">아이폰관리</button></li>
-                        <li><button type="button" data-name="안드로이드관리">안드로이드관리</button></li>
-                        <li><button type="button" data-name="앱메뉴속성관리">앱메뉴속성관리</button></li>
-                    </ul>
+                <div class="menu-list">
+                    <div class="left_top_menu">
+                        <div class="top_logo">
+                            <img src="../img/top_logo.png">
+                            <span class="top_info">운영</span>                
+                        </div>
+                    </div>
+                    <div class="dept_menu" id="dept_container">
+                        <div class="menu-group">
+                            <div>
+                            <button class="dept2_toggle" id="menuToggle"><img src="../img/arrow_down.png">사이트메뉴관리</button>
+                            </div>
+                            <ul id="menuList" style="display: none;">
+                                <li><button type="button" data-name="아이폰관리" class="dept3_toggle"><img src="../img/Ellipse 1.png">아이폰관리</button></li>
+                                <li><button type="button" data-name="안드로이드관리" class="dept3_toggle"><img src="../img/Ellipse 1.png">안드로이드관리</button></li>
+                                <li><button type="button" data-name="앱메뉴속성관리" class="dept3_toggle"><img src="../img/Ellipse 1.png">앱메뉴속성관리</button></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <button type="button" data-name="앱 공지 팝업(메인) 관리">앱 공지 팝업(메인) 관리</button>
+                <div class="guide_panel">
+                    <button class="guide_button" id="guide_button"><img src="../img/files.png">관리자 가이드</button>
                 </div>
-                <div>
-                    배너관리
-                    <ul>
-                        <li><button type="button" data-name="배너그룹관리">배너그룹관리</button></li>
-                        <li><button type="button" data-name="배너등록">배너등록</button></li>
-                        <li><button type="button" data-name="배너배포">배너배포</button></li>
-                    </ul>
-                </div>
+
             </div>
             <!--// 왼쪽 영역 -->
 
             <!-- 오른쪽 영역 -->
             <div class="right-panel">
-                <header id="header">
-                    <ul class="header_menu">
-                        <li><a href="">뱅킹관리</a></li>
-                        <li><a href="">배포관리</a></li>
-                        <li><a href="">결제관리</a></li>
-                        <li><a href="">공통관리</a></li>
-                    </ul>
-                    <div class="header_login">
-                        <div class=""><strong><span>백승민</span>님</strong> 반갑습니다</div>
-                        <div class="header_login_date">2025.02.12(수)</div>
-                        <button type="button" class="header_login_btn">로그아웃</button>
+                <div class="top_header">
+                    <div id="header">
+                        <ul class="header_menu">
+                            <li><span><button type="button" class="menu-item" data-dept="뱅킹관리">뱅킹관리</button></span></li>
+                            <li><span><button type="button" class="menu-item" data-dept="배포관리">배포관리</button></span></li>
+                            <li><span><button type="button" class="menu-item" data-dept="결제관리">결제관리</button></span></li>
+                            <li><span><button type="button" class="menu-item" data-dept="공통관리">공통관리</button></span></li>
+                        </ul>
+                        <div>
+                            <div class="header_login">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="user_login"><strong>백승민님</strong>반갑습니다</div>
+                                    <div class="vertical-line"></div>
+                                    <div class="header_login_date">2025.02.12(수)</div>
+                                </div>
+                                <button type="button" class="header_login_btn">로그아웃</button>
+                            </div>
+                        </div>
                     </div>
-                </header>
-                <div>
+                
+                
                     <!-- 탭 성성 -->
-                    <div class="tabs"></div>
-                    <!-- // 탭 생성 -->
-                    <button id="close-all-tabs" style="display: none; margin-top: 10px;">전체 탭 닫기</button>
+                    <div class="tabs_bar"> 
+                        <div class="tabs">
+                            <!-- // 탭 생성 -->
+                        </div>
+                        <button id="close-all-tabs">전체 닫기<img src="../img/Filled.png"></button>
+                    </div>
+                </div>
                     <div class="content-container">
                         <!-- 첫번째 탭 보여주기 위해 생성 -->
                          <!-- test2-->
-                        <div class="tab-content is_active" data-name="아이폰관리">
+                        <div class="tab-content is_active" data-name="약관관리">
                             <h2>아이폰 관리</h2>
                             <div class="contents">
                                 <div class="side_menu">
@@ -106,11 +354,14 @@
         const leftPanelButtons = document.querySelectorAll('.left-panel button');
         const rightPanelButtons = document.querySelectorAll('.right-panel .side-button');
         const closeAllTabsButton = document.getElementById('close-all-tabs');
+        const topMenuButtons = document.querySelectorAll('.menu-item');
+        const menuDept3Button = document.querySelectorAll('.dept3_toggle');
         let draggedTab = null;
 
         function addTab(tabName) {
             let existingTab = document.querySelector(`.tab[data-name="${tabName}"]`);
             if (existingTab) {
+
                 setActiveTab(existingTab);
                 return; // 이미 탭이 존재하면 추가하지 않고, 활성화만 함
             }
@@ -119,7 +370,7 @@
             tab.classList.add('tab');
             tab.setAttribute('data-name', tabName);
             tab.setAttribute('draggable', true);
-            tab.innerHTML = `${tabName} <button type="button" class="btn_tab_close">X</button>`;
+            tab.innerHTML = `${tabName} <button type="button" class="btn_tab_close"><img src="../img/Filled.png"></button>`;
             tab.onclick = () => setActiveTab(tab);
 
             tab.querySelector('.btn_tab_close').onclick = (e) => {
@@ -259,7 +510,139 @@
             if (firstButton) {
                 addTab(firstButton.getAttribute('data-name'));
             }
+
+            const activeMenuItem = localStorage.getItem('activeMenuItem');
+            if (activeMenuItem) {
+                const activeLink = document.querySelector(`.header_menu .menu-item[href="${activeMenuItem}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
         });
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function(event) {
+                // 모든 메뉴 항목에서 active 클래스를 제거
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+                
+                // 클릭한 항목에 active 클래스 추가
+                item.classList.add('active');
+            });
+        });
+
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const menuList = document.getElementById('menuList');
+            if (menuList.style.display === 'none' || menuList.style.display === '') {
+                menuList.style.display = 'block'; // 메뉴 보이기
+            } else {
+                menuList.style.display = 'none'; // 메뉴 숨기기
+            }
+        });
+
+        const dummyData = {
+        '뱅킹관리': {
+            dept2: ['계좌관리', '대출관리'],
+            dept3: {
+                '계좌관리': ['약관관리', '법인계좌'],
+                '대출관리': ['주택대출', '신용대출']
+            }
+        },
+        '배포관리': {
+            dept2: ['버전관리', '배포이력'],
+            dept3: {
+                '버전관리': ['버전1.0', '버전2.0'],
+                '배포이력': ['2025-01-01', '2025-02-01']
+            }
+        },
+        '결제관리': {
+            dept2: ['결제수단', '결제이력'],
+            dept3: {
+                '결제수단': ['신용카드', '계좌이체'],
+                '결제이력': ['2025-01-15', '2025-02-15']
+            }
+        },
+        '공통관리': {
+            dept2: ['사용자관리', '권한관리'],
+            dept3: {
+                '사용자관리': ['관리자', '일반사용자'],
+                '권한관리': ['읽기', '쓰기']
+            }
+        }
+    };
+
+    // 관리 항목을 클릭할 때 호출되는 함수
+    function createMenu(managementType) {
+        const data = dummyData[managementType];
+        // console.log(managementType);
+        // console.log(data.dept2);
+
+        if (data) {
+
+            dept_container.innerHTML = ''; // 기존 내용을 지우고 새로 추가
+            dept_container.innerHTML = `<h2 class="menu-title">${managementType}</h2>`; // dept1 메뉴        
+        
+            data.dept2.forEach(dept2 => {
+
+                // 사이트메뉴관리 버튼 생성
+                const dept2menu = document.createElement('button');
+                dept2menu.className = 'dept2_toggle';
+                dept2menu.id = 'menuToggle';
+                dept2menu.innerHTML = `<img src="../img/arrow_down.png">${dept2}`;
+
+                // dept2 리스트 생성
+                const dept2List = document.createElement('ul');
+                dept2List.id = 'menuList';
+                dept2List.style.display = 'none';
+
+                
+
+                // dept3 리스트 생성
+                data.dept3[dept2].forEach(dept3 => {
+                    const dept2Item = document.createElement('li');
+                    const dept3Button = document.createElement('button');
+                    dept3Button.type = 'button';
+                    dept3Button.className = 'dept3_toggle';
+                    dept3Button.setAttribute('data-name', dept3);
+                    dept3Button.innerHTML = `<img src="../img/Ellipse 1.png">${dept3}`;
+                    console.log(`${dept3}`);
+                    dept2Item.appendChild(dept3Button);
+                    dept2List.appendChild(dept2Item);
+
+                    dept3Button.addEventListener('click', (event) => {
+                        const dept3menu = event.currentTarget.getAttribute('data-name');
+
+                        addTab(dept3menu);
+
+                    });
+                });
+
+                 // dept2menu 클릭 이벤트 추가
+                dept2menu.addEventListener('click', function() {
+                    // dept2List의 display 속성을 토글
+                    if (dept2List.style.display === 'none') {
+                        dept2List.style.display = 'block';
+                    } else {
+                        dept2List.style.display = 'none';
+                    }
+                });
+                    
+                dept_container.appendChild(dept2menu);
+                dept_container.appendChild(dept2List);
+
+            // dept_container에 추가
+            })
+        }
+        
+    }
+
+    topMenuButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            // 클릭된 버튼의 data_dept 속성 값을 가져와서 createMenu 함수에 전달합니다.
+            const dept1menu = event.currentTarget.getAttribute('data-dept');
+            createMenu(dept1menu);                    
+        });
+    });
+      
     </script>
 </body>
 </html>
