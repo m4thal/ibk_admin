@@ -12,11 +12,34 @@
             margin: 0; /* 마진 제거 */
         }
 
-        .dept2_toggle, .dept3_toggle {
+        .dept2-group{
             display: flex;
-            /* margin: 5px 0; */
-            /* padding: 10px; */
-            width: 100%;
+            width: 180px;
+            padding: 6px 16px;
+            align-items: center;
+            gap: 8px;
+
+        }
+        
+        .dept3_group{
+            display: flex;
+            width: 180px;
+            padding: 6px 16px;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dept3_toggle{
+            display: flex;
+            width: 180px;
+            padding: 6px 0px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+
+        .dept2_toggle, .dept3_toggle {
             cursor: pointer;
             user-select: none;
             touch-action: none;
@@ -24,27 +47,17 @@
             border: none; /* 테두리 제거 */
             color: white; /* 텍스트 색상 */
             text-decoration: none; /* 밑줄 추가 */
-            cursor: pointer; /* 커서 모양 변경 */
             padding: 0; /* 패딩 제거 */
             color: var(--gray-0, #FFF);
 
-            /* 14_20/semibold */
+            /* 13_16/regular */
             font-family: "Noto Sans CJK KR";
-            font-size: 14px; 
+            font-size: 13px;
             font-style: normal;
-            font-weight: 500;
-            line-height: 20px; /* 142.857% */
+            font-weight: 400;
+            line-height: 16px; /* 123.077% */
             }
 
-            .dept3_toggle{
-            margin-left: 15px !important;
-            }
-
-            .dept_menu img{
-                display: flex;
-                margin: auto 10px;
-            }
-            
             .top_logo{
                 display: flex;
                 align-items: center;
@@ -112,15 +125,16 @@
 
             .btn_tab_close img{
                 display: flex;
-                width: 14px;
-                height: 14px;
-                padding: 1.866px 1.866px 1.868px 1.867px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+                padding: auto;
                 justify-content: center;
                 align-items: center;
             }
 
             #close-all-tabs{
-                display: flex;
+
+                display: inline-flex;
                 padding: 4px 6px;
                 align-items: center;
                 gap: 4px;
@@ -129,13 +143,10 @@
                 right: 24px;
                 bottom: 8px;
 
-                /* position: absolute;
-                right: 24px;
-                bottom: 8px; */
-
                 border-radius: 4px;
                 background: var(--gray-50, #F3F4F7);
 
+                /* display: flex; */
                 color: var(--gray-850, #1F2128);
 
                 /* 12_16/regular */
@@ -146,10 +157,12 @@
                 line-height: 16px; /* 133.333% */
 
                 border: none;
+                border-radius: 4px;
+                background: var(--gray-50, #F3F4F7);
             }
 
             #close-all-tabs img {
-                /* display: flex; */
+                display: flex;
                 width: 13px;
                 height: 13px;
                 padding: 1.733px 1.733px 1.734px 1.734px;
@@ -158,18 +171,18 @@
                 aspect-ratio: 1/1;
             }
 
-            .dept_menu{
-                display: flex;
-                width: 180px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
+            .close-all{
+                display: inline-flex;
+                padding: 4px 6px;
+                align-items: center;
+                gap: 4px;
 
-            #menuList {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
+                position: absolute;
+                right: 24px;
+                bottom: 8px;
+
+                border-radius: 4px;
+                background: var(--gray-50, #F3F4F7);
             }
 
             .guide-panel{
@@ -237,7 +250,6 @@
 
             .content-container{
                 display: flex;
-                height: 929px;
                 padding: 40px 32px 80px 32px;
                 flex-direction: column;
                 align-items: flex-start;
@@ -246,6 +258,171 @@
 
                 background: var(--gray-0, #FFF);
             }
+
+            #dept_container {
+                display: flex;
+                width: 180px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+        }
+
+        /* 메뉴 헤더 */
+        .dept-header {
+            height: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .dept-header-content {
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        /* 메뉴 아이콘 */
+        .dept-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            align-content: center;
+        }
+
+        .dept-icon-line {
+            width: 9px;
+            height: 1.80px;
+            left: 4.50px;
+            top: 9.90px;
+            /* position: absolute; */
+            background: white;
+            border-radius: 0.90px;
+            margin: auto;
+
+        }
+
+       
+
+        .dept-title{
+            color: #C5C8D3;
+            font-size: 14px;
+            font-family: Noto Sans CJK KR;
+            font-weight: 500;
+            line-height: 20px;
+            word-wrap: break-word;
+        }
+        
+
+         /* 메뉴 제목 */
+         .dept-title.active {
+            
+            color: white;
+            font-size: 14px;
+            font-family: Noto Sans CJK KR;
+            font-weight: 500;
+            line-height: 20px;
+            word-wrap: break-word;
+        }
+        
+
+        /* 메뉴 아이템 목록 */
+        .dept-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        /* 개별 메뉴 아이템 */
+        .dept-item {
+            width: 180px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 활성 메뉴 스타일 (파란색 배경) */
+        .dept-item.active {
+            width: 180px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            background-color: #1065D6; /* 원하는 배경색으로 변경 */
+            /* 필요에 따라 다른 스타일 추가 */
+            align-items: center; /* 세로 중앙 정렬 (선택 사항) */
+            border-radius: 4px; /* 둥근 모서리 (선택 사항) */
+        }
+
+        .dept-item-bluebox {
+            width: 180px; height: 30px; background: #1065D6; border-radius: 4px;
+            position: absolute;
+            left: 0px;
+            transform: translateX(-16px);
+        }
+
+        /* 메뉴 아이템 점 */
+        .dept-item-dot.active {
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 9999px;
+        }
+
+        /* 비활성 메뉴 아이템 점 */
+        .dept-item-dot {
+            background: #C5C8D3;
+            width: 4px;
+            height: 4px;
+            border-radius: 9999px;
+        }
+
+        /* 메뉴 아이템 텍스트 */
+        .dept-item-text.active {
+            color: white;
+            font-size: 13px;
+            font-family: Noto Sans CJK KR;
+            font-weight: 400;
+            line-height: 16px;
+            word-wrap: break-word;
+        }
+
+        /* 비활성 메뉴 아이템 텍스트 */
+        .dept-item-text {
+            color: #C5C8D3;
+            font-size: 13px;
+            font-family: Noto Sans CJK KR;
+            font-weight: 400;
+            line-height: 16px;
+            word-wrap: break-word;
+        }
+
+        .dept1-title{
+
+            align-self: stretch;
+
+            color: var(--gray-150, #D3D6DE);
+
+            /* 13_16/semibold */
+            font-family: "Noto Sans CJK KR";
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px; /* 123.077% */
+        }
 
 
 
@@ -263,16 +440,35 @@
                             <span class="top_info">운영</span>                
                         </div>
                     </div>
-                    <div class="dept_menu" id="dept_container">
-                        <div class="menu-group">
-                            <div>
-                            <button class="dept2_toggle" id="menuToggle"><img src="../img/arrow_down.png">사이트메뉴관리</button>
+                    <div id="dept_container">                        
+                        <div class="dept1-title ative">뱅킹관리(앱)</div>
+                        <div class="dept-group">
+                            <div class="dept-header">
+                                <div class="dept-header-content">
+                                    <div class="dept-icon">
+                                        <div class="dept-icon-line"></div>
+                                    </div>
+                                    <div class="dept-title">사이트메뉴관리</div>
+                                </div>
                             </div>
-                            <ul id="menuList" style="display: none;">
-                                <li><button type="button" data-name="아이폰관리" class="dept3_toggle"><img src="../img/Ellipse 1.png">아이폰관리</button></li>
-                                <li><button type="button" data-name="안드로이드관리" class="dept3_toggle"><img src="../img/Ellipse 1.png">안드로이드관리</button></li>
-                                <li><button type="button" data-name="앱메뉴속성관리" class="dept3_toggle"><img src="../img/Ellipse 1.png">앱메뉴속성관리</button></li>
-                            </ul>
+                            <div class="dept-items">
+                                <div class="dept-item active">
+                                    <div class="dept-item-dot active"></div>
+                                    <div class="dept-item-text active">아이폰</div>
+                                </div>
+                                <div class="dept-item">
+                                    <div class="dept-item-dot"></div>
+                                    <div class="dept-item-text">안드로이드</div>
+                                </div>
+                                <div class="dept-item">
+                                    <div class="dept-item-dot"></div>
+                                    <div class="dept-item-text">앱메뉴메타관리</div>
+                                </div>
+                                <div class="dept-item">
+                                    <div class="dept-item-dot"></div>
+                                    <div class="dept-item-text">메뉴보안관리</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -288,7 +484,7 @@
                 <div class="top_header">
                     <div id="header">
                         <ul class="header_menu">
-                            <li><span><button type="button" class="menu-item" data-dept="뱅킹관리">뱅킹관리</button></span></li>
+                            <li><span><button type="button" class="menu-item" data-dept="뱅킹관리(앱)">뱅킹관리</button></span></li>
                             <li><span><button type="button" class="menu-item" data-dept="배포관리">배포관리</button></span></li>
                             <li><span><button type="button" class="menu-item" data-dept="결제관리">결제관리</button></span></li>
                             <li><span><button type="button" class="menu-item" data-dept="공통관리">공통관리</button></span></li>
@@ -296,7 +492,7 @@
                         <div>
                             <div class="header_login">
                                 <div style="display: flex; align-items: center; gap: 8px;">
-                                    <div class="user_login"><strong>백승민님</strong>반갑습니다</div>
+                                    <div class="user_login"><strong>백승민님</strong> 반갑습니다</div>
                                     <div class="vertical-line"></div>
                                     <div class="header_login_date">2025.02.12(수)</div>
                                 </div>
@@ -311,15 +507,14 @@
                         <div class="tabs">
                             <!-- // 탭 생성 -->
                         </div>
-                        <button id="close-all-tabs">전체 닫기<img src="../img/Filled.png"></button>
+                            <button id="close-all-tabs">전체 닫기<img src="../img/Filled.png"></button>
+                        </dvv>
                     </div>
-                </div>
                     <div class="content-container">
                         <!-- 첫번째 탭 보여주기 위해 생성 -->
                          <!-- test2-->
                         <div class="tab-content is_active" data-name="약관관리">
-                            <h2>아이폰 관리</h2>
-                            <div class="contents">
+                            <div class="contents" style="display: none;">
                                 <div class="side_menu">
                                     <div class="side_menu_dep1">
                                         <button type="button" class="side_menu_dep1_button">i-ONE뱅크(개인)</button>
@@ -374,20 +569,22 @@
         function addTab(tabName) {
             let existingTab = document.querySelector(`.tab[data-name="${tabName}"]`);
             if (existingTab) {
-
                 setActiveTab(existingTab);
                 return; // 이미 탭이 존재하면 추가하지 않고, 활성화만 함
             }
+
             // 탭이 존재하지 않으면 새로 추가
             const tab = document.createElement('div');
             tab.classList.add('tab');
             tab.setAttribute('data-name', tabName);
             tab.setAttribute('draggable', true);
-            tab.innerHTML = `${tabName} <button type="button" class="btn_tab_close"><img src="../img/Filled.png"></button>`;
+            tab.innerHTML = `<span>${tabName}</span> <button type="button" class="btn_tab_close"><img src="../img/Filled.png"></button>`;
             tab.onclick = () => setActiveTab(tab);
 
             tab.querySelector('.btn_tab_close').onclick = (e) => {
+
                 e.stopPropagation();
+                
                 removeTab(tabName);
             };
 
@@ -433,11 +630,36 @@
 
             setActiveTab(tab);
             checkCloseAllTabsButton();
+
         }
+
+
+        // function adjustTabWidths() {
+        //     const tabsContainer = document.querySelector('.tabs');
+        //     const tabs = tabsContainer.querySelectorAll('.tab');
+        //     const tabCount = tabs.length;
+
+        //     const bodyWidth = document.body.clientWidth;
+        //     const containerWidth = Math.min(bodyWidth, 1280); // body 너비와 1280px 중 작은 값
+
+        //     tabsContainer.style.maxWidth = `${containerWidth}px`; // 컨테이너 최대 너비 설정
+
+        //     if (tabCount > 0) {
+        //         const tabWidth = containerWidth / tabCount; // 각 탭의 너비 계산
+
+        //         tabs.forEach((tab) => {
+        //         tab.style.flexBasis = `${tabWidth}px`; // 각 탭의 너비 설정
+        //         });
+        //     }
+        //     }
 
         function setActiveTab(tab) {
             document.querySelectorAll('.tab, .tab-content').forEach(el => el.classList.remove('is_active'));
             tab.classList.add('is_active');
+
+            // console.log(tab);
+          
+
             document.querySelector(`.tab-content[data-name="${tab.getAttribute('data-name')}"]`).classList.add('is_active');
 
             document.querySelectorAll('.left-panel button').forEach(button => button.classList.remove('is_active'));
@@ -466,7 +688,7 @@
         function checkCloseAllTabsButton() {
             const tabs = document.querySelectorAll('.tab');
             if (tabs.length > 0) {
-                closeAllTabsButton.style.display = 'block';
+                closeAllTabsButton.style.display = 'flex';
             } else {
                 closeAllTabsButton.style.display = 'none';
             }
@@ -485,6 +707,7 @@
 
         // 왼쪽 패널 버튼 클릭 시 탭 추가
         leftPanelButtons.forEach(button => {
+            console.log("12");
             button.onclick = () => addTab(button.textContent.trim());
         });
 
@@ -519,18 +742,8 @@
 
         // 초기에 탭 내용을 보여주기 위해 세팅됨 나중에 개발 데이터 붙으면 제거
         document.addEventListener("DOMContentLoaded", () => {
-            const firstButton = document.querySelector('.left-panel button');
-            if (firstButton) {
-                addTab(firstButton.getAttribute('data-name'));
-            }
-
-            const activeMenuItem = localStorage.getItem('activeMenuItem');
-            if (activeMenuItem) {
-                const activeLink = document.querySelector(`.header_menu .menu-item[href="${activeMenuItem}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
+            const managementType = Object.keys(dummyData)[0];
+            createMenu(managementType);
         });
 
         document.querySelectorAll('.menu-item').forEach(item => {
@@ -543,121 +756,177 @@
             });
         });
 
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const menuList = document.getElementById('menuList');
-            if (menuList.style.display === 'none' || menuList.style.display === '') {
-                menuList.style.display = 'block'; // 메뉴 보이기
-            } else {
-                menuList.style.display = 'none'; // 메뉴 숨기기
-            }
-        });
+        // document.getElementById('menuToggle').addEventListener('click', function() {
+        //     const menuList = document.getElementById('menuList');
+        //     if (menuList.style.display === 'none' || menuList.style.display === '') {
+        //         menuList.style.display = 'block'; // 메뉴 보이기
+        //     } else {
+        //         menuList.style.display = 'none'; // 메뉴 숨기기
+        //     }
+        // });
 
         const dummyData = {
-        '뱅킹관리': {
-            dept2: ['계좌관리', '대출관리','개인관리','기업관리', '대출관리','개인관리','기업관리'],
-            dept3: {
-                '계좌관리': ['약관관리', '법인계좌'],
-                '대출관리': ['주택대출', '신용대출'],
-                '개인관리': ['개인관리1', '개인관리2222222222222'],
-                '기업관리': ['기업관리', '기업계좌']
+            '뱅킹관리(앱)': {
+                dept2: ['사이트메뉴관리', '통합팝업관리','상품관리','배너관리', '약관관리','오류메시지관리','유의사항관리','FDS관리','세션관리','테스트데이터관리'],
+                    dept3: {
+                    '사이트메뉴관리': ['아이폰', '안드로이드','앱메뉴메타관리','메뉴보안관리'],
+                    '상품관리': ['상품별 거래시간 제한'],
+                    '배너관리': ['배너게시현황', '배너그룹관리'],
+                }
+            },
+            '배포관리': {
+                dept2: ['버전관리', '배포이력'],
+                dept3: {
+                    '버전관리': ['버전1.0', '버전2.0'],
+                    '배포이력': ['2025-01-01', '2025-02-01']
+                }
+            },
+            '결제관리': {
+                dept2: ['결제수단', '결제이력'],
+                dept3: {
+                    '결제수단': ['신용카드', '계좌이체'],
+                    '결제이력': ['2025-01-15', '2025-02-15']
+                }
+            },
+            '공통관리': {
+                dept2: ['사용자관리', '권한관리'],
+                dept3: {
+                    '사용자관리': ['관리자', '일반사용자'],
+                    '권한관리': ['읽기', '쓰기']
+                }
             }
-        },
-        '배포관리': {
-            dept2: ['버전관리', '배포이력'],
-            dept3: {
-                '버전관리': ['버전1.0', '버전2.0'],
-                '배포이력': ['2025-01-01', '2025-02-01']
-            }
-        },
-        '결제관리': {
-            dept2: ['결제수단', '결제이력'],
-            dept3: {
-                '결제수단': ['신용카드', '계좌이체'],
-                '결제이력': ['2025-01-15', '2025-02-15']
-            }
-        },
-        '공통관리': {
-            dept2: ['사용자관리', '권한관리'],
-            dept3: {
-                '사용자관리': ['관리자', '일반사용자'],
-                '권한관리': ['읽기', '쓰기']
-            }
-        }
-    };
+        };
 
-    // 관리 항목을 클릭할 때 호출되는 함수
-    function createMenu(managementType) {
-        const data = dummyData[managementType];
-        // console.log(managementType);
-        // console.log(data.dept2);
+        // 관리 항목을 클릭할 때 호출되는 함수
+        function createMenu(managementType) {
+            const data = dummyData[managementType];
+            // console.log(managementType);
 
-        if (data) {
+            console.log(data.dept2);
+            if (data) {
+                dept_container.innerHTML = ''; // 기존 내용 삭제
+                dept_container.innerHTML = `<div class="dept1-title">${managementType}</div>`;
 
-            dept_container.innerHTML = ''; // 기존 내용을 지우고 새로 추가
-            dept_container.innerHTML = `<h2 class="menu-title">${managementType}</h2>`; // dept1 메뉴        
-        
-            data.dept2.forEach(dept2 => {
-
-                // 사이트메뉴관리 버튼 생성
-                const dept2menu = document.createElement('button');
-                dept2menu.className = 'dept2_toggle';
-                dept2menu.id = 'menuToggle';
-                dept2menu.innerHTML = `<img src="../img/arrow_down.png">${dept2}`;
-
-                // dept2 리스트 생성
-                const dept2List = document.createElement('ul');
-                dept2List.id = 'menuList';
-                dept2List.style.display = 'none';
-
+                data.dept2.forEach(dept2 => {
+                    // dept2 생성
+                    const deptgroup = document.createElement('div');
+                    const deptHeader = document.createElement('div');
+                    const deptheadercontent = document.createElement('div');
+                    const depticon = document.createElement('div');
                 
+                    deptgroup.className = 'dept-group';
+                    deptHeader.className = 'dept-Header';
+                    deptheadercontent.className = 'dept-header-content';
+                    depticon.className = 'dept-icon';
+                    depticon.innerHTML = `<div class="dept-icon-line"></div>`;  
+                    deptheadercontent.appendChild(depticon);
+                    deptheadercontent.innerHTML += `<div class="dept-title">${dept2}</div>`;
 
-                // dept3 리스트 생성
-                data.dept3[dept2].forEach(dept3 => {
-                    const dept2Item = document.createElement('li');
-                    const dept3Button = document.createElement('button');
-                    dept3Button.type = 'button';
-                    dept3Button.className = 'dept3_toggle';
-                    dept3Button.setAttribute('data-name', dept3);
-                    dept3Button.innerHTML = `<img src="../img/Ellipse 1.png">${dept3}`;
-                    console.log(`${dept3}`);
-                    dept2Item.appendChild(dept3Button);
-                    dept2List.appendChild(dept2Item);
+                    deptHeader.dataset.name = dept2;    
 
-                    dept3Button.addEventListener('click', (event) => {
-                        const dept3menu = event.currentTarget.getAttribute('data-name');
 
-                        addTab(dept3menu);
+                    deptHeader.appendChild(deptheadercontent);
+                    deptgroup.appendChild(deptHeader);
 
-                    });
-                });
+                    // dept2에 해당하는 dept3가 있는지 확인하고 활성 클래스 설정
+                    const hasDept3 = data.dept3 && data.dept3[dept2] && data.dept3[dept2].length > 0;
 
-                 // dept2menu 클릭 이벤트 추가
-                dept2menu.addEventListener('click', function() {
-                    // dept2List의 display 속성을 토글
-                    if (dept2List.style.display === 'none') {
-                        dept2List.style.display = 'block';
+                    // dept3 리스트 생성 (ul -> div로 변경, 스타일 조정)
+                    if (hasDept3) {
+                        const deptitems = document.createElement('div');
+                        deptitems.className = 'dept-items';
+
+                        data.dept3[dept2].forEach(dept3 => {
+                            const deptitem = document.createElement('div');
+                            deptitem.className = 'dept-item';
+                            deptitem.dataset.name = dept3;
+                            deptitem.innerHTML = `
+                                <div class="dept-item-dot"></div>
+                                <div class="dept-item-text">${dept3}</div>
+                            `;                            
+
+                            // dept3 버튼 클릭 이벤트
+                            deptitem.addEventListener('click', (event) => {
+
+                                // 모든 .dept-item에서 active 클래스를 제거
+                                const removeActiveClass = (selector) => {
+                                    document.querySelectorAll(selector).forEach(i => i.classList.remove('active'));
+                                };
+
+                                removeActiveClass('.dept-item');
+                                removeActiveClass('.dept-item-dot');
+                                removeActiveClass('.dept-item-text');
+                            
+                                // dept3menu에 해당하는 요소에 active 클래스를 추가하는 함수
+                                const addActiveClass = (selector) => {
+                                    const activeItem = document.querySelector(`${selector}[data-name="${dept3}"]`);
+                                    if (activeItem) {
+                                        activeItem.classList.add('active');
+                                        
+                                        // 자식 요소에 active 클래스 추가
+                                        activeItem.querySelector('.dept-item-dot').classList.add('active');
+                                        activeItem.querySelector('.dept-item-text').classList.add('active');
+                                        
+                                    }
+                                };
+
+                                // dept2dp active 클래스 제거
+                                removeActiveClass('.dept-title');
+
+                                // dept2에 active 클래스 추가
+                                const activeItem = document.querySelector('[data-name="' + dept2 + '"]');
+                                activeItem.querySelector('.dept-title').classList.add('active');
+
+                                addActiveClass('.dept-item');
+
+
+                                addTab(dept3);
+
+                                //화면이동 추가
+                            });
+
+                            deptitems.appendChild(deptitem);
+                        });
+                        deptgroup.appendChild(deptitems);
                     } else {
-                        dept2List.style.display = 'none';
+                        deptHeader.addEventListener('click', (event) => {
+                            const dept2menu = event.currentTarget.getAttribute('data-name');
+
+                            // 모든 .dept-title에서 active 클래스를 제거
+                            const removeActiveClass = (selector) => {
+                                document.querySelectorAll(selector).forEach(i => i.classList.remove('active'));
+                            };
+
+                            removeActiveClass('.dept-title');
+                            removeActiveClass('.dept-item');
+                            removeActiveClass('.dept-item-dot');
+                            removeActiveClass('.dept-item-text');
+
+
+                            // dept2에 active 클래스 추가
+                            const activeItem = document.querySelector('[data-name="' + dept2 + '"]');
+                            activeItem.querySelector('.dept-title').classList.add('active');
+
+                            addTab(dept2menu);
+                        });
                     }
+                    dept_container.appendChild(deptgroup);
+
+
                 });
-                    
-                dept_container.appendChild(dept2menu);
-                dept_container.appendChild(dept2List);
-
-            // dept_container에 추가
-            })
+            }
         }
-        
-    }
 
-    topMenuButtons.forEach((button) => {
-        button.addEventListener('click', (event) => {
-            // 클릭된 버튼의 data_dept 속성 값을 가져와서 createMenu 함수에 전달합니다.
-            const dept1menu = event.currentTarget.getAttribute('data-dept');
-            createMenu(dept1menu);                    
+    
+
+        topMenuButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                // 클릭된 버튼의 data_dept 속성 값을 가져와서 createMenu 함수에 전달합니다.
+                const dept1menu = event.currentTarget.getAttribute('data-dept');
+                createMenu(dept1menu);                    
+            });
         });
-    });
-      
+        
     </script>
 </body>
 </html>
