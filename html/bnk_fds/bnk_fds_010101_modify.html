@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, initial-scale=1.0">
     <title>관리자</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010100_list.css">    
+    <link rel="stylesheet" href="../../css/con_style.css">
+    <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010101_modify.css">
 </head>
 <boody>
     <div class="content_container">
@@ -13,43 +13,61 @@
             <div class="menu_depth">
                 <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">약관관리</span>
             </div>
-            <h2 calsee="screen_title">FDS 관리</h2>
+            <h2 class="screen_title">FDS 관리</h2>
         </div>
         <div class="main_contents">
-            <div class="main_inner_container">
-                <div class="top_container">
-                    <div class="search_bar">
-                        <input type="text" placeholder="메뉴ID, 메뉴명">
-                        <button type="button" onclick="select_list()">검색</button>
-                    </div>
-                    <div class="file_io_container">
-                        <button type="button" onclick="file_down()"><span>일괄</span> <img src="../../img/download.svg"></button>
-                        <button type="button" onclick="file_up()">일괄 <img src="../../img/upload.svg"></button>
-                    </div>
+            <div class="table_container_1">
+                <table class="data_table_1">
+                    <tr>
+                        <th>메뉴</th>
+                        <td>cmc_bio_010300_1</td>
+                    </tr>
+                    <tr>
+                        <th>메뉴명</th>
+                        <td>바이오 홍채인증 등록</td>
+                    </tr>
+                    <tr>
+                        <th>최종수정</th>
+                        <td>X12345 (2025.02.05 14:35:19)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table_container_2">
+                <div class="middle_title_contiainer">
+                    <h3>상세설정</h3>
+                    <button>추가+</button>
                 </div>
-                <div class="table_container">
-                    <div class="table_list_container">
-                        <table class="table_list">
-                            <thead>
-                                <tr>
-                                    <th name="number">번호</th>
-                                    <th name="muneid">메뉴ID</th>
-                                    <th name="menuname">메뉴명</th>
-                                    <th name="modifier">최종 수정자</th>
-                                    <th name="modifidate">최종 수정일</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cell_width"></tbody>
-                        </table>
-                    </div>
-                    <div class="table_btn_container">
-                        <div class="pagination" id="pagination"></div>
-                        <button type="button" class="regist_btn">등록</button>
-                    </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table_btn_container">
+                    <button>목록</button>
+                    <button>삭제</button>
+                    <button>저장</button>
                 </div>
+            </div>
+            <div class="info_container">
+                <span>액션플래그</span>
+                <ul>
+                    <li>FP<span>FDSGateway.initAppFDSLog 앱의 Intro에서 초기화시 한번 호출됨 (사전거래(P))</span></li>
+                    <li>SA<span>로그인경우 조회(S) 후 (결과코드 가 차단(0)이 아닌경우는 해제(R)처리 수행) *(원뱅크 기업은 SR 임)</span></li>
+                    <li>S<span>조회 탐지서버에서 조회한다.</span></li>
+                    <li>P<span>사전거래 수취조회 같이 사전거래에서 발생</span></li>
+                    <li>A<span>해제거래 *(기업은 R 임)</span></li>
+                    <li>R<span>해제거래 + FDS 추가인증에 대한 처리가 있는 화면인인경우 차단정보 해제 전달 및 결좌정보 획득을 한번더 호출 *(기업은 RA임) 개인은 SMS사후통지(3)이 있지만 기업은 없음</span></li>
+                </ul>
             </div>
         </div>
     </div>
-    <script src="../../js/bnk_fds/bnk_fds_010100_list.js"></script>
+    <script src="../../js/bnk_fds/bnk_fds_010101_modify.js"></script>
 </boody>
 </html>
