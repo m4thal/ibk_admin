@@ -562,6 +562,10 @@
         const menuDept3Button = document.querySelectorAll('.dept3_toggle');
         let draggedTab = null;
 
+        window.onload = function() {
+          alert("페이지 로딩 완료");
+        };
+
         function addTab(tabName) {
             console.log(tabName);
             let existingTab = document.querySelector(`.tab[data-name="${tabName}"]`);
@@ -632,20 +636,26 @@
             setActiveTab(tab);
             checkCloseAllTabsButton();
 
-            fetch(`bnk_fds/bnk_fds_010100_list.html`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(html => {
-                document.getElementById('content-container').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
+            loadAndExecuteModule('bnk_fds_010100_list', 'bnk_fds/bnk_fds_010100_list.html', '../js/bnk_fds/bnk_fds_010100_list.js');
 
+
+        }
+
+        function loadAndExecuteModule(moduleName, url, scriptUrl) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content-container').innerHTML = html;
+                    const script = document.createElement('script');
+                    script.src = scriptUrl;
+                    script.onload = () => {
+                        // 스크립트 로드 후 실행
+                        init();
+                        displayPagination(1);
+                    };
+                    document.body.appendChild(script);
+                })
+                .catch(error => console.error('에러:', error));
         }
 
         function setActiveTab(tab) {
@@ -917,6 +927,7 @@
                 createMenu(dept1menu);                    
             });
         });
+        
         
     </script>
 </body>
