@@ -265,7 +265,7 @@ body {
 
 .tab.is_active {
 
-    /* min-width: 160px; */
+    min-width: 160px;
     position: relative;
     display: inline-flex;
     padding: 10px 10px 8px 20px;
