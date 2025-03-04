@@ -16,12 +16,12 @@
       flex-basis: 120px;
     }
   } */
-
 * {
     margin: 0;
     padding: 0;
+    border: none;
     box-sizing: border-box;
-    font-family: 'CustomFont';
+    background-color: transparent;
 }
 
 *::before,
@@ -60,7 +60,7 @@ img {
 a {
     text-decoration: none;
 }
-
+ 
 html,
 body {
     min-width: 1280px;
@@ -68,7 +68,6 @@ body {
     height: 100%;
     width: 100%;    
 }
-
 
 #container {
     display: flex;
