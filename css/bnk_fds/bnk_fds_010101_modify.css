@@ -1,0 +1,45 @@
+.main_contents{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 52px;
+    width: 100%;
+}
+
+.table_container_1{
+    display: flex;
+    min-width: 988px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border-top: 1px solid #1F2128;
+}
+
+.data_table_1 tr{
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+}
+ 
+.table_container_1 th{
+    display: flex;
+    width: 90px;
+    padding: 14px 12px;
+    align-items: center;
+    gap: 2px;
+
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-50, #F3F4F7);
+}
+
+.table_container_1 td{
+    display: flex;
+    height: 48px;
+    padding: 16px 12px;
+    align-items: center;
+    flex: 1 0 0;
+
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-0, #FFF);
+}
