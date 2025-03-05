@@ -532,3 +532,37 @@ flex-shrink: 0;
     font-weight: 500;
     line-height: 20px; /* 142.857% */
 }
+
+
+
+
+
+
+
+
+.tree_icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.tree_icon:hover {
+    background-color: #e0e0e0;
+}
+
+.selected {
+    background-color: blue !important;
+    color: white !important;
+}
+
+.arrow_icon {
+    font-size: 14px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tree_icon .arrow_icon:hover {
+    transform: scale(1.2);
+}
