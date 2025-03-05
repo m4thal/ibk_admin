@@ -4,52 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, initial-scale=1.0">
     <title>관리자</title>
-    <link rel="stylesheet" href="../../css/con_style.css">
-    <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010100_list.css">    
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010100_list.css">
 </head>
 <boody>
-    <div class="content_container">
-        <div class="header">
+    <div class="tab_container">
+        <div class="screen_title_container">
             <div class="menu_depth">
                 <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">약관관리</span>
             </div>
-            <h2 calsee="screen_title">FDS 관리</h2>
+            <h2>FDS관리</h2>
         </div>
+
         <div class="main_contents">
             <div class="main_inner_container">
-                <div class="top_container">
-                    <div class="search_bar">
-                        <input type="text" placeholder="메뉴ID, 메뉴명">
+                <div class="top_btn_container">
+                    <div class="search_bar_container">
+                        <input id="search_text" type="text" placeholder="메뉴ID, 메뉴명">
                         <button type="button" onclick="select_list()">검색</button>
                     </div>
                     <div class="file_io_container">
-                        <button type="button" onclick="file_down()"><span>일괄</span> <img src="../../img/download.svg"></button>
-                        <button type="button" onclick="file_up()">일괄 <img src="../../img/upload.svg"></button>
+                        <button type="button" onclick="file_down()">
+                            <span>일괄</span>
+                            <img src="../../img/download.svg"></button>
+                        <button type="button" onclick="file_up()">
+                            <span>일괄</span>
+                            <img src="../../img/upload.svg"></button>
                     </div>
                 </div>
-                <div class="table_container">
-                    <div class="table_list_container">
-                        <table class="table_list">
+
+                <div class="table_list_container">
+                    <div class="table_container">
+                        <table class="data_table">
                             <thead>
                                 <tr>
-                                    <th name="number">번호</th>
-                                    <th name="muneid">메뉴ID</th>
-                                    <th name="menuname">메뉴명</th>
-                                    <th name="modifier">최종 수정자</th>
-                                    <th name="modifidate">최종 수정일</th>
+                                    <th class="header_col_1"><span>번호</span></th>
+                                    <th class="header_col_2"><span>메뉴ID</span></th>
+                                    <th class="header_col_3"><span>메뉴명</span></th>
+                                    <th class="header_col_4"><span>최종 수정자</span></th>
+                                    <th class="header_col_5"><span>최종 수정일</span></th>
                                 </tr>
                             </thead>
-                            <tbody class="cell_width"></tbody>
+                            <tbody>
+                                <tr>
+                                    <td class="data_col_1"><span>1</span></td>
+                                    <td class="data_col_2"><span>bit_trn_000000_1</span></td>
+                                    <td class="data_col_3"><span>이체</span></td>
+                                    <td class="data_col_4"><span>admin</span></td>
+                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="data_col_1"><span>2</span></td>
+                                    <td class="data_col_2"><span>cmc_bcs_010000_1</span></td>
+                                    <td class="data_col_3"><span>뱅크사인 인증수단관리</span></td>
+                                    <td class="data_col_4"><span>admin</span></td>
+                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="data_col_1"><span>3</span></td>
+                                    <td class="data_col_2"><span>cmc_bcs_040000_1</span></td>
+                                    <td class="data_col_3"><span>뱅크사인 인증수단관리</span></td>
+                                    <td class="data_col_4"><span>admin</span></td>
+                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="data_col_1"><span>4</span></td>
+                                    <td class="data_col_2"><span>cmc_bio_010200_1</span></td>
+                                    <td class="data_col_3"><span>뱅크사인 이용해지</span></td>
+                                    <td class="data_col_4"><span>S22599</span></td>
+                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="data_col_1"><span>5</span></td>
+                                    <td class="data_col_2"><span>cmc_bio_010300_1</span></td>
+                                    <td class="data_col_3"><span>바이오 홍채인증 등록</span></td>
+                                    <td class="data_col_4"><span>S22599</span></td>
+                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="data_col_1"><span>6</span></td>
+                                    <td class="data_col_2"><span>cmc_bio_020200_1</span></td>
+                                    <td class="data_col_3"><span>바이오 홍채인증 해지</span></td>
+                                    <td class="data_col_4"><span>S22599</span></td>
+                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                </tr>                                
+                            </tbody>
                         </table>
                     </div>
-                    <div class="table_btn_container">
-                        <div class="pagination" id="pagination"></div>
+                    <div class="bottom_btn_container">
+                        <div class="pagination" id="pagination">
+                            <button><<</button>
+                            <button><</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>></button>
+                            <button>>></button>
+                        </div>
                         <button type="button" class="regist_btn">등록</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../../js/bnk_fds/bnk_fds_010100_list.js"></script>
 </boody>
 </html>

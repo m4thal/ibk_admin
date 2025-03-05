@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_app/bnk_app_010100_modify.css">
+</head>
+<body>
+    <div class="tab_container">
+        <div class="screen_title_container">
+            <div class="menu_depth_container">
+                <span>뱅킹관리</span>
+                <img src="../../img/Filled.svg">
+                <span>메뉴관리</span>
+                <img src="../../img/Filled.svg">
+                <span>아이폰</span>
+            </div>
+            <h2>아이폰</h2>
+        </div>
+        <div class="main_container">
+            <div class="inner_container">
+                <div class="left_menu_container">
+                    <div class="menu_state_container">
+                        <div class="menu_title_container">
+                            <span class="menu_title">메뉴상태</span>
+                            <div class="use_check">
+                                <input type="checkbox">
+                                <span>미사용 포함</span>
+                            </div>
+                        </div>
+                        <div class="menu_search_container">
+                            <input id="search_bar" type="text">
+                            <div id="search_icon">
+                                <img src="../../img/search_icon.svg">
+                            </div>
+                        </div>
+                        <div class="menu_io_container">
+                            <button>메뉴 일괄
+                                <div class="menu_io_icon">
+                                    <img src="../../img/download.svg">
+                                </div>
+                            </button>
+                            <button>메뉴 일괄
+                                <div class="menu_io_icon">
+                                    <img src="../../img/upload.svg">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tree_menu_container">
+                        <div class="tree_move_container">
+                            <button>메뉴 이동</button>
+                            <button>하위메뉴 추가</button>
+                        </div>
+                        <div id="treeMenu">
+                        </div>
+                    </div>
+                </div>
+                <div class="right_contents_container">
+                    <table class="data_table_1">
+                        <tbody>
+                            <tr>
+                                <td class="table_header_col">상위항목</td>
+                                <td class="table_data_col">바이오인증</td>
+                            </tr>
+                            <tr>
+                                <td class="table_header_col">메뉴 사용여부</td>
+                                <td class="table_data_col menu_use_radio">
+                                    <div class="radio_btn">
+                                        <input id="" type="radio"><label for="">사용</label>
+                                    </div>
+                                    <div class="radio_btn">
+                                        <input id="" type="radio"><label for="">미사용</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table_header_col">메뉴ID</td>
+                                <td class="table_data_col">AIB_GATE1</td>
+                            </tr>
+                            <tr>
+                                <td class="table_header_col">메뉴명</td>
+                                <td class="table_data_col">
+                                    <input class="data_table_1_menu_name" type="text" value="i-ONE뱅크(개인)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table_header_col">메뉴종류</td>
+                                <td class="table_data_col">앱</td>
+                            </tr>
+                            <tr>
+                                <td class="table_header_col">최종수정</td>
+                                <td class="table_data_col">admin (2019-04-15 22:30:04)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="data_table_2_container">
+                        <div class="data_table_2_btn_container">
+                            <button>메뉴 속성 설정</button>
+                            <button class="active">서비스 시간설정</button>
+                        </div>
+                        <table class="data_table_2">
+                            <tbody>
+                                <tr>
+                                    <td class="table_header_col">사용여부*</td>
+                                    <td class="table_data_col menu_use_radio">
+                                        <div class="radio_btn">
+                                            <input id="" type="radio"><label for="">사용</label>
+                                        </div>
+                                        <div class="radio_btn">
+                                            <input id="" type="radio"><label for="">미사용</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table_header_col">거래제어 시간*</td>
+                                    <td class="table_data_col">
+                                        <div class="multi_row_container">영업일
+                                            <div class="input_container"><input type="text" placeholder="HHmm">~<input type="text" placeholder="HHmm">
+                                            </div>
+                                        </div>
+                                        <div class="multi_row_container">토요일
+                                            <div class="input_container"><input type="text" placeholder="HHmm">~<input type="text" placeholder="HHmm">
+                                            </div>
+                                        </div>
+                                        <div class="multi_row_container">공휴일
+                                            <div class="input_container"><input type="text" placeholder="HHmm">~<input type="text" placeholder="HHmm">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_contents_btn_container">
+                <button class="delete_btn">삭제</button>
+                <button class="regist_btn">저장</button>
+            </div>
+
+        </div>
+
+    </div>
+    
+<script>
+    const jsonData = {
+        "menu": {
+            "name": "i-ONE뱅크(개인)",
+            "depth": 1,
+            "children": [
+                {
+                    "name": "메인",
+                    "depth": 2,
+                    "children": [
+                        {
+                            "name": "개인형IRP링크",
+                            "depth": 3
+                        },
+                        {   
+                            "name": "카드혜택",
+                            "depth": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "로그인",
+                    "depth": 2,
+                    "children": [
+                        {
+                            "name": "바이오인증",
+                            "depth": 3,
+                            "children": [
+                                {
+                                    "name": "얼굴로그인",
+                                    "depth": 4
+                                },
+                                {
+                                    "name": "홍채로그인",
+                                    "depth": 4
+                                }
+                            ]
+                        },
+                        {
+                            "name": "기타 로그인 수단",
+                            "depth": 3,
+                            "children": [
+                                {
+                                    "name": "ONE아이디",
+                                    "depth": 4,
+                                },
+                                {
+                                    "name": "공인인증서",
+                                    "depth": 4
+                                },
+                                {
+                                    "name": "뱅크사인",
+                                    "depth": 4
+                                },
+                                {
+                                    "name": "금융인증서",
+                                    "depth": 4
+                                },
+                                {
+                                    "name": "뱅크아이디",
+                                    "depth": 4
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    };
+
+    function createTree(data) {
+        const ul = document.createElement("ul");
+
+        data.forEach(item => {
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            const div = document.createElement("div");
+            if (item.children) {
+                const span = document.createElement("span");
+                span.classList.add("tree");
+                span.textContent = item.name;
+                span.classList.add("toggle");
+                span.onclick = () => {
+                    const childUl = li.querySelector("ul");
+                    if (childUl) {
+                        childUl.style.display = childUl.style.display === "none" ? "block" : "none";
+                    }
+                };
+                
+                li.appendChild(div);
+                div.appendChild(img);
+                div.appendChild(span);
+                div.classList.add("tree_icon");
+                img.classList.add("tree_fold");
+                
+                li.appendChild(createTree(item.children));
+            } else {
+                li.textContent = item.name;
+            }
+            ul.appendChild(li);
+        });
+
+        return ul;
+    }
+
+    document.getElementById("treeMenu").appendChild(createTree([jsonData.menu]));
+</script>
+    
+</body>
+</html>
