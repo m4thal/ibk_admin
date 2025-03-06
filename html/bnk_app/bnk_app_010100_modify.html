@@ -26,8 +26,8 @@
                         <div class="menu_title_container">
                             <span class="menu_title">메뉴상태</span>
                             <div class="use_check">
-                                <input type="checkbox">
-                                <span>미사용 포함</span>
+                                <input type="checkbox" id="menu_state_use">
+                                <label for="menu_state_use">미사용 포함</span>
                             </div>
                         </div>
                         <div class="menu_search_container">
@@ -69,11 +69,15 @@
                             <tr>
                                 <td class="table_header_col">메뉴 사용여부</td>
                                 <td class="table_data_col menu_use_radio">
-                                    <div class="radio_btn">
-                                        <input id="" type="radio"><label for="">사용</label>
-                                    </div>
-                                    <div class="radio_btn">
-                                        <input id="" type="radio"><label for="">미사용</label>
+                                    <div class="radio-group">
+                                        <label class="radio-container">
+                                            <input type="radio" name="reservation" value="yes" id="yes">
+                                            <div class="radio-label"></div>사용
+                                        </label>
+                                        <label class="radio-container">
+                                        <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
+                                            <div class="radio-label"></div>미사용
+                                        </label>
                                     </div>
                                 </td>
                             </tr>
@@ -84,7 +88,7 @@
                             <tr>
                                 <td class="table_header_col">메뉴명</td>
                                 <td class="table_data_col">
-                                    <input class="data_table_1_menu_name" type="text" value="i-ONE뱅크(개인)">
+                                    <input class="table_input_col" type="text" value="i-ONE뱅크(개인)">
                                 </td>
                             </tr>
                             <tr>
@@ -100,20 +104,59 @@
 
                     <div class="data_table_2_container">
                         <div class="data_table_2_btn_container">
-                            <button>메뉴 속성 설정</button>
-                            <button class="active">서비스 시간설정</button>
+                            <button class="table_change_btn1 active" onclick="table_change_btn1()">메뉴 속성 설정</button>
+                            <button class="table_change_btn2" onclick="table_change_btn2()" class="active">서비스 시간설정</button>
                         </div>
-                        <table class="data_table_2">
+                        <table class="menu_data_table">
+                            <thead>
+                                <tr>
+                                    <td>속성명</td>
+                                    <td>속성ID</td>
+                                    <td>설정</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>메뉴구분|필수</td>
+                                    <td>c_view_tpye</td>
+                                    <td>
+                                        <input class="table_input_col" type="text" value="2" placeholder="숫자">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>큰글씨 전환버튼 표기여부</td>
+                                    <td>c_big_menu_yn</td>
+                                    <td class="menu_use_radio">
+                                        <div class="radio-group">
+                                            <label class="radio-container">
+                                                <input type="radio" name="reservation" value="yes" id="yes">
+                                                <div class="radio-label"></div>예
+                                            </label>
+                                            <label class="radio-container">
+                                            <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
+                                                <div class="radio-label"></div>아니오
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="service_data_table hidden">
                             <tbody>
                                 <tr>
                                     <td class="table_header_col">사용여부*</td>
                                     <td class="table_data_col menu_use_radio">
-                                        <div class="radio_btn">
-                                            <input id="" type="radio"><label for="">사용</label>
-                                        </div>
-                                        <div class="radio_btn">
-                                            <input id="" type="radio"><label for="">미사용</label>
-                                        </div>
+                                    <div class="radio-group">
+                                        <label class="radio-container">
+                                            <input type="radio" name="reservation" value="yes" id="yes">
+                                            <div class="radio-label"></div>사용
+                                        </label>
+                                        <label class="radio-container">
+                                        <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
+                                            <div class="radio-label"></div>미사용
+                                        </label>
+                                    </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -133,18 +176,203 @@
                                         </div>
                                     </td>
                                 </tr>
+                           
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <div class="right_contents_btn_container">
-                <button class="delete_btn">삭제</button>
-                <button class="regist_btn">저장</button>
-            </div>
+            <div class="right_contents_bottom_container">
+                <div class="right_contents_btn_container">
+                    <button class="delete_btn">삭제</button>
+                    <button class="regist_btn">저장</button>
+                </div>
 
+                <div class="info_container">
+                    <div class="info_inner">
+                        <ul>
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [메뉴뷰 구분]
+                                </span>
+                                <span class="info_text">
+                                    1 : 네이티브, 2 : 하이브리드, 3: 외부링크 연동
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [서비스여부]
+                                </span>
+                                <span class="info_text">
+                                    false : 서비스 불가 true : 서비스 가능
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [서비스 불가 이유]
+                                </span>
+                                <span class="info_text">
+                                    * 해당메뉴 서비스 불사 사유 출력 default reason 사용시 제외 가능("서비스 준비 중입니다.")
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [서비스 불가 대응방법]
+                                </span>
+                                <span class="info_text">
+                                    * 해당 값이 있는 경우 c_reason 에 해당 메시지 더해서 보여 줌
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [메뉴숨김여부]
+                                </span>
+                                <span class="info_text">
+                                    false : 보임 true : 숨김
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [수행가능버전]
+                                </span>
+                                <span class="info_text">
+                                    현재 기능에서 수행이 가능한 버전
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [필요 로그인 레벨]
+                                </span>
+                                <span class="info_text">
+                                    1 : 로그인, 2 : 로그인/비로그인, 3 : 비로그인 / 로그아웃 후 이동
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [서브타이틀명]
+                                </span>
+                                <span class="info_text">
+                                    * 현재 값이 있는경우 사용하고 없는경우 c_menu_title 를 보여줌 (c_menu_title 값 안맞는거 변경 필요)
+                                </span>
+                            </li>
+
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [메뉴 URL]
+                                </span>
+                                <span class="info_text">
+                                    메뉴뷰가 image web인 경우 호출할 URL : *개인뱅킹의 경우 Native menu에서 각 메뉴 이동시 사용 현<br>
+                                    기업뱅킹과 같이 gateway.jsp 하나의 통로를 사용 할 경우 삭제 가능
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [맞춤메뉴대상여부]
+                                </span>
+                                <span class="info_text">
+                                    맞춤메뉴 대상여부
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [통합검색에서 해당메뉴검색가능여부등록]
+                                </span>
+                                <span class="info_text">
+                                    합검색에서 해당메뉴검색가능여부등록 트리에서보일경우 여, 숨김메뉴는 부
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [메뉴배치코드]
+                                </span>
+                                <span class="info_text">
+                                    전체메뉴트리를 보여질때 메뉴명 옆에 메뉴배지코드에 해당하는 배지표기 0,공백:표기없음, 1:NEW배지,<br>
+                                     2:UPDATE배지, 3: EVENT배지
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [큰글씨 전환버튼 표기여부]
+                                </span>
+                                <span class="info_text">
+                                    해당메뉴에 상단bar에 큰글씨 화면의 전환버튼(큰글씨설정값에 따라) 추가 true: 큰글씨화면<br>
+                                    전환버튼표기 / 공백 or false : 큰글씨화면 전환버튼 표기 안함 
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [큰글씨 메뉴아이디]
+                                </span>
+                                <span class="info_text">
+                                    해당메뉴에 상응하는 큰글씨 메뉴아이디 (큰글씨인경우 일반메뉴 아이디)
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [큰글씨 메뉴url]
+                                </span>
+                                <span class="info_text">
+                                    해당메뉴에 상응하는 큰글씨 메뉴URL (큰글씨인경우 일반메뉴 URL)
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [쉬운뱅킹 메뉴아이콘 URL]
+                                </span>
+                                <span class="info_text">
+                                    뱅크사인 스토어 url
+                                </span>
+                            </li>
+
+                            <li>
+                                <img src="../../img/dot.svg">
+                                <span class="info_title">
+                                    [간편회원 접근불가능 여부]
+                                </span>
+                                <span class="info_text">
+                                    간편회원 접근불가능한 메뉴 여부 : true -> 접근불가능(제어) / false -> 접근가능(미 제어)-디폴트
+                                </span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+
+       
 
     </div>
     
@@ -218,60 +446,82 @@
         }
     };
 
-    let selectedItem = null; // 현재 선택된 아이템을 저장할 변수
+let selectedItem = null; // 현재 선택된 아이템을 저장할 변수
 
 function createTree(data, depth = 1) {
     const ul = document.createElement("ul");
     ul.style.paddingLeft = "0px"; // 기본 padding 제거
 
     data.forEach(item => {
-        const li = document.createElement("li");
-        li.style.listStyleType = "none"; // 기본 리스트 스타일 제거
-        li.style.position = "relative"; // 내부 요소 위치 조정
+        let li = document.createElement("li");
+        let tree_list_container = document.createElement("div");
+        let tree_item = document.createElement("div");
+        let tree_item_inner = document.createElement("div");
+        let text = document.createElement("span");
 
-        const div = document.createElement("div");
-        div.classList.add("tree_icon");
-        div.style.display = "flex";
-        div.style.alignItems = "center";
-        div.style.paddingLeft = `${depth * 15}px`; // depth별 들여쓰기 적용
+        tree_list_container.classList.add("tree_list_container");
+        tree_item.classList.add("tree_item");
+        tree_item_inner.classList.add("tree_item_inner");
 
-        const arrow = document.createElement("span");
-        arrow.innerHTML = "▶"; // 기본 화살표 (닫힌 상태)
-        arrow.classList.add("arrow_icon");
-        arrow.style.marginRight = "8px";
-        arrow.style.cursor = "pointer";
-        arrow.style.visibility = item.children ? "visible" : "hidden"; // 자식이 없으면 숨김
+        item.children ? tree_list_container.style.paddingLeft = `${(item.depth -1 ) * 20}px`:
+        tree_list_container.style.paddingLeft = `${item.depth *20}px`;
 
-        const text = document.createElement("span");
+        tree_item.innerHTML += item.children ? "<div><img src='../../img/triangle_down.svg'></div>" : "";        
+
+        const tree_icon = document.createElement("div");
+        tree_icon.innerHTML = "<img src='../../img/tree_folder.svg'>"; // 기본 아이콘 (닫힌상태)
+        tree_icon.classList.add("tree_icon");
+        tree_icon.style.visibility = item.children ? "visible" : tree_icon.innerHTML = item.children ? "" : "<img src='../../img/tree_doc.svg'>";
+
+        item.children ? tree_icon.classList.add("parent") : tree_icon.classList.add("children");
+
+       
+
         text.textContent = item.name;
         text.classList.add("tree");
 
-        // ✅ 트리 메뉴 클릭 이벤트 추가
-        div.onclick = () => {
+        //트리메뉴 클릭 이벤트 추가
+
+        tree_item.onclick = (e) => {
+            
             if (selectedItem) {
                 selectedItem.classList.remove("selected"); // 이전 선택 항목 초기화
             }
-            div.classList.add("selected"); // 현재 선택된 항목 스타일 적용
-            selectedItem = div;
+            document.addEventListener("click", function (e) {
+                
+            let selectedElement = e.target.closest(".selected");
+                if (selectedElement) {
+                    selectedElement.classList.remove("selected");
+                    console.log("selected 제거됨!");
+                } else {
+                    console.log("선택된 요소 없음!");
+                }
+            });
+
+            tree_item.classList.add("selected"); // 현재 선택된 항목 스타일 적용
+            
+            let change_icon = tree_icon.querySelector(".selected .tree_icon img")
+            selectedItem = tree_item;
         };
 
-        div.appendChild(arrow);
-        div.appendChild(text);
-        li.appendChild(div);
+
+        tree_item_inner.appendChild(tree_icon);
+        tree_item_inner.appendChild(text);
+        tree_item.appendChild(tree_item_inner);
+        tree_list_container.appendChild(tree_item);
+        li.appendChild(tree_list_container);
 
         if (item.children) {
             const childUl = createTree(item.children, depth + 1);
             childUl.style.display = "none"; // 기본적으로 숨김
             li.appendChild(childUl);
-
-            arrow.onclick = (e) => {
+            
+            tree_icon.onclick = (e) => {
                 e.stopPropagation(); // 부모 div 클릭 이벤트와 겹치지 않도록 방지
                 if (childUl.style.display === "none") {
                     childUl.style.display = "block";
-                    arrow.innerHTML = "🔽"; // 열린 상태 아이콘 변경
                 } else {
                     childUl.style.display = "none";
-                    arrow.innerHTML = "▶"; // 닫힌 상태 아이콘 변경
                 }
             };
         }
@@ -284,6 +534,30 @@ function createTree(data, depth = 1) {
 
 document.getElementById("treeMenu").appendChild(createTree([jsonData.menu]));
 
+
+function table_change_btn1(){
+
+    document.querySelector(".table_change_btn2").classList.remove("active");
+    document.querySelector(".table_change_btn1").classList.add("active");
+    document.querySelector(".menu_data_table").classList.remove("hidden");
+    document.querySelector(".service_data_table").classList.add("hidden");
+    
+    
+
+    
+
+}
+
+function table_change_btn2(){
+    document.querySelector(".table_change_btn1").classList.remove("active");
+    document.querySelector(".table_change_btn2").classList.add("active");
+    document.querySelector(".service_data_table").classList.remove("hidden");
+    document.querySelector(".menu_data_table").classList.add("hidden")
+    
+    
+    
+    
+}
 
 
 </script>

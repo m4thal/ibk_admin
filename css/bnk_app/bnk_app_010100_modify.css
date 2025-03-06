@@ -239,13 +239,14 @@ flex-shrink: 0;
 
 .right_contents_container{
     display: flex;
+    min-width: 712px;
     flex-direction: column;
     align-items: flex-start;
     gap: 52px;
 }
 
 
-.data_table_1 , .data_table_2{
+.data_table_1 , .service_data_table , .menu_data_table{
     width: 100%;
 }
 
@@ -256,6 +257,7 @@ flex-shrink: 0;
 .data_table_1 tr{
     border-bottom: 1px solid var(--gray-100, #E1E3EA);
 }
+
 
 .data_table_1 .table_header_col{
     width: 120px;
@@ -287,7 +289,7 @@ flex-shrink: 0;
     line-height: 16px; /* 123.077% */
 }
 
-.table_data_col:has(.data_table_1_menu_name){
+.table_data_col:has(.table_input_col){
    padding: 0 12px;
 }
 
@@ -302,7 +304,7 @@ flex-shrink: 0;
     line-height: 16px; /* 123.077% */
 }
 
-.data_table_1_menu_name{
+.table_input_col{
     width: 100%;
     padding: 8px;    
 
@@ -318,11 +320,6 @@ flex-shrink: 0;
     font-weight: 400;
     line-height: 20px; /* 142.857% */
 }
-
-.data_table_1_menu_name:has{
-    padding: 0 12px;
-}
-
 
 .data_table_2_container{
     display: flex;
@@ -354,15 +351,48 @@ flex-shrink: 0;
 }
 
 
-.data_table_2 tr:first-child{
+.menu_data_table thead tr{
+    height: 48px;
+    text-align: center;
+    border-top: 1px solid var(--gray-850, #1F2128);;
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-50, #F3F4F7);
+    
+    color: var(--gray-700, #454855);
+    text-align: center;
+
+    /* 14_20/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+}
+
+.menu_data_table tbody tr{
+    height: 48px;
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-0, #FFF);
+
+    color: var(--gray-850, #1F2128);
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.service_data_table tr:first-child{
     border-top: 1px solid var(--gray-100, #1F2128);
 }
 
-.data_table_2 tr{
+.service_data_table tr{
     border-bottom: 1px solid var(--gray-100, #E1E3EA);
 }
 
-.data_table_2 .table_header_col{
+.service_data_table .table_header_col{
     width: 120px;
     padding: 14px 12px;
 
@@ -377,7 +407,7 @@ flex-shrink: 0;
     line-height: 20px; /* 142.857% */
 }
 
-.data_table_2 .table_data_col{
+.service_data_table .table_data_col{
     height: 48px;
     padding: 16px 12px;
 
@@ -466,9 +496,115 @@ flex-shrink: 0;
 
 
 
+
+
+.data_table_2_btn_container button.active{
+    border-radius: var(--value-radius-radius_28, 28px);
+    background: var(--blue-admin_primary, #2D3443);
+
+    color: var(--gray-0, #FFF);
+
+    /* 14_20/semibold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+}
+
+
+
+
+
+
+
+.tree_list_container{
+    display: inline-flex;
+    height: 28px;
+    padding: 0px 8px 0px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tree_item{
+    display: flex;
+    padding: 4px 0px;
+    align-items: center;
+}
+
+
+.tree_item_inner{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tree_item_inner span{
+    color: var(--gray-600, #5A5E6C);
+
+    /* 13_16/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 123.077% */
+}
+
+.selected{
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--blue-400, #2A86FF);
+}
+
+.selected span{
+    color: var(--gray-0, #FFF);
+
+    /* 13_16/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 123.077% */
+}
+
+.tree_icon{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: 2.5px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.selected .tree_icon.parent img{
+    content: url("../../img/select_tree_folder.svg");
+}
+
+.selected .tree_icon.children img{
+    content: url("../../img/select_tree_doc.svg");
+}
+
+.hidden{
+    display: none;
+}
+
+
+
+
+
+
+.right_contents_bottom_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 52px;
+}
+
 .right_contents_btn_container{
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-start;
     gap: 8px;
 }
 
@@ -517,52 +653,76 @@ flex-shrink: 0;
     line-height: 20px; /* 142.857% */
 }
 
+.info_container{
+    display: flex;
+    min-width: 712px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 
-
-.data_table_2_btn_container button.active{
-    border-radius: var(--value-radius-radius_28, 28px);
-    background: var(--blue-admin_primary, #2D3443);
-
-    color: var(--gray-0, #FFF);
-
-    /* 14_20/semibold */
-    font-family: "Noto Sans CJK KR";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px; /* 142.857% */
+    border-radius: 8px;
+    background: var(--gray-50, #F3F4F7);
+}
+.info_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
 }
 
 
+/* 기본 라디오 버튼 숨기기 */
+input[type="radio"] {
+    display: none;
+}
 
-
-
-
-
-
-.tree_icon {
+.radio-group{
     display: flex;
+    gap: 56px;
+}
+.radio-label{
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: relative;
+    width: 18px;
+    height: 18px;
+    background-image: url('../../img/radio_btn_f.svg');
+    background-size: cover;
 }
 
-.tree_icon:hover {
-    background-color: #e0e0e0;
+input[type="radio"]:checked + .radio-label {
+    background-image: url('../../img/Radio\ button.png');
 }
 
-.selected {
-    background-color: blue !important;
-    color: white !important;
+.radio-container{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: space-between;
+    
 }
 
-.arrow_icon {
-    font-size: 14px;
-    transition: transform 0.2s ease-in-out;
+
+.info_title{
+    color: var(--gray-600, #5A5E6C);
+
+    /* 13_16/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 123.077% */
 }
 
-.tree_icon .arrow_icon:hover {
-    transform: scale(1.2);
+.info_text{
+    color: var(--gray-500, #737684);
+
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
 }
