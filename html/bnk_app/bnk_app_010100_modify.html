@@ -117,7 +117,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>메뉴구분|필수</td>
+                                    <td>메뉴구분<span style="color: blue;"> | 필수</span></td>
                                     <td>c_view_tpye</td>
                                     <td>
                                         <input class="table_input_col" type="text" value="2" placeholder="숫자">
@@ -180,200 +180,200 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
 
-            <div class="right_contents_bottom_container">
-                <div class="right_contents_btn_container">
-                    <button class="delete_btn">삭제</button>
-                    <button class="regist_btn">저장</button>
-                </div>
-
-                <div class="info_container">
-                    <div class="info_inner">
-                        <ul>
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [메뉴뷰 구분]
-                                </span>
-                                <span class="info_text">
-                                    1 : 네이티브, 2 : 하이브리드, 3: 외부링크 연동
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [서비스여부]
-                                </span>
-                                <span class="info_text">
-                                    false : 서비스 불가 true : 서비스 가능
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [서비스 불가 이유]
-                                </span>
-                                <span class="info_text">
-                                    * 해당메뉴 서비스 불사 사유 출력 default reason 사용시 제외 가능("서비스 준비 중입니다.")
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [서비스 불가 대응방법]
-                                </span>
-                                <span class="info_text">
-                                    * 해당 값이 있는 경우 c_reason 에 해당 메시지 더해서 보여 줌
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [메뉴숨김여부]
-                                </span>
-                                <span class="info_text">
-                                    false : 보임 true : 숨김
-                                </span>
-                            </li>
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [수행가능버전]
-                                </span>
-                                <span class="info_text">
-                                    현재 기능에서 수행이 가능한 버전
-                                </span>
-                            </li>
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [필요 로그인 레벨]
-                                </span>
-                                <span class="info_text">
-                                    1 : 로그인, 2 : 로그인/비로그인, 3 : 비로그인 / 로그아웃 후 이동
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [서브타이틀명]
-                                </span>
-                                <span class="info_text">
-                                    * 현재 값이 있는경우 사용하고 없는경우 c_menu_title 를 보여줌 (c_menu_title 값 안맞는거 변경 필요)
-                                </span>
-                            </li>
-
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [메뉴 URL]
-                                </span>
-                                <span class="info_text">
-                                    메뉴뷰가 image web인 경우 호출할 URL : *개인뱅킹의 경우 Native menu에서 각 메뉴 이동시 사용 현<br>
-                                    기업뱅킹과 같이 gateway.jsp 하나의 통로를 사용 할 경우 삭제 가능
-                                </span>
-                            </li>
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [맞춤메뉴대상여부]
-                                </span>
-                                <span class="info_text">
-                                    맞춤메뉴 대상여부
-                                </span>
-                            </li>
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [통합검색에서 해당메뉴검색가능여부등록]
-                                </span>
-                                <span class="info_text">
-                                    합검색에서 해당메뉴검색가능여부등록 트리에서보일경우 여, 숨김메뉴는 부
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [메뉴배치코드]
-                                </span>
-                                <span class="info_text">
-                                    전체메뉴트리를 보여질때 메뉴명 옆에 메뉴배지코드에 해당하는 배지표기 0,공백:표기없음, 1:NEW배지,<br>
-                                     2:UPDATE배지, 3: EVENT배지
-                                </span>
-                            </li>
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [큰글씨 전환버튼 표기여부]
-                                </span>
-                                <span class="info_text">
-                                    해당메뉴에 상단bar에 큰글씨 화면의 전환버튼(큰글씨설정값에 따라) 추가 true: 큰글씨화면<br>
-                                    전환버튼표기 / 공백 or false : 큰글씨화면 전환버튼 표기 안함 
-                                </span>
-                            </li>
-                            
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [큰글씨 메뉴아이디]
-                                </span>
-                                <span class="info_text">
-                                    해당메뉴에 상응하는 큰글씨 메뉴아이디 (큰글씨인경우 일반메뉴 아이디)
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [큰글씨 메뉴url]
-                                </span>
-                                <span class="info_text">
-                                    해당메뉴에 상응하는 큰글씨 메뉴URL (큰글씨인경우 일반메뉴 URL)
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [쉬운뱅킹 메뉴아이콘 URL]
-                                </span>
-                                <span class="info_text">
-                                    뱅크사인 스토어 url
-                                </span>
-                            </li>
-
-                            <li>
-                                <img src="../../img/dot.svg">
-                                <span class="info_title">
-                                    [간편회원 접근불가능 여부]
-                                </span>
-                                <span class="info_text">
-                                    간편회원 접근불가능한 메뉴 여부 : true -> 접근불가능(제어) / false -> 접근가능(미 제어)-디폴트
-                                </span>
-                            </li>
-                            
-                        </ul>
+                    <div class="right_contents_bottom_container">
+                        <div class="right_contents_btn_container">
+                            <button class="delete_btn">삭제</button>
+                            <button class="regist_btn">저장</button>
+                        </div>
+        
+                        <div class="info_container">
+                            <div class="info_inner">
+                                <ul>
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [메뉴뷰 구분]
+                                        </span>
+                                        <span class="info_text">
+                                            1 : 네이티브, 2 : 하이브리드, 3: 외부링크 연동
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [서비스여부]
+                                        </span>
+                                        <span class="info_text">
+                                            false : 서비스 불가 true : 서비스 가능
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [서비스 불가 이유]
+                                        </span>
+                                        <span class="info_text">
+                                            * 해당메뉴 서비스 불사 사유 출력 default reason 사용시 제외 가능("서비스 준비 중입니다.")
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [서비스 불가 대응방법]
+                                        </span>
+                                        <span class="info_text">
+                                            * 해당 값이 있는 경우 c_reason 에 해당 메시지 더해서 보여 줌
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [메뉴숨김여부]
+                                        </span>
+                                        <span class="info_text">
+                                            false : 보임 true : 숨김
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [수행가능버전]
+                                        </span>
+                                        <span class="info_text">
+                                            현재 기능에서 수행이 가능한 버전
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [필요 로그인 레벨]
+                                        </span>
+                                        <span class="info_text">
+                                            1 : 로그인, 2 : 로그인/비로그인, 3 : 비로그인 / 로그아웃 후 이동
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [서브타이틀명]
+                                        </span>
+                                        <span class="info_text">
+                                            * 현재 값이 있는경우 사용하고 없는경우 c_menu_title 를 보여줌 (c_menu_title 값 안맞는거 변경 필요)
+                                        </span>
+                                    </li>
+        
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [메뉴 URL]
+                                        </span>
+                                        <span class="info_text">
+                                            메뉴뷰가 image web인 경우 호출할 URL : *개인뱅킹의 경우 Native menu에서 각 메뉴 이동시 사용 현<br>
+                                            기업뱅킹과 같이 gateway.jsp 하나의 통로를 사용 할 경우 삭제 가능
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [맞춤메뉴대상여부]
+                                        </span>
+                                        <span class="info_text">
+                                            맞춤메뉴 대상여부
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [통합검색에서 해당메뉴검색가능여부등록]
+                                        </span>
+                                        <span class="info_text">
+                                            합검색에서 해당메뉴검색가능여부등록 트리에서보일경우 여, 숨김메뉴는 부
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [메뉴배치코드]
+                                        </span>
+                                        <span class="info_text">
+                                            전체메뉴트리를 보여질때 메뉴명 옆에 메뉴배지코드에 해당하는 배지표기 0,공백:표기없음, 1:NEW배지,<br>
+                                             2:UPDATE배지, 3: EVENT배지
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [큰글씨 전환버튼 표기여부]
+                                        </span>
+                                        <span class="info_text">
+                                            해당메뉴에 상단bar에 큰글씨 화면의 전환버튼(큰글씨설정값에 따라) 추가 true: 큰글씨화면<br>
+                                            전환버튼표기 / 공백 or false : 큰글씨화면 전환버튼 표기 안함 
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [큰글씨 메뉴아이디]
+                                        </span>
+                                        <span class="info_text">
+                                            해당메뉴에 상응하는 큰글씨 메뉴아이디 (큰글씨인경우 일반메뉴 아이디)
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [큰글씨 메뉴url]
+                                        </span>
+                                        <span class="info_text">
+                                            해당메뉴에 상응하는 큰글씨 메뉴URL (큰글씨인경우 일반메뉴 URL)
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [쉬운뱅킹 메뉴아이콘 URL]
+                                        </span>
+                                        <span class="info_text">
+                                            뱅크사인 스토어 url
+                                        </span>
+                                    </li>
+        
+                                    <li>
+                                        <img src="../../img/dot.svg">
+                                        <span class="info_title">
+                                            [간편회원 접근불가능 여부]
+                                        </span>
+                                        <span class="info_text">
+                                            간편회원 접근불가능한 메뉴 여부 : true -> 접근불가능(제어) / false -> 접근가능(미 제어)-디폴트
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
+
+
         </div>
-
-       
-
     </div>
     
 <script>
@@ -478,32 +478,17 @@ function createTree(data, depth = 1) {
        
 
         text.textContent = item.name;
-        text.classList.add("tree");
 
         //트리메뉴 클릭 이벤트 추가
 
-        tree_item.onclick = (e) => {
-            
-            if (selectedItem) {
-                selectedItem.classList.remove("selected"); // 이전 선택 항목 초기화
-            }
-            document.addEventListener("click", function (e) {
-                
-            let selectedElement = e.target.closest(".selected");
-                if (selectedElement) {
-                    selectedElement.classList.remove("selected");
-                    console.log("selected 제거됨!");
+                    tree_item.onclick = (e) => {
+                // 현재 요소가 선택된 상태인지 확인
+                if (tree_item.classList.contains("selected")) {
+                    tree_item.classList.remove("selected"); // 선택 해제
                 } else {
-                    console.log("선택된 요소 없음!");
+                    tree_item.classList.add("selected"); // 선택 추가
                 }
-            });
-
-            tree_item.classList.add("selected"); // 현재 선택된 항목 스타일 적용
-            
-            let change_icon = tree_icon.querySelector(".selected .tree_icon img")
-            selectedItem = tree_item;
-        };
-
+            };
 
         tree_item_inner.appendChild(tree_icon);
         tree_item_inner.appendChild(text);
