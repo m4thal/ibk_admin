@@ -246,16 +246,7 @@
                 background: var(--blue-admin_primary, #2D3443);
             }
 
-            .content-container{
-                display: flex;
-                padding: 40px 32px 80px 32px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 32px;
-                align-self: stretch;
-
-                background: var(--gray-0, #FFF);
-            }
+            
 
             #dept_container {
                 display: flex;
@@ -422,6 +413,104 @@
             line-height: 16px; /* 123.077% */
         }
 
+        /* 팝업 배경 (어둡게 처리) */
+        .modal-background {
+            position: absolute; /* content-container 기준으로 위치 설정 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        
+        }
+
+
+        /* 팝업 컨테이너 */
+        .modal-container {
+            display: flex;
+            width: 301px;
+            height: 154px;
+            padding: 32px 24px;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            flex-shrink: 0;
+
+            border-radius: 16px;
+            background: var(--gray-0, #FFF);
+            box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.20);
+        }
+
+        /* 팝업 내용 (텍스트) */
+        .modal-content {
+            color: var(--gray-700, #454855);
+
+            /* 14_20/semibold */
+            font-family: "Noto Sans CJK KR";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px; /* 142.857% */
+        }
+
+        /* 버튼 컨테이너 */
+        .modal-buttons {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        /* 취소 버튼 */
+        .modal-cancel-button {
+            display: flex;
+            height: 36px;
+            padding: 12px 16px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+
+            border-radius: 6px;
+            border: 1px solid var(--gray-500, #737684);
+            background: var(--gray-0, #FFF);
+
+            color: var(--gray-850, #1F2128);
+            text-align: center;
+
+            /* 14_20/regular */
+            font-family: "Noto Sans CJK KR";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 142.857% */
+        }
+
+        /* 확인 버튼 */
+        .modal-confirm-button {
+            display: flex;
+            height: 36px;
+            padding: 12px 16px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+
+            border-radius: 6px;
+            background: var(--blue-500, #1A71E5);
+
+            color: var(--gray-0, #FFF);
+            text-align: center;
+
+            /* 14_20/regular */
+            font-family: "Noto Sans CJK KR";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 142.857% */
+        }
+
 
 
     </style>
@@ -496,6 +585,9 @@
                                 </div>
                                 <button type="button" class="header_login_btn">로그아웃</button>
                             </div>
+                            <div>
+                                <button id="openModalButton">팝업 열기</button>
+                            </div>
                         </div>
                     </div>
                     <!-- 탭 성성 -->
@@ -504,54 +596,57 @@
                             <!-- // 탭 생성 -->
                         </div>
                             <button id="close-all-tabs">전체 닫기<img src="../img/Filled.png"></button>
-                        </dvv>
-                    </div>
-                </div>
-                    <div class="content-container" id="content-container">
-                        <!-- 첫번째 탭 보여주기 위해 생성 -->
-                         <!-- test2-->
-                        <div class="tab-content is_active" data-name="약관관리">
-                            <div class="contents" style="display: none;">
-                                <div class="side_menu">
-                                    <div class="side_menu_dep1">
-                                        <button type="button" class="side_menu_dep1_button">i-ONE뱅크(개인)</button>
-                                        <div class="side_menu_dep2">
-                                            <button type="button" class="side_menu_dep2_button">메인</button>
-                                            <div class="side_menu_dep3">
-                                                <button type="button" class="side-button" draggable="true">개인형IRP링크</button><!-- 드래그 가능 요소 -->
-                                                <button type="button" class="side-button" draggable="true">카드 혜택</button>
+                    </div> 
+                </div> 
+
+                
+                              
+                <div class="content-container" id="content-container">
+                    <!-- 첫번째 탭 보여주기 위해 생성 -->
+                    <!-- test2-->
+                    <div class="tab-content is_active" data-name="약관관리">
+                        <div class="contents" style="display: none;">
+                            <div class="side_menu">
+                                <div class="side_menu_dep1">
+                                    <button type="button" class="side_menu_dep1_button">i-ONE뱅크(개인)</button>
+                                    <div class="side_menu_dep2">
+                                        <button type="button" class="side_menu_dep2_button">메인</button>
+                                        <div class="side_menu_dep3">
+                                            <button type="button" class="side-button" draggable="true">개인형IRP링크</button><!-- 드래그 가능 요소 -->
+                                            <button type="button" class="side-button" draggable="true">카드 혜택</button>
+                                        </div>
+                                    </div>
+                                    <div class="side_menu_dep2">
+                                        <button type="button" class="side_menu_dep2_button">로그인</button>
+                                        <div class="side_menu_dep3">
+                                            <button type="button" class="side_menu_dep3_button">바이오인증</button>
+                                            <div class="side_menu_dep4">
+                                                <button type="button" class="side-button" draggable="true">홍채 로그인</button>
+                                                <button type="button" class="side-button" draggable="true">얼굴 로그인</button>
                                             </div>
                                         </div>
-                                        <div class="side_menu_dep2">
-                                            <button type="button" class="side_menu_dep2_button">로그인</button>
-                                            <div class="side_menu_dep3">
-                                                <button type="button" class="side_menu_dep3_button">바이오인증</button>
-                                                <div class="side_menu_dep4">
-                                                    <button type="button" class="side-button" draggable="true">홍채 로그인</button>
-                                                    <button type="button" class="side-button" draggable="true">얼굴 로그인</button>
-                                                </div>
-                                            </div>
-                                            <div class="side_menu_dep3">
-                                                <button type="button" class="side_menu_dep3_button">기타 로그인 수단</button>
-                                                <div class="side_menu_dep4">
-                                                    <button type="button" class="side-button" draggable="true">ONE아이디</button>
-                                                    <button type="button" class="side-button" draggable="true">공인인증서</button>
-                                                    <button type="button" class="side-button" draggable="true">뱅크사인</button>
-                                                    <button type="button" class="side-button" draggable="true">금융인증서</button>
-                                                    <button type="button" class="side-button" draggable="true">뱅크아이디</button>
-                                                </div>
+                                        <div class="side_menu_dep3">
+                                            <button type="button" class="side_menu_dep3_button">기타 로그인 수단</button>
+                                            <div class="side_menu_dep4">
+                                                <button type="button" class="side-button" draggable="true">ONE아이디</button>
+                                                <button type="button" class="side-button" draggable="true">공인인증서</button>
+                                                <button type="button" class="side-button" draggable="true">뱅크사인</button>
+                                                <button type="button" class="side-button" draggable="true">금융인증서</button>
+                                                <button type="button" class="side-button" draggable="true">뱅크아이디</button>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <!--// 첫번쨰 탭 -->
                     </div>
+                        <!--// 첫번쨰 탭 -->
+                </div>
             </div>
             <!-- 오른쪽 영역 -->
+            </div>
         </div>
-    </div>
     <script>
         const tabsContainer = document.querySelector('.tabs');
         const contentContainer = document.querySelector('.content-container');
@@ -562,10 +657,8 @@
         const menuDept3Button = document.querySelectorAll('.dept3_toggle');
         let draggedTab = null;
 
-        window.onload = function() {
-            console.log("관리자 페이지 로드됨..");
-        };
 
+        // 탭 추가  main
         function addTab(tabName) {
             console.log(tabName);
             let existingTab = document.querySelector(`.tab[data-name="${tabName}"]`);
@@ -636,28 +729,42 @@
             setActiveTab(tab);
             checkCloseAllTabsButton();
 
-            loadAndExecuteModule('bnk_fds_010100_list', 'bnk_fds/bnk_fds_010100_list.html', '../js/bnk_fds/bnk_fds_010100_list.js');
-
+            loadAndExecuteModule('bnk_ter_010101_write', 'bnk_ter/bnk_ter_010101_write.html', '../js/bnk_ter/bnk_ter_010101_write.js');
 
         }
 
+        // 모듈 로드 및 실행
         function loadAndExecuteModule(moduleName, url, scriptUrl) {
             fetch(url)
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('content-container').innerHTML = html;
-                    const script = document.createElement('script');
-                    script.src = scriptUrl;
-                    script.onload = () => {
-                        // 스크립트 로드 후 실행
-                        init();
-                        displayPagination(1);
-                    };
-                    document.body.appendChild(script);
+                    document.getElementById('content-container').innerHTML = `
+                    ${html} 
+                    <div class="modal-background">
+                        <div class="modal-container">
+                        <div class="modal-content">
+                            알렛팝업 가이드입니다. 알렛팝업 가이드입니다. 알렛팝업 가이드입니다.
+                        </div>
+                        <div class="modal-buttons">
+                            <button class="modal-cancel-button">취소</button>
+                            <button class="modal-confirm-button">확인</button>
+                        </div>
+                        </div>
+                        <div class="modal-container">
+                        <div class="modal-content">
+                            알렛팝업 가이드입니다. 알렛팝업 가이드입니다. 알렛팝업 가이드입니다.
+                        </div>
+                        <div class="modal-buttons">
+                            <button class="modal-confirm-button">확인</button>
+                        </div>
+                        </div>
+                    </div>
+                    `;
                 })
                 .catch(error => console.error('에러:', error));
         }
 
+        // 탭 활성화
         function setActiveTab(tab) {
             document.querySelectorAll('.tab, .tab-content').forEach(el => el.classList.remove('is_active'));
             tab.classList.add('is_active');
@@ -669,6 +776,7 @@
             if (leftButton) leftButton.classList.add('is_active');
         }
 
+        // 탭 삭제
         function removeTab(tabName) {
             const tab = document.querySelector(`.tab[data-name="${tabName}"]`);
             const tabContent = document.querySelector(`.tab-content[data-name="${tabName}"]`);
@@ -687,6 +795,7 @@
         }
 
 
+        // 모든 탭 닫기 버튼 표시 여부 확인
         function checkCloseAllTabsButton() {
             const tabs = document.querySelectorAll('.tab');
             if (tabs.length > 0) {
@@ -696,6 +805,7 @@
             }
         }
 
+        // 모든 탭 닫기
         closeAllTabsButton.addEventListener('click', () => {
             document.querySelectorAll('.tab').forEach(tab => {
                 removeTab(tab.getAttribute('data-name'));
@@ -747,6 +857,7 @@
             createMenu(managementType);
         });
 
+        // 탑 메뉴 클릭 시 왼쪽메뉴 추가
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', function(event) {
                 // 모든 메뉴 항목에서 active 클래스를 제거
@@ -912,13 +1023,9 @@
                         });
                     }
                     dept_container.appendChild(deptgroup);
-
-
                 });
             }
         }
-
-    
 
         topMenuButtons.forEach((button) => {
             button.addEventListener('click', (event) => {
@@ -927,6 +1034,37 @@
                 createMenu(dept1menu);                    
             });
         });
+
+    // 팝업 가져오기
+    // const modalBackground = document.querySelector('.modal-background');
+    // const cancelButton = document.querySelector('.modal-cancel-button');
+    // const confirmButton = document.querySelector('.modal-confirm-button');
+    const openModalButton = document.querySelector('#openModalButton');
+
+    document.getElementById('content-container').addEventListener('click', (event) => {
+        if (event.target.classList.contains('modal-cancel-button')) {
+            console.log('취소 버튼 클릭');
+            // 취소 버튼 클릭 처리
+            document.querySelector('.modal-background').style.display = 'none';
+        } else if (event.target.classList.contains('modal-confirm-button')) {
+            // 확인 버튼 클릭 처리
+            document.querySelector('.modal-background').style.display = 'none';
+        }
+    });
+
+    // 팝업 열기 함수
+    function openModal() {
+        document.querySelector('.modal-background').style.display = 'flex';
+    }
+
+    // 팝업 닫기 함수
+    function closeModal() {
+        document.querySelector('.modal-background').style.display = 'none';
+    }
+
+    // 팝업 열기 버튼 클릭 이벤트 처리
+    openModalButton.addEventListener('click', openModal);
+
         
         
     </script>

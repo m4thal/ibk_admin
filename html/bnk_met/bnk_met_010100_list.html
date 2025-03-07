@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_met/bnk_met_010100_list.css">    
+</head>
+<body>
+    <div class="content_container">
+        <!-- 검색 옵션 팝업-->
+        <div class="searchmodal-container">
+            <div class="close-search-popup" id="close-search-popup" ><img src="/img/Filled.png"></div>
+                    <table class="table_list_2">
+                        <tr>
+                            <th>OS</th>
+                            <td>
+                                <!-- <div class="radio-group"> -->
+                                    <label class="radio-container">
+                                        <input type="radio" name="os" value="all" id="saerch_all">
+                                        <span class="radio-label"></span>전체
+                                    </label>
+                                    <label class="radio-container">
+                                        <input type="radio" name="os" value="iphone" id="saerch_iphone">
+                                        <span class="radio-label"></span>아이폰
+                                    </label>
+                                    <label class="radio-container">
+                                        <input type="radio" name="os" value="android" id="saerch_android">
+                                        <span class="radio-label"></span>안드로이드
+                                    </label>
+                                <!-- </div> -->
+                            </td>
+                            </tr>
+                        <tr>
+                            <th>메뉴구분</th>
+                            <td><div class="searchdropdown">
+                                <button class="searchdropbtn">전체</button>
+                                <div class="searchdropdown-content">
+                                    <div class="searchmenu-item" data-name="전체">전체</div>
+                                    <div class="searchmenu-item" data-name="앱">앱</div>
+                                    <div class="searchmenu-item" data-name="메뉴">메뉴</div>
+                                </div>
+                            </div></td>
+                        </tr>
+                    </table>                
+        </div>
+        <!-- 순서변경 팝업 -->
+        <div class="modal-background1">
+            <div class="modal-container">
+                <div class="modal-title">
+                    <h2 class="modal-h2-title">앱메뉴메타관리</h2>
+                </div>
+                <div class="modal-content-container">
+                    <div class="modal-content-sub-container">
+                        <div class="modal-search">
+                            <div class="select-group">
+                                <div class="dropdown1">
+                                    <button class="dropbtn1">플랫폼</button>
+                                    <div class="dropdown-content1">
+                                        <div class="menu-item1">플랫폼</div>
+                                        <div class="menu-item1">아이폰</div>
+                                        <div class="menu-item1">안드로이드</div>
+                                    </div>
+                                </div>
+                                <div class="dropdown2">
+                                    <button class="dropbtn2">메뉴구분</button>
+                                    <div class="dropdown-content2">
+                                        <div class="menu-item2" data-name="app">메뉴구분</div>
+                                        <div class="menu-item2" data-name="app">앱</div>
+                                        <div class="menu-item2" data-name="menu">메뉴</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="modal-search-button">검색</button>
+                        </div>
+                            <div class="modal-content">
+                                <div class="modal-comment">
+                                    * 이동하실 경로의 메뉴 선택 후 저장 시 이동됩니다.
+                                </div>
+                                <div class="modal-list-line">
+                                    <div class="modal-list">
+                                        <div class="item-list">c_available_service(서비스여부)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_reason(서비스 불가 이유)
+                                            <img src="/img/dragable.svg">
+                                        </div>
+                                        <div class="item-list">c_session_time(세션타입아웃)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_app_version(현재APP버전)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_search_yn(통합검색사용여부)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_act(서비스 불가 대응방법)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_act(서비스 불가 대응방법)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_act(서비스 불가 대응방법)<img src="/img/dragable.svg"></div>
+                                        <div class="item-list">c_act(서비스 불가 대응방법)<img src="/img/dragable.svg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="banner-save-button-active" onclick="updatepage()">이동 배너 저장</button>
+                </div>
+            </div>
+        </div>
+        <!-- 빈내용팝업 -->
+        <div class="modal-background2">
+            <div class="modal-container">
+                <div class="modal-title">
+                    <h2 class="modal-h2-title">앱메뉴메타관리</h2>
+                </div>
+                <div class="modal-content-container">
+                    <div class="modal-content-sub-container">
+                        <div class="modal-search">
+                            <div class="select-group">
+                                <div class="dropdown3">
+                                    <button class="dropbtn3">플랫폼</button>
+                                    <div class="dropdown-content3">
+                                        <div class="menu-item3">플랫폼</div>
+                                        <div class="menu-item3">아이폰</div>
+                                        <div class="menu-item3">안드로이드</div>
+                                    </div>
+                                </div>
+                                <div class="dropdown4">
+                                    <button class="dropbtn4">메뉴구분</button>
+                                    <div class="dropdown-content4">
+                                        <div class="menu-item4" data-name="app">메뉴구분</div>
+                                        <div class="menu-item4" data-name="app">앱</div>
+                                        <div class="menu-item4" data-name="menu">메뉴</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="modal-search-button">검색</button>
+                        </div>
+                            <div class="modal-content">
+                                <div class="modal-comment">
+                                    * 이동하실 경로의 메뉴 선택 후 저장 시 이동됩니다.
+                                </div>
+                                <div class="modal-list-line">
+                                    <div class="modal-list">
+                                        <a href="#">조회된 결과가 없습니다.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="banner-save-button" onclick="updatepage()">이동 배너 저장</button>
+                </div>
+            </div>
+        </div>
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>앱>&nbsp;메뉴관리>&nbsp;</span><span class="current_scr_depth">앱메뉴메타관리</span>
+            </div>
+            <h2 class="screen_title">앱메뉴메타관리</h2>
+        </div>
+        <div class="main_contents">
+            <div class="main_inner_container">
+                <div class="top_container">
+                    <div class="search_bar">
+                        <input type="text" id="searchInput" placeholder="메뉴속성명, 메뉴속성ID"">
+                        <button type="button" class="searchButton" onclick="select_list(document.getElementById('searchInput').value)">검색</button>
+                        <button type="button" class="searchFilter" onclick="open_option()"><img src="/img/filter.svg"></button>
+                    </div>
+                    <div class="file_io_container">
+                        <button type="button" onclick="file_download()"><span>일괄</span> <img src="../../img/download.svg"></button>
+                        <button type="button" onclick="file_upload()">일괄 <img src="../../img/upload.svg"></button>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <div class="table_list_container">
+                        <table class="table_list">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>메뉴속성ID</th>
+                                    <th>메뉴속성명</th>
+                                    <th>OS</th>
+                                    <th>메뉴구분</th>
+                                    <th>리소스</th>
+                                    <th>내부관리</th>
+                                    <th>필수여부</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cell_width"></tbody>
+                        </table>
+                    </div>
+                    <div class="table_btn_container">
+                        <button type="button" class="change_btn" id="change_btn1">(내용팝업)순서변경</button>
+                        <button type="button" class="change_btn" id="change_btn2">(빈내용팝업)순서변경</button>
+                        <div class="pagination" id="pagination"></div>
+                        <button type="button" class="regist_btn" id="regist_btn">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const searchmodal = document.querySelector('.searchmodal-container')
+
+        document.getElementById('close-search-popup').addEventListener('click', () => {
+            searchmodal.style.display = 'none';
+        });
+
+        function open_option(){
+            searchmodal.style.display = 'block';
+        }
+
+        
+        let draggedList = null;
+        const itemList = document.querySelectorAll('.item-list');
+
+       
+        // 오른쪽 패널에 이미 존재하는 버튼들이 드래그 가능하도록 설정
+        itemList.forEach(item => {
+            item.addEventListener('dragstart', (e) => {
+                draggedList = item;
+                setTimeout(() => item.style.opacity = '0.5', 0); // 드래그 시작 시 버튼이 반투명해짐
+            });
+
+            item.addEventListener('dragend', () => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    draggedList = null;
+                }, 0);
+            });
+
+            item.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                const currentItem = e.target;
+                if (currentItem.classList.contains('item-list') && currentItem !== draggedList) {
+                    const bounding = currentItem.getBoundingClientRect();
+                    const offset = bounding.y + bounding.height / 2;
+                    if (e.clientY - offset > 0) {
+                        currentItem.parentElement.insertBefore(draggedList, currentItem.nextSibling);
+                    } else {
+                        currentItem.parentElement.insertBefore(draggedList, currentItem);
+                    }
+                }
+            });
+        });
+
+        document.querySelector('.dropbtn1').addEventListener('click', function() {
+            const dropdown = document.querySelector('.dropdown1');
+            dropdown.classList.toggle('active');
+        });
+
+        document.querySelector('.dropbtn2').addEventListener('click', function() {
+            const dropdown = document.querySelector('.dropdown2');
+            dropdown.classList.toggle('active');
+        });
+
+        document.querySelector('.dropbtn3').addEventListener('click', function() {
+            const dropdown = document.querySelector('.dropdown3');
+            dropdown.classList.toggle('active');
+        });
+
+        document.querySelector('.dropbtn4').addEventListener('click', function() {
+            const dropdown = document.querySelector('.dropdown4');
+            dropdown.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.menu-item1').forEach(item => {
+            item.addEventListener('click', function() {
+                const dropdown = document.querySelector('.dropdown1');
+                dropdown.classList.remove('active');
+                document.querySelector('.dropbtn1').textContent = this.textContent;
+            });
+        });
+
+        document.querySelectorAll('.menu-item2').forEach(item => {
+            item.addEventListener('click', function() {
+                const dropdown = document.querySelector('.dropdown2');
+                dropdown.classList.remove('active');
+                document.querySelector('.dropbtn2').textContent = this.textContent;
+            });
+        });
+
+        document.querySelectorAll('.menu-item3').forEach(item => {
+            item.addEventListener('click', function() {
+                const dropdown = document.querySelector('.dropdown3');
+                dropdown.classList.remove('active');
+                document.querySelector('.dropbtn3').textContent = this.textContent;
+            });
+        });
+
+        document.querySelectorAll('.menu-item4').forEach(item => {
+            item.addEventListener('click', function() {
+                const dropdown = document.querySelector('.dropdown4');
+                dropdown.classList.remove('active');
+                document.querySelector('.dropbtn4').textContent = this.textContent;
+            });
+        });
+
+        const modalBackground1 = document.querySelector('.modal-background1');
+        const modalBackground2 = document.querySelector('.modal-background2');
+
+        document.getElementById('regist_btn').addEventListener('click', () => {
+            console.log('regist_btn');
+        });
+
+        document.getElementById('change_btn1').addEventListener('click', () => {
+            console.log('change_btn');
+            modalBackground1.style.display = 'flex';
+        });
+
+        document.getElementById('change_btn2').addEventListener('click', () => {
+            console.log('change_btn');
+            modalBackground2.style.display = 'flex';
+        });
+
+        document.querySelector('.searchdropbtn').addEventListener('click', function() {
+            const searchdropdown = document.querySelector('.searchdropdown');
+            searchdropdown.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.searchmenu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const dropdown = document.querySelector('.searchdropdown');
+                dropdown.classList.remove('active');
+                document.querySelector('.searchdropbtn').textContent = this.textContent;
+            });
+        });
+
+
+
+
+
+
+
+
+        const paginationContainer = document.getElementById('pagination');
+        const table = document.querySelector('.table_list');
+        
+        let itemsPerPage = 10;   // 한페이지에 출력할 데이터 개수
+        let currentPage = 1;       // 현재 선택된 페이지
+        let totalItems = 1;       // 출력할 데이터 총 개수
+        let totalPages = Math.ceil(totalItems / itemsPerPage);         // 총 페이지 개수
+        let pagesPerGroup = 5;      // 한 페이지 그룹에 페이지 개수
+        
+        let jsonDataList;
+        
+        let filteredDataList = jsonDataList; // 필터링된 데이터를 저장할 변수
+        
+        // 초기화
+        function init(){
+            currentPage = 1;
+            totalItems = 1;
+            totalPages = Math.ceil(totalItems / itemsPerPage);
+            pagesPerGroup = 5;
+        }
+        
+        //현재 페이지 데이터출력
+        function displayData(page) {
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const dataBody = document.querySelector('.table_list tbody');
+            dataBody.innerHTML = '';
+        
+            if (filteredDataList == null) return;
+        
+            for (let i = start; i < end && i < totalItems; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${filteredDataList[i].number}</td>
+                    <td>${filteredDataList[i].menu_id}</td>
+                    <td>${filteredDataList[i].menu_name}</td>
+                    <td>${filteredDataList[i].os}</td>
+                    <td>${filteredDataList[i].menutype}</td>
+                    <td style="${filteredDataList[i].resource === '미사용' ? 'color: var(--semantic-negative, #EE473D);' : ''}">${filteredDataList[i].resource}</td>
+                    <td style="${filteredDataList[i].manage === '미사용' ? 'color: var(--semantic-negative, #EE473D);' : ''}">${filteredDataList[i].manage}</td>
+                    <td style="${filteredDataList[i].essential === '미사용' ? 'color: var(--semantic-negative, #EE473D);' : ''}">${filteredDataList[i].essential}</td>
+                `;
+                dataBody.appendChild(row);
+            }
+        }
+        
+        // 테이블 행 클릭 이벤트 리스너 추가
+        table.addEventListener('click', (event) => {
+            const target = event.target;
+        
+            // 클릭된 요소가 <td> 태그인지 확인
+            if (target.tagName === 'TD') {
+                // 클릭된 <td> 태그의 부모 요소(<tr>) 가져오기
+                const row = target.parentElement;
+        
+                // 두 번째 <td> 태그(메뉴ID)의 텍스트 내용 가져오기
+                const menuId = row.cells[1].textContent;
+        
+                // 메뉴ID 값을 사용하여 다른 함수 호출
+                handleRowClick(menuId);
+            }
+        });
+        
+        // 행 클릭 시 실행될 함수
+        function handleRowClick(menuId) {
+            alert(`메뉴ID: ${menuId}`);
+        }
+
+        // 페이징 넘버 생성
+        function displayPagination(page) {
+            totalPages = Math.ceil(totalItems / itemsPerPage);
+        
+            let pagination = '';
+            let currentGroup = Math.ceil(page / pagesPerGroup);
+            let startPage = (currentGroup - 1) * pagesPerGroup + 1;
+            let endPage = Math.min(currentGroup * pagesPerGroup, totalPages);
+            
+        
+            let pageing_info =
+            {
+                "총페이지개수":totalPages,
+                "현재페이지": currentGroup,
+                "시작페이지": startPage,
+                "마지막페이지": endPage
+            }
+        
+            console.log(pageing_info);
+        
+            pagination += `<button onclick="goToPage(1)">&lt;&lt;</button>`;
+            pagination += `<button onclick="goToPreviousGroup(${currentGroup})" ${currentGroup === 1 ? 'disabled' : ''}>&lt;</button>`;
+        
+            for (let i = startPage; i <= endPage; i++) {
+                pagination += `<button onclick="goToPage(${i})" class="${i === page ? 'active' : ''}">${i}</button>`;
+            }
+        
+            pagination += `<button onclick="goToNextGroup(${currentGroup})" ${currentGroup * pagesPerGroup >= totalPages ? 'disabled' : ''}>&gt;</button>`;
+            pagination += `<button onclick="goToPage(${totalPages})">&gt;&gt;</button>`;
+        
+            paginationContainer.innerHTML = pagination;
+        
+            displayData(page);
+        }
+        
+        //페이지 이동
+        function goToPage(page) {
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            displayData(currentPage);
+            displayPagination(currentPage);
+        }
+        //이전 그룹페이지
+        function goToPreviousGroup(currentGroup) {
+            if (currentGroup > 1) {
+                goToPage((currentGroup - 2) * pagesPerGroup + 1);
+            }
+        }
+        //다음 그룹페이지
+        function goToNextGroup(currentGroup) {
+            if (currentGroup * pagesPerGroup < totalPages) {
+                goToPage(currentGroup * pagesPerGroup + 1);
+            }
+        }        
+        
+        jsonDataList = [
+            {"number":1, "menu_id":"bit_trn_000000_1", "menu_name":"이체",               "os":"아이폰", "menutype":"앱", "resource":"사용","manage":"미사용",  "essential":"사용"},
+            {"number":2, "menu_id":"cmc_bcs_010000_1", "menu_name":"뱅크사인 이용신청",   "os":"안드로이드", "menutype":"메뉴",  "resource":"미사용", "manage":"사용", "essential":"사용"},
+            {"number":3, "menu_id":"cmc_bcs_040000_1", "menu_name":"뱅크사인 인증수단관리","os":"아이폰" ,"menutype":"메뉴","resource":"사용", "manage":"사용",  "essential":"미사용"}         
+        ]
+        
+        function select_list(searchstring) {
+            if (searchstring) {
+                filteredDataList = jsonDataList.filter(item => {
+                    const searchLower = searchstring.toLowerCase();
+                    return item.menu_id.toLowerCase().includes(searchLower) || item.menu_name.toLowerCase().includes(searchLower);
+                });
+            } else {
+                filteredDataList = jsonDataList; // 검색 조건이 없으면 전체 데이터 사용
+            }
+        
+            totalItems = filteredDataList.length;
+            displayPagination(currentPage);
+            displayData(currentPage); // 필터링된 결과를 표시
+        }
+        
+        function file_download()
+        {
+            console.log('file_down');
+        }
+        
+        function file_upload()
+        {
+            const dataBody = document.querySelector('.table_list tbody');
+            dataBody.innerHTML = '';
+            console.log('file_upload');
+        }
+        
+        function updatepage()
+        {
+            modalBackground1.style.display = 'none';
+            modalBackground2.style.display = 'none';
+        }
+        </script>    
+</body>
+</html>
