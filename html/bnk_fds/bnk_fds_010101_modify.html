@@ -1,73 +1,150 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280, initial-scale=1.0">
-    <title>관리자</title>
-    <link rel="stylesheet" href="../../css/con_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010101_modify.css">
+    <style>
+    </style>
 </head>
-<boody>
-    <div class="content_container">
-        <div class="header">
+<body>
+    <div class="tab_container">
+        <div class="screen_title_container">
             <div class="menu_depth">
                 <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">약관관리</span>
             </div>
-            <h2 class="screen_title">FDS 관리</h2>
+            <h2>FDS관리</h2>
         </div>
         <div class="main_contents">
             <div class="table_container_1">
                 <table class="data_table_1">
                     <tr>
-                        <th>메뉴</th>
-                        <td>cmc_bio_010300_1</td>
+                        <th><span>메뉴</span></th>
+                        <td><span>cmc_bio_010300_1</span></td>
                     </tr>
                     <tr>
-                        <th>메뉴명</th>
-                        <td>바이오 홍채인증 등록</td>
+                        <th><span>메뉴명</span></th>
+                        <td><input id="menu_name" type="text" value="바이오 홍채인증 등록"></td>
                     </tr>
                     <tr>
-                        <th>최종수정</th>
-                        <td>X12345 (2025.02.05 14:35:19)</td>
+                        <th><span>최종수정</span></th>
+                        <td><span>X12345 (2025.02.05 14:35:19)</span></td>
                     </tr>
                 </table>
             </div>
             <div class="table_container_2">
-                <div class="middle_title_contiainer">
+                <div class="middle_title_container">
                     <h3>상세설정</h3>
-                    <button>추가+</button>
+                    <button>
+                        <span>추가</span>
+                        <span>+</span>
+                    </button>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="table_btn_container">
+                <div class="table_container_2">
+                    <div class="inner_table_container">
+                        <table class="data_table_2">
+                            <thead>
+                                <tr>
+                                    <th class="header_col_1"><span>번호</span></th>
+                                    <th class="header_col_2"><span>Nebsoa 서비스 ID</span></th>
+                                    <th class="header_col_3"><span>Nebsoa 서비스명</span></th>
+                                    <th class="header_col_4"><span>액션플래그</span></th>
+                                    <th class="header_col_5"><span>삭제</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="data_col_1"><span>1</span></td>
+                                    <td class="data_col_2"><input type="text" value="c_available_service"></td>
+                                    <td class="data_col_3"><input type="text" value="바이오 공인인증서비스 조회"></td>
+                                    <td class="data_col_4">
+                                        <div>
+                                            <select name="" id="">
+                                                <option value="A">A</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td class="data_col_5">
+                                        <button type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M19.1663 10.0003C19.1663 15.063 15.0623 19.167 9.99967 19.167C4.93706 19.167 0.833008 15.063 0.833008 10.0003C0.833008 4.93774 4.93706 0.833679 9.99967 0.833679C15.0623 0.833679 19.1663 4.93774 19.1663 10.0003Z" fill="#737684"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2412 6.76136C13.5276 7.04775 13.5276 7.51207 13.2412 7.79845L7.7965 13.2432C7.51011 13.5296 7.04579 13.5296 6.75941 13.2432C6.47302 12.9568 6.47302 12.4925 6.75941 12.2061L12.2041 6.76136C12.4905 6.47498 12.9548 6.47498 13.2412 6.76136Z" fill="white"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.7588 6.76177C7.04518 6.47539 7.5095 6.47539 7.79589 6.76177L13.2406 12.2065C13.527 12.4929 13.527 12.9572 13.2406 13.2436C12.9542 13.53 12.4899 13.53 12.2035 13.2436L6.7588 7.79886C6.47241 7.51248 6.47241 7.04815 6.7588 6.76177Z" fill="white"/>
+                                        </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="data_col_1"><span>2</span></td>
+                                    <td class="data_col_2"><input type="text" value="c_available_service"></td>
+                                    <td class="data_col_3"><input type="text" value="보안검증"></td>
+                                    <td class="data_col_4">
+                                        <div>
+                                            <select name="" id="">
+                                                <option value="A">A</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td class="data_col_">
+                                        <button type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M19.1663 10.0003C19.1663 15.063 15.0623 19.167 9.99967 19.167C4.93706 19.167 0.833008 15.063 0.833008 10.0003C0.833008 4.93774 4.93706 0.833679 9.99967 0.833679C15.0623 0.833679 19.1663 4.93774 19.1663 10.0003Z" fill="#737684"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2412 6.76136C13.5276 7.04775 13.5276 7.51207 13.2412 7.79845L7.7965 13.2432C7.51011 13.5296 7.04579 13.5296 6.75941 13.2432C6.47302 12.9568 6.47302 12.4925 6.75941 12.2061L12.2041 6.76136C12.4905 6.47498 12.9548 6.47498 13.2412 6.76136Z" fill="white"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.7588 6.76177C7.04518 6.47539 7.5095 6.47539 7.79589 6.76177L13.2406 12.2065C13.527 12.4929 13.527 12.9572 13.2406 13.2436C12.9542 13.53 12.4899 13.53 12.2035 13.2436L6.7588 7.79886C6.47241 7.51248 6.47241 7.04815 6.7588 6.76177Z" fill="white"/>
+                                        </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bottom_btn_container">
                     <button>목록</button>
-                    <button>삭제</button>
-                    <button>저장</button>
+                    <div class="right_btn">
+                        <button>삭제</button>
+                        <button>저장</button>
+                    </div>
                 </div>
             </div>
             <div class="info_container">
-                <span>액션플래그</span>
                 <ul>
-                    <li>FP<span>FDSGateway.initAppFDSLog 앱의 Intro에서 초기화시 한번 호출됨 (사전거래(P))</span></li>
-                    <li>SA<span>로그인경우 조회(S) 후 (결과코드 가 차단(0)이 아닌경우는 해제(R)처리 수행) *(원뱅크 기업은 SR 임)</span></li>
-                    <li>S<span>조회 탐지서버에서 조회한다.</span></li>
-                    <li>P<span>사전거래 수취조회 같이 사전거래에서 발생</span></li>
-                    <li>A<span>해제거래 *(기업은 R 임)</span></li>
-                    <li>R<span>해제거래 + FDS 추가인증에 대한 처리가 있는 화면인인경우 차단정보 해제 전달 및 결좌정보 획득을 한번더 호출 *(기업은 RA임) 개인은 SMS사후통지(3)이 있지만 기업은 없음</span></li>
+                    <li>
+                        <img src="../../img/dot.svg">
+                        <span class="info_code">FP</span>
+                        <span class="info_text">FDSGateway.initAppFDSLog 앱의 Intro에서 초기화시 한번 호출됨 (사전거래(P))</span>
+                    </li>
+                    <li>
+                        <img src="../../img/dot.svg">
+                        <span class="info_code">SA</span>
+                        <span class="info_text">로그인경우 조회(S) 후 (결과코드 가 차단(0)이 아닌경우는 해제(R)처리 수행) *(원뱅크 기업은 SR 임)</span>
+                    </li>
+                    <li>
+                        <img src="../../img/dot.svg">
+                        <span class="info_code">S</span>
+                        <span class="info_text">조회 탐지서버에서 조회한다.</span>
+                    </li>
+                    <li>
+                        <img src="../../img/dot.svg">
+                        <span class="info_code">P</span>
+                        <span class="info_text">사전거래 수취조회 같이 사전거래에서 발생</span>
+                    </li>
+                    <li>
+                        <img src="../../img/dot.svg">
+                        <span class="info_code">A</span>
+                        <span class="info_text">해제거래 *(기업은 R 임)</span>
+                    </li>
+                    <li>
+                        <img src="../../img/dot.svg">
+                        <span class="info_code">R</span>
+                        <span class="info_text">해제거래 + FDS 추가인증에 대한 처리가 있는 화면인인경우 차단정보 해제 전달 및 결좌정보 획득을 한번더 호출 *(기업은 RA임) 개인은 SMS사후통지(3)이 있지만 기업은 없음</span>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <script src="../../js/bnk_fds/bnk_fds_010101_modify.js"></script>
-</boody>
+</body>
 </html>
+

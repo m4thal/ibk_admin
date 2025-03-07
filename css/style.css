@@ -1,21 +1,4 @@
 /* reset 변경해도 됩니다. */
-@font-face {
-    font-family: 'CustomFont';
-    src: url('../font/Pretendard-ExtraBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* @media (max-width: 1280px) {
-    .tab {
-      flex-basis: auto; 
-  }
-  
-  @media (max-width: 900px) {
-    .tab {
-      flex-basis: 120px;
-    }
-  } */
 * {
     margin: 0;
     padding: 0;
@@ -57,13 +40,18 @@ img {
     height: auto;
 }
 
+input {
+    border: none;
+    outline: none;
+}
+
 a {
     text-decoration: none;
 }
  
 html,
 body {
-    min-width: 1280px;
+    /* min-width: 1280px; */
     min-height: 1080px;
     height: 100%;
     width: 100%;    
