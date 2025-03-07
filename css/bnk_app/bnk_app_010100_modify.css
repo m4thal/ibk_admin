@@ -442,9 +442,6 @@ flex-shrink: 0;
     height: 18px;
 }
 
-
-
-
 .multi_row_container{
     display: flex;
     align-items: center;
@@ -489,15 +486,6 @@ flex-shrink: 0;
     line-height: 20px; /* 142.857% */
 }
 
-
-
-
-
-
-
-
-
-
 .data_table_2_btn_container button.active{
     border-radius: var(--value-radius-radius_28, 28px);
     background: var(--blue-admin_primary, #2D3443);
@@ -512,12 +500,6 @@ flex-shrink: 0;
     line-height: 20px; /* 142.857% */
 }
 
-
-
-
-
-
-
 .tree_list_container{
     display: inline-flex;
     height: 28px;
@@ -529,7 +511,12 @@ flex-shrink: 0;
 
 .tree_item{
     display: flex;
-    padding: 4px 0px;
+    height: 28px;
+    padding: 0px 8px 0px 4px;
+    align-items: center;
+}
+
+.tree_item img{
     align-items: center;
 }
 
@@ -538,6 +525,30 @@ flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.state_inner_box_1{
+    display: flex;
+    width: 12px;
+    height: 12px;
+    padding: 1.75px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 2px;
+    border: 0.9px solid var(--blue-500, #1A71E5);
+    background: var(--gray-0, #FFF);
+}
+
+.state_inner_box_2{
+    display: flex;
+width: 14.015px;
+height: 14px;
+padding: 1px 1.001px;
+justify-content: center;
+align-items: center;
+aspect-ratio: 14.02/14.00;
 }
 
 .tree_item_inner span{
@@ -551,8 +562,13 @@ flex-shrink: 0;
     line-height: 16px; /* 123.077% */
 }
 
+.tree_item_inner span{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
 .selected{
-    padding: 4px 8px;
     border-radius: 4px;
     background: var(--blue-400, #2A86FF);
 }
@@ -578,22 +594,36 @@ flex-shrink: 0;
     aspect-ratio: 1/1;
 }
 
-.selected .tree_icon.parent img{
+.tree_state_icon{
+    display: flex;
+    width: 14px;
+    height: 14px;
+    padding: 1px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.selected .tree_icon.folder img{
     content: url("../../img/select_tree_folder.svg");
 }
 
-.selected .tree_icon.children img{
-    content: url("../../img/select_tree_doc.svg");
+.selected .tree_icon.file img{
+    content: url("../../img/tree_file.svg");
+}
+
+.tree_item .tree_icon.file , .file_no.selected .tree_icon.file{
+    padding: 0;
+}
+
+.file_no.selected .tree_icon.file img{
+    content: url("../../img/tree_file_no.svg");
+    
 }
 
 .hidden{
     display: none;
 }
-
-
-
-
-
 
 .right_contents_bottom_container{
     display: flex;
@@ -705,7 +735,6 @@ input[type="radio"]:checked + .radio-label {
     justify-content: space-between;
     
 }
-
 
 .info_title{
     color: var(--gray-600, #5A5E6C);
