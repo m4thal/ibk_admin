@@ -30,14 +30,16 @@
                             </tr>
                         <tr>
                             <th>메뉴구분</th>
-                            <td><div class="searchdropdown">
-                                <button class="searchdropbtn">전체</button>
-                                <div class="searchdropdown-content">
-                                    <div class="searchmenu-item" data-name="전체">전체</div>
-                                    <div class="searchmenu-item" data-name="앱">앱</div>
-                                    <div class="searchmenu-item" data-name="메뉴">메뉴</div>
+                            <td>
+                                <div class="searchdropdown">
+                                    <button class="searchdropbtn">전체</button>
+                                    <div class="searchdropdown-content">
+                                        <div class="searchmenu-item" data-name="전체">전체</div>
+                                        <div class="searchmenu-item" data-name="앱">앱</div>
+                                        <div class="searchmenu-item" data-name="메뉴">메뉴</div>
+                                    </div>
                                 </div>
-                            </div></td>
+                            </td>
                         </tr>
                     </table>                
         </div>
@@ -154,7 +156,7 @@
             <div class="main_inner_container">
                 <div class="top_container">
                     <div class="search_bar">
-                        <input type="text" id="searchInput" placeholder="메뉴속성명, 메뉴속성ID"">
+                        <input type="text" id="searchInput" placeholder="메뉴속성명, 메뉴속성ID">
                         <button type="button" class="searchButton" onclick="select_list(document.getElementById('searchInput').value)">검색</button>
                         <button type="button" class="searchFilter" onclick="open_option()"><img src="/img/filter.svg"></button>
                     </div>
@@ -184,7 +186,18 @@
                     <div class="table_btn_container">
                         <button type="button" class="change_btn" id="change_btn1">(내용팝업)순서변경</button>
                         <button type="button" class="change_btn" id="change_btn2">(빈내용팝업)순서변경</button>
-                        <div class="pagination" id="pagination"></div>
+                        <div class="pagination" id="pagination">
+                            <button>&lt;&lt;</button>
+                            <button>&lt;</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>&gt;</button>
+                            <button>&gt;&gt;</button>
+                        </div>
                         <button type="button" class="regist_btn" id="regist_btn">등록</button>
                     </div>
                 </div>
@@ -318,21 +331,7 @@
             });
         });
 
-
-
-
-
-
-
-
-        const paginationContainer = document.getElementById('pagination');
         const table = document.querySelector('.table_list');
-        
-        let itemsPerPage = 10;   // 한페이지에 출력할 데이터 개수
-        let currentPage = 1;       // 현재 선택된 페이지
-        let totalItems = 1;       // 출력할 데이터 총 개수
-        let totalPages = Math.ceil(totalItems / itemsPerPage);         // 총 페이지 개수
-        let pagesPerGroup = 5;      // 한 페이지 그룹에 페이지 개수
         
         let jsonDataList;
         
@@ -340,22 +339,18 @@
         
         // 초기화
         function init(){
-            currentPage = 1;
-            totalItems = 1;
-            totalPages = Math.ceil(totalItems / itemsPerPage);
-            pagesPerGroup = 5;
+
         }
         
         //현재 페이지 데이터출력
-        function displayData(page) {
-            const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
+        function displayData() {
+    
             const dataBody = document.querySelector('.table_list tbody');
             dataBody.innerHTML = '';
         
             if (filteredDataList == null) return;
         
-            for (let i = start; i < end && i < totalItems; i++) {
+            for (let i = 0; i < totalItems; i++) {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${filteredDataList[i].number}</td>
@@ -392,61 +387,6 @@
         function handleRowClick(menuId) {
             alert(`메뉴ID: ${menuId}`);
         }
-
-        // 페이징 넘버 생성
-        function displayPagination(page) {
-            totalPages = Math.ceil(totalItems / itemsPerPage);
-        
-            let pagination = '';
-            let currentGroup = Math.ceil(page / pagesPerGroup);
-            let startPage = (currentGroup - 1) * pagesPerGroup + 1;
-            let endPage = Math.min(currentGroup * pagesPerGroup, totalPages);
-            
-        
-            let pageing_info =
-            {
-                "총페이지개수":totalPages,
-                "현재페이지": currentGroup,
-                "시작페이지": startPage,
-                "마지막페이지": endPage
-            }
-        
-            console.log(pageing_info);
-        
-            pagination += `<button onclick="goToPage(1)">&lt;&lt;</button>`;
-            pagination += `<button onclick="goToPreviousGroup(${currentGroup})" ${currentGroup === 1 ? 'disabled' : ''}>&lt;</button>`;
-        
-            for (let i = startPage; i <= endPage; i++) {
-                pagination += `<button onclick="goToPage(${i})" class="${i === page ? 'active' : ''}">${i}</button>`;
-            }
-        
-            pagination += `<button onclick="goToNextGroup(${currentGroup})" ${currentGroup * pagesPerGroup >= totalPages ? 'disabled' : ''}>&gt;</button>`;
-            pagination += `<button onclick="goToPage(${totalPages})">&gt;&gt;</button>`;
-        
-            paginationContainer.innerHTML = pagination;
-        
-            displayData(page);
-        }
-        
-        //페이지 이동
-        function goToPage(page) {
-            if (page < 1 || page > totalPages) return;
-            currentPage = page;
-            displayData(currentPage);
-            displayPagination(currentPage);
-        }
-        //이전 그룹페이지
-        function goToPreviousGroup(currentGroup) {
-            if (currentGroup > 1) {
-                goToPage((currentGroup - 2) * pagesPerGroup + 1);
-            }
-        }
-        //다음 그룹페이지
-        function goToNextGroup(currentGroup) {
-            if (currentGroup * pagesPerGroup < totalPages) {
-                goToPage(currentGroup * pagesPerGroup + 1);
-            }
-        }        
         
         jsonDataList = [
             {"number":1, "menu_id":"bit_trn_000000_1", "menu_name":"이체",               "os":"아이폰", "menutype":"앱", "resource":"사용","manage":"미사용",  "essential":"사용"},
@@ -465,8 +405,7 @@
             }
         
             totalItems = filteredDataList.length;
-            displayPagination(currentPage);
-            displayData(currentPage); // 필터링된 결과를 표시
+            displayData(); // 필터링된 결과를 표시
         }
         
         function file_download()

@@ -91,7 +91,7 @@
 
 .table_list_container_1{
     display: flex;
-    min-width: 988px;
+    /* min-width: 988px; */
     flex-direction: column;
     align-items: flex-start;
 }
@@ -125,9 +125,15 @@
 
 .table_list_1 td{
 
+    display: flex;
+    height: 48px;
+    padding: 16px 12px;
+    align-items: center;
+
+    height: 48px;
+    padding: 6px 12px;
+
     text-align: left;
-    padding-left: 12px;
-    padding-right: 12px; 
 
     color: var(--gray-850, #1F2128);
 
@@ -142,6 +148,8 @@
 .style-input {
     width: 100%; /* 원하는 너비 */
     height: 40px; /* 원하는 높이 */
+
+    padding: 8px;
     
     color: var(--gray-850, #1F2128);
 
@@ -185,9 +193,15 @@
 
 .table_list_2 td{
 
+    display: flex;
+    height: 48px;
+    padding: 16px 12px;
+    align-items: center;
+
+    height: 48px;
+    padding: 6px 12px;
+
     text-align: left;
-    padding-left: 12px;
-    padding-right: 12px; 
 
     color: var(--gray-850, #1F2128);
 
@@ -214,6 +228,8 @@ input::-webkit-inner-spin-button {
     height: 40px; /* 원하는 높이 */
 
     margin-right: 32px;
+
+    padding: 8px;
     
     color: var(--gray-850, #1F2128);
 
@@ -237,7 +253,7 @@ input::-webkit-inner-spin-button {
 
 .table_list_container_2{
     display: flex;
-    min-width: 988px;
+    /* min-width: 988px; */
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
