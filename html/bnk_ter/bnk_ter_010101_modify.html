@@ -38,8 +38,15 @@
                         <tr>
                             <th>전환예약 사용</th>
                             <td>
-                                <input type="radio" name="reservation" value="yes" id="yes"> 예
-                                <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked> 아니오
+                                <div class="radio-group">
+                                    <label class="radio-container">
+                                        <input type="radio" name="reservation" value="yes" id="yes">
+                                        <span class="radio-label"></span>예
+                                    </label>
+                                    <label class="radio-container">
+                                    <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked><span class="radio-label"></span>아니오
+                                    </label>
+                                </div>
                             </td>
                             </tr>
                         <tr class="hide-tr">

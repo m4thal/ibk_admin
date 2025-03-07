@@ -1,0 +1,1185 @@
+.screen_title_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.screen_title_container .screen_depth{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: stretch;
+}
+
+.screen_title_container .screen_title{
+    align-self: stretch;
+
+    color: var(--gray-850, #1F2128);
+
+    /* 24_32/bold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+}
+
+.content_container{
+    position: relative;
+    display: flex;
+    padding: 18px 32px 80px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    min-height: 889px;
+}
+
+.screen_title_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.screen_title_container .screen_depth{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: stretch;
+
+    color: var(--gray-500, #737684);
+
+    /* 12_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}
+.screen_title_container .screen_depth .current_scr_depth{
+    color: var(--blue-550, #1065D6);
+
+    /* 12_16/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 133.333% */
+}
+
+.screen_title{
+    color: var(--gray-900, #101116);
+
+    /* 24_32/bold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+}
+
+.main_contents{
+    display: flex;
+    min-width: 988px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.main_inner_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.top_container{
+    display: flex;
+    
+    align-items: flex-end;
+    
+    align-self: stretch;
+}
+.top_container{
+    gap: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+}
+
+.search_bar{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#searchInput {
+    display: flex;
+    width: 248px;
+    height: 44px;
+    /* padding: 16px; */
+    align-items: center;
+    gap: 12px;
+
+    border-radius: 6px;
+    border: 1px solid var(--gray-150, #D3D6DE);
+    background: var(--gray-0, #FFF);
+
+    color: var(--gray-400, #979BAA);
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.searchButton{
+    display: flex;
+    height: 44px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    border-color: var(--gray-500, #737684);
+    background: var(--gray-500, #737684);
+
+    color: var(--gray-0, #FFF);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.searchFilter{
+    display: flex;
+    height: 44px;
+    width: 44px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    border: 1px solid var(--gray-500, #737684);
+    background: var(--gray-0, #FFF);
+}
+
+.searchFilter img{
+    width: 20px;
+    height: 20px;
+}
+
+.file_io_container{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.file_io_container button{
+    display: flex;
+    height: 28px;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    border: 1px solid var(--gray-500, #737684);
+
+    color: var(--gray-850, #1F2128);
+
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+.file_io_container span{
+    color: var(--gray-850, #1F2128);
+
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+
+.file_io_container img{
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1/1;
+}
+
+.table_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.table_list_container{
+    display: flex;
+    min-width: 988px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.table_list {
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table_list thead{
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-50, #F3F4F7);
+    border-top: 1px solid  var(--gray-850, #1F2128);
+    align-items: flex-start;
+    align-self: stretch;
+
+    height: 48px;
+
+}
+
+.table_list thead th{
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    color: var(--gray-900, #101116);
+    text-align: center;
+}
+
+.table_list tbody tr{
+    align-items: flex-start;
+    align-self: stretch;
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    text-align: center;
+
+    color: var(--gray-900, #101116);
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+
+    height: 48px;
+
+}
+
+.table_list thead th:nth-child(1), .table_list tbody td:nth-child(1){
+    width: 60px;
+}
+
+.table_list thead th:nth-child(2), .table_list tbody td:nth-child(2){
+    width: 180px;
+}
+
+.table_list thead th:nth-child(3), .table_list tbody td:nth-child(3){
+    width: 320px;
+}
+
+.table_list tbody td:nth-child(3){
+    text-align: left;
+}
+
+.table_list thead th:nth-child(4), .table_list tbody td:nth-child(4){
+    width: 100px;
+}
+
+.table_list thead th:nth-child(5), .table_list tbody td:nth-child(5){
+    width: 170px;
+}
+
+.table_btn_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.pagination{
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    margin: auto;
+}
+
+.pagination button{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--gray-400, #979BAA);
+    text-align: center;
+
+    /* 14_20/bold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 142.857% */
+}
+
+.pagination button.active {
+    color: var(--gray-850, #1F2128);
+    text-align: center;
+    
+    /* 14_20/bold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 142.857% */
+}
+
+.regist_btn{
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    background: var(--blue-500, #1A71E5);
+    border-style: none;
+
+    color: var(--gray-0, #FFF);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.change_btn{
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    border: 1px solid var(--gray-500, #737684);
+    background: var(--gray-0, #FFF);
+
+    color: var(--gray-850, #1F2128);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+
+}
+
+.cell_width{
+    width: 100%;
+}
+
+.modal-title{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.modal-h2-title{
+    flex: 1 0 0;
+    color: var(--gray-900, #101116);
+
+    /* 18_26/bold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px; /* 144.444% */
+}
+  .select-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .modal-search{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* 팝업 배경 (어둡게 처리) */
+  .modal-background1 {
+    position: absolute; /* content-container 기준으로 위치 설정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+.modal-background2 {
+    position: absolute; /* content-container 기준으로 위치 설정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+
+/* 팝업 컨테이너 */
+.modal-container {
+    display: flex;
+    width: 480px;
+    height: auto;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+
+    border-radius: 16px;
+    background: var(--gray-0, #FFF);
+    box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.20);
+}
+
+.modal-content-container{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+align-self: stretch;
+}
+
+.modal-content-sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    align-self: stretch;
+}
+
+.modal-search{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* 팝업 내용 (텍스트) */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.modal-comment{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+
+    color: var(--blue-550, #1065D6);
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.modal-list-line{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    align-self: stretch;
+
+    border-top: 1px solid  var(--gray-900, #101116);
+
+    border-bottom: 1px solid var(--gray-150, #D3D6DE);
+}
+
+.modal-list{
+    margin-top: 2px;
+    min-height: 157px;
+    max-height: 246px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+}
+
+.modal-list a{
+    color: var(--gray-850, #1F2128);
+
+    margin: auto;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.item-list{
+
+    display: flex;
+    padding: 10px 8px;
+    align-self: stretch;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+
+    color: var(--gray-900, #101116);
+
+    /* 14_20/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+}
+/* 버튼 컨테이너 */
+/* .modal-buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+} */
+
+.item-list:hover {
+    background: var(--gray-50, #F3F4F7);
+}
+
+.item-list img{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: 4.333px 2.334px 4.333px 2.333px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 검색 버튼 */
+.modal-search-button{
+
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    background: var(--gray-500, #737684);
+
+    color: var(--gray-0, #FFF);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+/* 확인 버튼 */
+.banner-save-button {
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    background: var(--gray-150, #D3D6DE);
+
+    color: var(--gray-500, #737684);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.banner-save-button-active{
+
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;    
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+
+    background: var(--blue-500, #1A71E5);
+
+    color: var(--gray-0, #FFF);
+}
+
+
+/* 스크롤바 전체 */
+::-webkit-scrollbar {
+    width: 4px; /* 스크롤바의 너비 */
+}
+
+/* 스크롤바의 핸들 (드래그할 수 있는 부분) */
+::-webkit-scrollbar-thumb {
+    background: var(--gray-400, #979BAA);
+    border-radius: 6px; /* 핸들의 모서리 둥글게 */
+}
+
+/* 핸들에 마우스를 올렸을 때의 스타일 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 핸들에 마우스를 올렸을 때의 색상 */
+}
+
+
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn1 {
+    display: flex;
+    width: 120px;
+    height: 36px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+    cursor: pointer;
+    appearance: none;
+    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    /* padding: 0 12px; */
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+}
+
+
+.menu-item1 {
+    cursor: pointer; /* 커서를 포인터로 변경 */
+    
+    color: var(--gray-850, #1F2128);
+    
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+    
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown1.active .dropdown-content1 {
+    display: block;
+}
+
+
+.dropdown1.active .dropbtn1{
+    border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
+    border-bottom: none;
+    background-image: url('/img/arrow_up.svg');
+}
+
+.dropdown1.active .dropdown-content1 {
+    border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
+    border-top: none;
+
+}
+
+.dropdown1.active .dropdown-content1 :hover{
+    background: var(--gray-50, #F3F4F7);
+}
+
+.dropdown2 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn2 {
+    display: flex;
+    width: 140px;
+    height: 36px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+    cursor: pointer;
+    appearance: none;
+    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    /* padding: 0 12px; */
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+}
+
+.menu-item2 {
+    cursor: pointer; /* 커서를 포인터로 변경 */
+    
+    color: var(--gray-850, #1F2128);
+    
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown2.active .dropdown-content2 {
+    display: block;
+}
+
+
+.dropdown2.active .dropbtn2{
+    border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
+    border-bottom: none;
+    background-image: url('/img/arrow_up.svg');
+}
+
+.dropdown2.active .dropdown-content2 {
+    border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
+    border-top: none;
+    
+}
+
+.dropdown2.active .dropdown-content2 :hover{
+    background: var(--gray-50, #F3F4F7);
+}
+
+.dropdown3 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn3 {
+    display: flex;
+    width: 120px;
+    height: 36px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+    cursor: pointer;
+    appearance: none;
+    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.dropdown-content3 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    
+    width: 100%;
+    /* padding: 0 12px; */
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+}
+
+.menu-item3 {
+    cursor: pointer; /* 커서를 포인터로 변경 */
+    
+    color: var(--gray-850, #1F2128);
+    
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+    
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown3.active .dropdown-content3 {
+    display: block;
+}
+
+
+.dropdown3.active .dropbtn3{
+    border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
+    border-bottom: none;
+    background-image: url('/img/arrow_up.svg');
+}
+
+.dropdown3.active .dropdown-content3 {
+    border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
+    border-top: none;
+
+}
+
+.dropdown3.active .dropdown-content3 :hover{
+    background: var(--gray-50, #F3F4F7);
+}
+
+.menu-item4 {
+    cursor: pointer; /* 커서를 포인터로 변경 */
+    
+    color: var(--gray-850, #1F2128);
+    
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown4 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn4 {
+    display: flex;
+    width: 140px;
+    height: 36px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+    cursor: pointer;
+    appearance: none;
+    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.dropdown-content4 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    /* padding: 0 12px; */
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+}
+
+.dropdown4.active .dropdown-content4 {
+    display: block;
+}
+
+
+.dropdown4.active .dropbtn4{
+    border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
+    border-bottom: none;
+    background-image: url('/img/arrow_up.svg');
+}
+
+.dropdown4.active .dropdown-content4 {
+    border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
+    border-top: none;
+
+}
+
+.dropdown4.active .dropdown-content4 :hover{
+    background: var(--gray-50, #F3F4F7);
+}
+
+
+.searchmodal-container{
+    width: 465px;
+    height: 164px;
+    position: absolute;
+    left: 32px;
+    top: 150px;
+    border-radius: 14px;
+    border: 1px solid var(--gray-150, #D3D6DE);
+    background: var(--gray-0, #FFF);
+
+    /* shadow 3 */
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.14);
+
+    display: none;
+
+}
+
+.close-search-popup img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    width: 12px;
+
+}
+
+.close-search-popup{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-shrink: 0;
+
+    
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+
+.searchmenu-item {
+    cursor: pointer; /* 커서를 포인터로 변경 */
+    
+    color: var(--gray-850, #1F2128);
+    
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.searchdropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.searchdropbtn {
+    display: flex;
+    width: 140px;
+    height: 36px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+    cursor: pointer;
+    appearance: none;
+    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.searchdropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    /* padding: 0 12px; */
+    border-radius: 6px;
+    border: 1px solid var(--gray-200, #C5C8D3);
+    background: var(--gray-0, #FFF);
+}
+
+.searchdropdown.active .searchdropdown-content {
+    display: block;
+}
+
+.searchdropdown.active .searchdropbtn{
+    border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
+    border-bottom: none;
+    background-image: url('/img/arrow_up.svg');
+}
+
+.searchdropdown.active .searchdropdown-content {
+    border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
+    border-top: none;
+
+}
+
+.searchdropdown.active .searchdropdown-content :hover{
+    background: var(--gray-50, #F3F4F7);
+}
+
+
+.table_list_2 {
+    border-top: 1px solid  var(--gray-850, #1F2128);
+    table-layout: fixed;
+    display: flex;
+    width: 425px;
+    align-items: flex-start;
+
+    margin: 20px;
+}
+
+.table_list_2 tr{
+    display: flex;
+    align-items: flex-start;
+}
+
+.table_list_2 th{
+    display: flex;
+    height: 48px;
+    width: 100px;
+    padding: 14px 12px;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-50, #F3F4F7);
+
+    color: var(--gray-850, #1F2128);
+
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+
+.table_list_2 td{
+    display: flex;
+    height: 48px;
+    width: 325px;
+    padding: 16px 12px;
+    align-items: center;
+    gap: 32px;
+    flex: 1 0 0;
+
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-0, #FFF);
+
+    color: var(--gray-850, #1F2128);
+
+    /* 13_16/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+/* 
+.radio-container{
+    
+    display:inline;
+    color: var(--gray-850, #1F2128);
+
+    text-align: center;
+    vertical-align: middle;
+
+    font-family: "Noto Sans CJK KR";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+} */
+ 

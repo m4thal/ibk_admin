@@ -69,6 +69,10 @@ body {
     width: 100%;    
 }
 
+.content-container{
+    position: relative; /* 모달 팝업의 기준 위치 설정 */
+}
+
 #container {
     display: flex;
     width: 100%;
@@ -347,4 +351,37 @@ body {
 }
 .side-button + .side-button {
     margin-top:10px;
+}
+
+/* 기본 라디오 버튼 숨기기 */
+input[type="radio"] {
+    display: none;
+}
+
+.radio-label{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    background-image: url('/img/Radio_button.png');
+    background-size: cover;
+    aspect-ratio: 1/1;
+}
+
+input[type="radio"]:checked + .radio-label {
+    background-image: url('/img/chenkde_Radio_button.png');
+}
+
+.radio-container{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: space-between;
+    
+}
+
+.radio-group{
+    display: flex;
+    gap: 56px;
 }
