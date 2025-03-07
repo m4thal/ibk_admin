@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_scu/bnk_scu_010100_list.css">    
+</head>
+<body>
+    <div class="content_container">
+        <!-- 검색 옵션 팝업-->
+        <div class="searchmodal-container">
+                    <table class="table_list_2">
+                        <tr>
+                            <th>구분코드</th>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-container">
+                                        <input type="radio" name="category" value="all" id="category_all" checked>
+                                        <span class="radio-label"></span>전체
+                                    </label>
+                                    <label class="radio-container">
+                                        <input type="radio" name="category" value="authentication" id="category_authentication">
+                                        <span class="radio-label"></span>추가인증
+                                    </label>
+                                    <label class="radio-container">
+                                        <input type="radio" name="category" value="securitymedium" id="category_securitymedium">
+                                        <span class="radio-label"></span>보안매체
+                                    </label>
+                                </div>
+                            </td>
+                            </tr>
+                    </table>                
+        </div>
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>뱅킹관리>&nbsp;메뉴관리>&nbsp;</span><span class="current_scr_depth">메뉴보안관리</span>
+            </div>
+            <h2 class="screen_title">메뉴보안관리</h2>
+        </div>
+        <div class="main_contents">
+            <div class="main_inner_container">
+                <div class="top_container">
+                    <div class="search_bar">
+                        <input type="text" class="searchInput" placeholder="페이지명, JSP명">
+                        <button type="button" class="searchButton" onclick="select_list()">검색</button>
+                        <button type="button" class="searchFilter" onclick="optionpopupcontrol()"></button>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <div class="table_list_container">
+                        <table class="table_list">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>구분코드</th>
+                                    <th>페이지명</th>
+                                    <th>JSP명</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cell_width">
+                                <tr>
+                                    <td>1</td>
+                                    <td>보안매체</td>
+                                    <td>바이오 홍채인증 등록</td>
+                                    <td>cmc_bio_010200_3</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>추가인증</td>
+                                    <td>공인인증서 발급/재발금</td>
+                                    <td>cmc_bio_010200_3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_btn_container">
+                        <div class="pagination" id="pagination">
+                            <button>&lt;&lt;</button>
+                            <button>&lt;</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>&gt;</button>
+                            <button>&gt;&gt;</button>
+                        </div>
+                        <button type="button" class="regist_btn" onclick="insertbutton()">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const searchmodal = document.querySelector('.searchmodal-container');
+        const filterbutton = document.querySelector('.searchFilter');
+
+        function optionpopupcontrol(){
+            if(filterbutton.classList.contains('active')){
+                filterbutton.classList.remove('active');
+                searchmodal.style.display = 'none';
+            }else{
+                filterbutton.classList.add('active');
+                searchmodal.style.display = 'block';
+            }
+        }
+
+        function select_list(){
+            alert("검색")
+        }
+
+        function insertbutton(){
+            alert("등록")
+        }
+        </script>    
+</body>
+</html>

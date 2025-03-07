@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_scu/bnk_scu_010102_modify.css">
+</head>
+<boody>
+    <div class="content_container">
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>뱅킹관리>&nbsp;</span><span>메뉴관리>&nbsp;</span><span class="current_scr_depth">메뉴보안관리</span>
+            </div>
+            <h2 class="screen_title">메뉴보안관리</h2>
+        </div>
+        <div class="table_container">
+            <div class="table_list_container_1">
+                <table class="table_list_1">
+                    <tr>
+                        <th>페이지명*</th>
+                        <td><input type="text" class="menuid-input" value="홍채인증 등록"></td>
+                    </tr>
+                    <tr>
+                        <th>구분코드*</th>
+                        <td>추가인증</td>
+                    </tr>
+                    <tr>
+                        <th>JSP명*</th>
+                        <td><input type="text" class="menuid-input readonly" value="cmc_bio_010200_3" readonly></td>
+                    </tr>                   
+                    <tr>
+                        <th>최종수정</th>
+                        <td>Admin (2025.02.05 14:35:19)</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="bottom_btn_container">
+                    <div class="btn_container">                
+                        <button type="button" class="list-button">목록</button>
+                    </div>
+                    <div class="btn_container">
+                        <button type="button" class="delete-button">삭제</button>
+                        <button type="button" class="save-button">수정</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+
+        // 버튼 이벤트
+        const saveButton = document.querySelector('.save-button');
+        const deleteButton = document.querySelector('.delete-button');
+        const listButton = document.querySelector('.list-button');
+
+        saveButton.addEventListener('click', () => {
+            alert('저장되었습니다.');
+        });
+
+        deleteButton.addEventListener('click', () => {
+            alert('삭제되었습니다.');
+        });
+
+        listButton.addEventListener('click', () => {
+            alert('목록으로 이동합니다.');
+        });
+    </script>
+</boody>
+</html>
