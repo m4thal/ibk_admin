@@ -10,19 +10,24 @@
 <boody>
     <div class="tab_container">
         <div class="screen_title_container">
-            <div class="menu_depth">
-                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">약관관리</span>
+            <div class="menu_depth_container">
+                <span>뱅킹관리</span>
+                <img src="../../img/Filled.svg">
+                <span>메뉴관리</span>
+                <img src="../../img/Filled.svg">
+                <span>아이폰</span>
             </div>
-            <h2>FDS관리</h2>
+            <h2>아이폰</h2>
         </div>
 
-        <div class="main_contents">
+        <div class="main_container">
             <div class="main_inner_container">
                 <div class="top_btn_container">
-                    <div class="search_bar_container">
-                        <input id="search_text" type="text" placeholder="메뉴ID, 메뉴명">
-                        <button type="button" onclick="select_list()">검색</button>
+                    <div class="menu_search_container">
+                        <input id="search_bar" type="text" placeholder="메뉴명, 메뉴ID">
+                        <button>검색</button>
                     </div>
+
                     <div class="file_io_container">
                         <button type="button" onclick="file_down()">
                             <span>일괄</span>
@@ -35,61 +40,44 @@
 
                 <div class="table_list_container">
                     <div class="table_container">
-                        <table class="data_table">
+                        <table class="menu_data_table">
                             <thead>
                                 <tr>
-                                    <th class="header_col_1"><span>번호</span></th>
-                                    <th class="header_col_2"><span>메뉴ID</span></th>
-                                    <th class="header_col_3"><span>메뉴명</span></th>
-                                    <th class="header_col_4"><span>최종 수정자</span></th>
-                                    <th class="header_col_5"><span>최종 수정일</span></th>
+                                    <td>속성명</td>
+                                    <td>속성ID</td>
+                                    <td>설정</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="data_col_1"><span>1</span></td>
-                                    <td class="data_col_2"><span>bit_trn_000000_1</span></td>
-                                    <td class="data_col_3"><span>이체</span></td>
-                                    <td class="data_col_4"><span>admin</span></td>
-                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                    <td>메뉴구분
+                                        |
+                                        <span style="color: blue;">  필수</span></td>
+                                    <td>c_view_tpye</td>
+                                    <td>
+                                        <input class="table_input_col" type="text" value="2" placeholder="숫자">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td class="data_col_1"><span>2</span></td>
-                                    <td class="data_col_2"><span>cmc_bcs_010000_1</span></td>
-                                    <td class="data_col_3"><span>뱅크사인 인증수단관리</span></td>
-                                    <td class="data_col_4"><span>admin</span></td>
-                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
+                                    <td>큰글씨 전환버튼 표기여부</td>
+                                    <td>c_big_menu_yn</td>
+                                    <td class="menu_use_radio">
+                                        <div class="radio-group">
+                                            <label class="radio-container">
+                                                <input type="radio" name="reservation" value="yes" id="yes">
+                                                <div class="radio-label"></div>예
+                                            </label>
+                                            <label class="radio-container">
+                                            <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
+                                                <div class="radio-label"></div>아니오
+                                            </label>
+                                        </div>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td class="data_col_1"><span>3</span></td>
-                                    <td class="data_col_2"><span>cmc_bcs_040000_1</span></td>
-                                    <td class="data_col_3"><span>뱅크사인 인증수단관리</span></td>
-                                    <td class="data_col_4"><span>admin</span></td>
-                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="data_col_1"><span>4</span></td>
-                                    <td class="data_col_2"><span>cmc_bio_010200_1</span></td>
-                                    <td class="data_col_3"><span>뱅크사인 이용해지</span></td>
-                                    <td class="data_col_4"><span>S22599</span></td>
-                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="data_col_1"><span>5</span></td>
-                                    <td class="data_col_2"><span>cmc_bio_010300_1</span></td>
-                                    <td class="data_col_3"><span>바이오 홍채인증 등록</span></td>
-                                    <td class="data_col_4"><span>S22599</span></td>
-                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="data_col_1"><span>6</span></td>
-                                    <td class="data_col_2"><span>cmc_bio_020200_1</span></td>
-                                    <td class="data_col_3"><span>바이오 홍채인증 해지</span></td>
-                                    <td class="data_col_4"><span>S22599</span></td>
-                                    <td class="data_col_5"><span>2025.02.05 14:35:19</span></td>
-                                </tr>                                
+
                             </tbody>
                         </table>
+                        
                     </div>
                     <div class="bottom_btn_container">
                         <div class="pagination" id="pagination">

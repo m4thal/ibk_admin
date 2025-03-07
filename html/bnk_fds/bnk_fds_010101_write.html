@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010101_modify.css">
+    <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010101_write.css">
     <style>
     </style>
 </head>
@@ -21,20 +21,24 @@
             <div class="table_container_1">
                 <table class="data_table_1">
                     <tr>
-                        <th>메뉴</th>
-                        <td>cmc_bio_010300_1</td>
+                        <th>
+                            메뉴ID*
+                        </th>
+                        <td>
+                            <div class="input_container">
+                                <input type="text" value="">
+                            </div>
+                        </td>
                     </tr>
-                    <th>
-                        메뉴명*
-                    </th>
-                    <td>
-                        <div class="input_container">
-                            <input type="text" value="">
-                        </div>
-                    </td>
                     <tr>
-                        <th>최종수정</span></th>
-                        <td>X12345 (2025.02.05 14:35:19)</td>
+                        <th>
+                            메뉴명*
+                        </th>
+                        <td>
+                            <div class="input_container">
+                                <input type="text" value="">
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -51,16 +55,16 @@
                         <table class="data_table_2">
                             <thead>
                                 <tr>
-                                    <td>번호</td>
-                                    <td>NeBsoa 서비스 ID</td>
-                                    <td>Nebsoa 서비스명</td>
-                                    <td>액션플래그</td>
-                                    <td>삭제</td>
+                                    <th>번호</th>
+                                    <th>NeBsoa 서비스 ID</th>
+                                    <th>Nebsoa 서비스명</th>
+                                    <th>액션플래그</th>
+                                    <th>삭제</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
+                                    <td style="width: 10%;">1</td>
                                     <td>
                                         <div class="input_container">
                                             <input type="text" value="c_available_service">
@@ -68,7 +72,7 @@
                                     </td>
                                     <td>
                                         <div class="input_container">
-                                            <input type="text" value="서비스 여부">
+                                            <input class="table_input_col" type="text" value="서비스 여부">
                                         </div>
                                     </td>
                                     <td>
@@ -107,11 +111,8 @@
                     </div>
                 </div>
                 <div class="bottom_btn_container">
-                    <button>목록</button>
-                    <div class="right_btn">
-                        <button>삭제</button>
-                        <button>저장</button>
-                    </div>
+                    <button class="list_btn">목록</button>
+                    <button class="regist_btn">저장</button>
                 </div>
             </div>
             <div class="info_container">

@@ -373,3 +373,45 @@ input[type="radio"]:checked + .radio-label {
     display: flex;
     gap: 56px;
 }
+
+
+input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    /* border: 2px solid #333; */
+    border-radius: 4px;
+    background: url('../img/check_box_f.svg') no-repeat center/cover;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+    width: 18px;
+    height: 18px;
+    background: url('../img/check_box_t.svg') no-repeat center/cover;
+    border-color: #007bff;
+}
+
+/* 스크롤바 전체 크기 설정 */
+::-webkit-scrollbar {
+    width: 4px;  /* 세로 스크롤바 너비 */
+    height: 6px; /* 가로 스크롤바 높이 */
+  }
+  
+  /* 스크롤바 트랙 (배경 부분) */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; /* 흰색 배경 */
+  }
+  
+  /* 스크롤바 핸들 (움직이는 부분) */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: var(--gray-400, #979BAA);
+  }
+  
+  /* 스크롤바 핸들 - 마우스 오버 시 */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #909090; /* 진한 회색 */
+  }
+  
+
