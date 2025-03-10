@@ -89,31 +89,46 @@
     gap: 52px;
 }
 
-.table_list_container_1{
+
+.table_container{
     display: flex;
-    /* min-width: 988px; */
     flex-direction: column;
     align-items: flex-start;
+    align-self: stretch;
+    gap: 16px;
+}
+
+.table_list_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
 }
 
 
-.table_list_1 {
+.table_list {
     border-top: 1px solid  var(--gray-850, #1F2128);
     table-layout: fixed;
     width: 100%;
 }
 
-.table_list_1 tr{
+.table_list tr{
     height: 48px;
-    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
 }
 
-.table_list_1 th{
-    width: 120px;
+.table_list th{
+    width: 140px;
     height: 48px;
     text-align: left;
-    padding-left: 12px;     
     background: var(--gray-50, #F3F4F7);
+
+    display: flex;
+
+    padding: 14px 12px;
 
     /* 14_20/regular */
     font-family: "Noto Sans CJK KR";
@@ -121,19 +136,22 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 142.857% */
+
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-50, #F3F4F7);
 }
 
-.table_list_1 td{
-
+.table_list td{
     display: flex;
     height: 48px;
     padding: 16px 12px;
     align-items: center;
-
-    height: 48px;
-    padding: 6px 12px;
+    gap: 12px;
+    flex: 1 0 0;
 
     text-align: left;
+    padding-left: 12px;
+    padding-right: 12px; 
 
     color: var(--gray-850, #1F2128);
 
@@ -143,6 +161,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 142.857% */
+
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
 }
 
 .style-input {
@@ -155,55 +175,6 @@
 
     border: 1px solid var(--gray-100, #E1E3EA); /* 테두리 설정 */
     border-radius: 4px; /* 모서리 둥글게 */
-
-    /* 14_20/regular */
-    font-family: "Noto Sans CJK KR";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
-}
-
-
-.table_list_2 {
-    border-top: 1px solid  var(--gray-850, #1F2128);
-    table-layout: fixed;
-    width: 100%;
-}
-
-.table_list_2 tr{
-    height: 48px;
-    border-bottom: 1px solid var(--gray-100, #E1E3EA);
-}
-
-.table_list_2 th{
-    width: 120px;
-    height: 48px;
-    text-align: left;
-    padding-left: 12px; 
-    background: var(--gray-50, #F3F4F7);
-
-    /* 14_20/regular */
-    font-family: "Noto Sans CJK KR";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
-}
-
-.table_list_2 td{
-
-    display: flex;
-    height: 48px;
-    padding: 16px 12px;
-    align-items: center;
-
-    height: 48px;
-    padding: 6px 12px;
-
-    text-align: left;
-
-    color: var(--gray-850, #1F2128);
 
     /* 14_20/regular */
     font-family: "Noto Sans CJK KR";
@@ -227,8 +198,6 @@ input::-webkit-inner-spin-button {
     width: 150px; /* 원하는 너비 */
     height: 40px; /* 원하는 높이 */
 
-    margin-right: 32px;
-
     padding: 8px;
     
     color: var(--gray-850, #1F2128);
@@ -251,15 +220,8 @@ input::-webkit-inner-spin-button {
     align-self: stretch;
 }
 
-.table_list_container_2{
-    display: flex;
-    /* min-width: 988px; */
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-}
 
-.table_list_container_2 h2{
+.table_list_container h2{
     color: var(--gray-850, #1F2128);
 
 /* 18_26/bold */
@@ -356,7 +318,7 @@ line-height: 20px; /* 142.857% */
     line-height: 20px; /* 142.857% */
 }
 
-.hide-tr{
+.table_list tr.hide-tr{
     display: none;
 }
 

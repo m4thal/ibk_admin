@@ -140,7 +140,7 @@
 
 .style-input {
     width: 100%; /* 원하는 너비 */
-    height: 40px; /* 원하는 높이 */
+    padding: 8px;
     
     color: var(--gray-850, #1F2128);
 
@@ -157,7 +157,7 @@
 
 .style-input_1 {
     width: 40%; /* 원하는 너비 */
-    height: 40px; /* 원하는 높이 */
+    padding: 8px;
     
     color: var(--gray-850, #1F2128);
 

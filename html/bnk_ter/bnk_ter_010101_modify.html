@@ -12,8 +12,8 @@
             <h2 class="screen_title">약관관리</h2>
         </div>
         <div class="table_container">
-            <div class="table_list_container_1">
-                <table class="table_list_1">
+            <div class="table_list_container">
+                <table class="table_list">
                     <tr>
                         <th>약관코드*</th>
                         <td>Notice123456_1</td>
@@ -32,9 +32,9 @@
                     </tr>
                   </table>
             </div>
-            <div class="table_list_container_2">
+            <div class="table_list_container">
                 <h2>약관 전환예약</h2>
-                    <table class="table_list_2">
+                    <table class="table_list">
                         <tr>
                             <th>전환예약 사용</th>
                             <td>
@@ -84,7 +84,7 @@
         document.getElementById('yes').addEventListener('change', function() {
             if (this.checked) {
                 hide_tr.forEach((tr) => {
-                    tr.style.display = 'table-row';
+                    tr.style.display = 'flex';
                 });                
             }
         });

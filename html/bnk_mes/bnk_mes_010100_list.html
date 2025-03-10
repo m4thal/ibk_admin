@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_mes/bnk_mes_010100_list.css">    
+</head>
+<body>
+    <div class="content_container">
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">오류메시지관리</span>
+            </div>
+            <h2 class="screen_title">오류메시지관리</h2>
+        </div>
+        <div class="main_contents">
+            <div class="main_inner_container">
+                <div class="top_container">
+                    <div class="search_bar">
+                        <input type="text" id="searchInput" placeholder="에러코드, 대외계에러코드, 에러제목">
+                        <button type="button" onclick="select_list()">검색</button>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <div class="table_list_container">
+                        <table class="table_list">
+                            <thead>
+                                <tr>
+                                    <th>에러코드</th>
+                                    <th>대외계 에러코드</th>
+                                    <th>에러제목</th>
+                                    <th>Locale 코드</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cell_width">
+                                <tr>
+                                    <td>10</td>
+                                    <td></td>
+                                    <td>사기의심계좌 조회</td>
+                                    <td>KO</td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td></td>
+                                    <td>전자금융 로그인 차단</td>
+                                    <td>KO</td>
+                                </tr>
+                                <tr>
+                                    <td>B00000</td>
+                                    <td></td>
+                                    <td>정의되지 않은 오류코드 입니다.</td>
+                                    <td>KO</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_btn_container">
+                        <div class="pagination" id="pagination">
+                            <button>&lt;&lt;</button>
+                            <button>&lt;</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>&gt;</button>
+                            <button>&gt;&gt;</button>
+                        </div>
+                        <button type="button" class="regist_btn" onclick="regist()">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const table = document.querySelector('.table_list');
+    
+        function select_list() {
+         alert("검색");
+        }
+
+        function regist(){
+            alert("등록페이지 이동");
+        }
+
+        </script>    
+</body>
+</html>
