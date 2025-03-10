@@ -5,6 +5,7 @@
     align-items: flex-start;
     gap: 24px;
     align-self: stretch;
+    min-width: 988px;
 
     background: var(--gray-0, #FFF);
 }
@@ -124,7 +125,7 @@
 }
 
 #search_bar{
-    min-width: 184px;
+    /* min-width: 184px; */
     flex: 1 0 0;
     color: var(--gray-400, #979BAA);
 
@@ -226,8 +227,6 @@
 }
 
 .tree_menu{
-    min-width: 248px;
-    min-height: 605px;
     overflow: scroll;
     white-space: nowrap;
 }
@@ -238,15 +237,14 @@
 }
 .tree_fold{
     width: 15px;
-height: 15px;
-flex-shrink: 0;
+    height: 15px;
+    flex-shrink: 0;
     background: url(../../img/tree_fold.svg);
 }
 
 
 .right_contents_container{
     display: flex;
-    min-width: 712px;
     flex-direction: column;
     align-items: flex-start;
     gap: 52px;
@@ -267,7 +265,7 @@ flex-shrink: 0;
 
 
 .data_table_1 .table_header_col{
-    width: 120px;
+    width: 110px;
     padding: 14px 12px;
 
     background: var(--gray-50, #F3F4F7);
@@ -689,7 +687,7 @@ aspect-ratio: 14.02/14.00;
 
 .info_container{
     display: flex;
-    min-width: 712px;
+    /* min-width: 712px; */
     width: 100%;
     padding: 16px;
     flex-direction: column;
@@ -702,6 +700,13 @@ aspect-ratio: 14.02/14.00;
 .info_inner{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.info_inner ul li {
+    display: flex;
     align-items: flex-start;
     gap: 8px;
     align-self: stretch;
@@ -751,6 +756,7 @@ input[type="radio"]:checked + .radio-label {
 }
 
 .info_text{
+    flex: 1 0 0;
     color: var(--gray-500, #737684);
 
     /* 13_16/regular */
