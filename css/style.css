@@ -35,6 +35,28 @@ table {
     border-spacing: 0;
 }
 
+th{
+    color: var(--gray-700, #454855);
+
+    /* 14_20/medium */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+}
+
+td{
+    color: var(--gray-850, #1F2128);
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
 img {
     max-width: 100%;
     height: auto;

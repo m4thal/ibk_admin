@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_ses/bnk_ses_010100_list.css">    
+</head>
+<body>
+    <div class="content_container">
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">세션관리</span>
+            </div>
+            <h2 class="screen_title">세션관리</h2>
+        </div>
+        <div class="main_contents">
+            <div class="main_inner_container">
+                <div class="top_container">
+                    <div class="search_bar">
+                        <input type="text" id="searchInput" placeholder="세션ID, 세션명">
+                        <button type="button" onclick="select_list()">검색</button>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <div class="table_list_container">
+                        <table class="table_list">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>세션ID</th>
+                                    <th>세션명</th>
+                                    <th>사용여부</th>
+                                    <th>최종 수정자</th>
+                                    <th>최종 수정일</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cell_width">
+                                <tr>
+                                    <td>1</td>
+                                    <td>session_ios_00001</td>
+                                    <td>앱 미사용으로 인한 로그아웃 처리</td>
+                                    <td>사용</td>
+                                    <td>admin</td>
+                                    <td>2025.02.05 14:35:19</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>session_and_00001</td>
+                                    <td>세션명 노출영역 111</td>
+                                    <td>사용</td>
+                                    <td>admin</td>
+                                    <td>2025.02.05 14:35:19</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>session_ios_00002</td>
+                                    <td>세션명 노출영역 24242</td>
+                                    <td style="color: red;">미사용</td>
+                                    <td>S22599</td>
+                                    <td>2025.02.05 14:35:19</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_btn_container">
+                        <div class="pagination" id="pagination">
+                            <button>&lt;&lt;</button>
+                            <button>&lt;</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>&gt;</button>
+                            <button>&gt;&gt;</button>
+                        </div>
+                        <button type="button" class="regist_btn" onclick="regist()">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const table = document.querySelector('.table_list');
+    
+        function select_list() {
+         alert("검색");
+        }
+
+        function regist(){
+            alert("등록페이지 이동");
+        }
+
+        </script>    
+</body>
+</html>

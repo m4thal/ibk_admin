@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_pre/bnk_pre_010100_list.css">    
+</head>
+<body>
+    <div class="content_container">
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">유의사항 관리</span>
+            </div>
+            <h2 class="screen_title">유의사항 관리</h2>
+        </div>
+        <div class="main_contents">
+            <div class="main_inner_container">
+                <div class="top_container">
+                    <div class="search_bar">
+                        <input type="text" id="searchInput" placeholder="유의사항ID, 유의사항명">
+                        <button type="button" onclick="select_list()">검색</button>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <div class="table_list_container">
+                        <table class="table_list">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>유의사항ID</th>
+                                    <th>유의사항명</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cell_width">
+                                <tr>
+                                    <td>1</td>
+                                    <td>fnt_inq_010100_33</td>
+                                    <td>처음만나는IBK중금채(복리맞춤채권) 우대조건 충족기준</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>fnt_inq_010100_32</td>
+                                    <td>처음만나는IBK중금채(단기중금채) 우대조건 충족기준</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>fnt_inq_010100_00</td>
+                                    <td>계좌상세 실적 유의사항</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_btn_container">
+                        <div class="pagination" id="pagination">
+                            <button>&lt;&lt;</button>
+                            <button>&lt;</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>&gt;</button>
+                            <button>&gt;&gt;</button>
+                        </div>
+                        <button type="button" class="regist_btn" onclick="regist()">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const table = document.querySelector('.table_list');
+    
+        function select_list() {
+         alert("검색");
+        }
+
+        function regist(){
+            alert("등록페이지 이동");
+        }
+
+        </script>    
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bnk_tim/bnk_tim_010100_list.css">    
+</head>
+<body>
+    <div class="content_container">
+        <div class="screen_title_container">
+            <div class="screen_depth">
+                <span>뱅킹관리>&nbsp;</span><span>상품관리&nbsp;</span><span class="current_scr_depth">상품별 거래시간 제한</span>
+            </div>
+            <h2 class="screen_title">상품별 거래시간 제한</h2>
+        </div>
+        <div class="main_contents">
+            <div class="main_inner_container">
+                <div class="top_container">
+                    <div class="search_bar">
+                        <input type="text" id="searchInput" placeholder="상품코드, 메세지">
+                        <button type="button" onclick="select_list()">검색</button>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <div class="table_list_container">
+                        <table class="table_list">
+                            <thead>
+                                <tr>
+                                    <th>상품코드</th>
+                                    <th>게시기간</th>
+                                    <th>메세지</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cell_width">
+                                <tr>
+                                    <td>01211210115</td>
+                                    <td>2019.04.30 08:00 ~ 2020.04.30 08:30</td>
+                                    <td><div>죄송합니다.\n온라인 전환 및 시스템 조정작업으로 일시 중지 중 이오니 잠시 후 이용하여 주시기 바랍니다. \n시스템 전환일시 : 신서민섬김통장(정기예금) 이런식으로 두줄까지 노출 1234 죄송합니다.\n온라인 전환 및 시스템 조정작업으로 일시 중지 중 이오니 잠시 후 이용하여 주시기 바랍니다. \n시스템 전환일시 : 신서민섬김통장(정기예금) 이런식으로 두줄까지 노출 1234</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>01511880013</td>
+                                    <td>2019.04.30 08:00 ~ 2020.04.30 08:30</td>
+                                    <td><div>죄송합니다.\n온라인 전환 및 시스템 조정작업으로 일시 중지 중 이오니 잠시 후 이용하여 주시기 바랍니다. \n시스템 전환일시 : 신서민섬김통장(정기예금) 이런식으로 두줄까지 노출 1234 죄송합니다.\n온라인 전환 및 시스템 조정작업으로 일시 중지 중 이오니 잠시 후 이용하여 주시기 바랍니다. \n시스템 전환일시 : 신서민섬김통장(정기예금) 이런식으로 두줄까지 노출 1234</div></td>
+                                </tr>
+                                <tr>
+                                    <td>01211210115</td>
+                                    <td>2019.04.30 08:00 ~ 2020.04.30 08:30</td>
+                                    <td><div>죄송합니다.\n온라인 전환 및 시스템 조정작업으로 일시 중지 중 이오니 잠시 후 이용하여 주시기 바랍니다. \n시스템 전환일시 : 신서민섬김통장(정기예금) 이런식으로 두줄까지 노출 1234 죄송합니다.\n온라인 전환 및 시스템 조정작업으로 일시 중지 중 이오니 잠시 후 이용하여 주시기 바랍니다. \n시스템 전환일시 : 신서민섬김통장(정기예금) 이런식으로 두줄까지 노출 1234</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_btn_container">
+                        <div class="pagination" id="pagination">
+                            <button>&lt;&lt;</button>
+                            <button>&lt;</button>
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>&gt;</button>
+                            <button>&gt;&gt;</button>
+                        </div>
+                        <button type="button" class="regist_btn" onclick="regist()">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const table = document.querySelector('.table_list');
+    
+        function select_list() {
+         alert("검색");
+        }
+
+        function regist(){
+            alert("등록페이지 이동");
+        }
+
+        </script>    
+</body>
+</html>
