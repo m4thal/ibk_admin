@@ -728,7 +728,7 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
     cursor: pointer;
     appearance: none;
-    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-image: url('../../img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
@@ -771,7 +771,7 @@ align-self: stretch;
 .dropdown1.active .dropbtn1{
     border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
     border-bottom: none;
-    background-image: url('/img/arrow_up.svg');
+    background-image: url('../../img/arrow_up.svg');
 }
 
 .dropdown1.active .dropdown-content1 {
@@ -802,7 +802,7 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
     cursor: pointer;
     appearance: none;
-    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-image: url('../../img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
@@ -844,7 +844,7 @@ align-self: stretch;
 .dropdown2.active .dropbtn2{
     border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
     border-bottom: none;
-    background-image: url('/img/arrow_up.svg');
+    background-image: url('../../img/arrow_up.svg');
 }
 
 .dropdown2.active .dropdown-content2 {
@@ -875,7 +875,7 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
     cursor: pointer;
     appearance: none;
-    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-image: url('../../img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
@@ -917,7 +917,7 @@ align-self: stretch;
 .dropdown3.active .dropbtn3{
     border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
     border-bottom: none;
-    background-image: url('/img/arrow_up.svg');
+    background-image: url('../../img/arrow_up.svg');
 }
 
 .dropdown3.active .dropdown-content3 {
@@ -966,7 +966,7 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
     cursor: pointer;
     appearance: none;
-    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-image: url('../../img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
@@ -991,7 +991,7 @@ align-self: stretch;
 .dropdown4.active .dropbtn4{
     border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
     border-bottom: none;
-    background-image: url('/img/arrow_up.svg');
+    background-image: url('../../img/arrow_up.svg');
 }
 
 .dropdown4.active .dropdown-content4 {
@@ -1043,7 +1043,7 @@ align-self: stretch;
     margin-right: 20px;
 }
 
-.searchmenu-item {
+.dropdown-item {
     cursor: pointer; /* 커서를 포인터로 변경 */
     
     color: var(--gray-850, #1F2128);
@@ -1061,12 +1061,12 @@ align-self: stretch;
 }
 
 
-.searchdropdown {
+.dropdown-container {
     position: relative;
     display: inline-block;
 }
 
-.searchdropbtn {
+.dropdown-button {
     display: flex;
     width: 140px;
     height: 36px;
@@ -1079,12 +1079,12 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
     cursor: pointer;
     appearance: none;
-    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-image: url('../../img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
 
-.searchdropdown-content {
+.dropdown-items {
     display: none;
     position: absolute;
     z-index: 1;
@@ -1096,23 +1096,23 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
 }
 
-.searchdropdown.active .searchdropdown-content {
+.dropdown-container.active .dropdown-items {
     display: block;
 }
 
-.searchdropdown.active .searchdropbtn{
+.dropdown-container.active .dropdown-button{
     border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
     border-bottom: none;
-    background-image: url('/img/arrow_up.svg');
+    background-image: url('../../img/arrow_up.svg');
 }
 
-.searchdropdown.active .searchdropdown-content {
+.dropdown-container.active .dropdown-items {
     border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
     border-top: none;
 
 }
 
-.searchdropdown.active .searchdropdown-content :hover{
+.dropdown-container.active .dropdown-items :hover{
     background: var(--gray-50, #F3F4F7);
 }
 

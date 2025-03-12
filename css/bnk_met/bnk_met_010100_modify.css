@@ -218,7 +218,7 @@
     background: var(--gray-0, #FFF);
     cursor: pointer;
     appearance: none;
-    background-image: url('/img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
+    background-image: url('../../img/arrow_down.svg'); /* 화살표 이미지 경로 설정 */
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
@@ -242,7 +242,7 @@
 .type-dropdown.active .type-dropbtn{
     border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
     border-bottom: none;
-    background-image: url('/img/arrow_up.svg');
+    background-image: url('../../img/arrow_up.svg');
 }
 
 .type-dropdown.active .type-dropdown-content {

@@ -1,31 +1,3 @@
-.screen_title_container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    align-self: stretch;
-}
-
-.screen_title_container .screen_depth{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    align-self: stretch;
-}
-
-.screen_title_container .screen_title{
-    align-self: stretch;
-
-    color: var(--gray-850, #1F2128);
-
-    /* 24_32/bold */
-    font-family: "Noto Sans CJK KR";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px; /* 133.333% */
-}
-
 .content_container{
     display: flex;
     min-width: 988px;
@@ -34,51 +6,6 @@
     align-items: flex-start;
     gap: 24px;
     align-self: stretch;
-}
-
-.screen_title_container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    align-self: stretch;
-}
-
-.screen_title_container .screen_depth{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    align-self: stretch;
-
-    color: var(--gray-500, #737684);
-
-    /* 12_16/regular */
-    font-family: "Noto Sans CJK KR";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 16px; /* 133.333% */
-}
-.screen_title_container .screen_depth .current_scr_depth{
-    color: var(--blue-550, #1065D6);
-
-    /* 12_16/medium */
-    font-family: "Noto Sans CJK KR";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px; /* 133.333% */
-}
-
-.screen_title{
-    color: var(--gray-900, #101116);
-
-    /* 24_32/bold */
-    font-family: "Noto Sans CJK KR";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px; /* 133.333% */
 }
 
 .main_contents{
@@ -121,7 +48,7 @@
 
 .search_bar input{
     display: flex;
-    width: 248px;
+    width: 350px;
     height: 44px;
     padding: 16px;
     align-items: center;
@@ -267,46 +194,33 @@
     line-height: 20px; /* 142.857% */
 
     height: 48px;
-
 }
 
-.table_list thead th:nth-child(1), .table_list tbody td:nth-child(1){
-    width: 7%;
-}
 
-.table_list thead th:nth-child(2), .table_list tbody td:nth-child(2){
-    width: 21%;
-}
 
-.table_list thead th:nth-child(3), .table_list tbody td:nth-child(3){
-    width: 40%;
-}
-
-.table_list tbody td:nth-child(3){
-    text-align: left;
-}
-
-.table_list tbody td:nth-child(3) div{
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2; /* 줄 수 설정 */
-        overflow: hidden;
-        text-overflow: ellipsis;
- 
-}
-
-.table_btn_container{
+.table-btn-container{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     align-self: stretch;
+    position: relative;
+}
+
+.table-btn-container-regist{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    align-self: stretch;
+    position: relative;
 }
 
 .pagination{
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
     display: flex;
     align-items: flex-start;
     gap: 4px;
-    margin: auto;
 }
 
 .pagination button{
@@ -339,7 +253,7 @@
     line-height: 20px; /* 142.857% */
 }
 
-.regist_btn{
+.regist-btn{
     display: flex;
     height: 36px;
     padding: 12px 16px;

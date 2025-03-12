@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_ter/bnk_ter_010100_list.css">    
+    <link rel="stylesheet" href="../../css/style.css"> 
 </head>
 <body>
     <div class="content_container">
-        <div class="screen_title_container">
-            <div class="screen_depth">
-                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">약관관리</span>
-            </div>
-            <h2 class="screen_title">약관관리</h2>
-        </div>
         <div class="main_contents">
             <div class="main_inner_container">
                 <div class="top_container">
                     <div class="search_bar">
                         <input type="text" id="searchInput" placeholder="약관코드, 제목">
-                        <button type="button" onclick="select_list(document.getElementById('searchInput').value)">검색</button>
+                        <button type="button" class="searchButton" onclick="select_list()">검색</button>
                     </div>
                     <div class="file_io_container">
                         <button type="button" onclick="file_download()"><span>일괄</span> <img src="../../img/download.svg"></button>
@@ -35,10 +28,28 @@
                                     <th>최종 수정일</th>
                                 </tr>
                             </thead>
-                            <tbody class="cell_width"></tbody>
+                            <tbody class="cell_width"><tr>
+                                <td>1</td>
+                                <td>bit_trn_000000_1</td>
+                                <td>이체</td>
+                                <td>admin</td>
+                                <td>2025.02.05 14:35:19</td>
+                            </tr><tr>
+                                <td>2</td>
+                                <td>cmc_bcs_010000_1</td>
+                                <td>뱅크사인 이용신청</td>
+                                <td>admin</td>
+                                <td>2025.02.05 14:35:19</td>
+                            </tr><tr>
+                                <td>3</td>
+                                <td>cmc_bcs_040000_1</td>
+                                <td>뱅크사인 인증수단관리</td>
+                                <td>admin</td>
+                                <td>2025.02.05 14:35:19</td>
+                            </tr></tbody>
                         </table>
                     </div>
-                    <div class="table_btn_container">
+                    <div class="table_btn_container_regist">
                         <div class="pagination" id="pagination">
                             <button>&lt;&lt;</button>
                             <button>&lt;</button>
@@ -49,114 +60,39 @@
                             <button>5</button>
                             <button>6</button>
                             <button>&gt;</button>
-                            <button>&gt;&gt;</button>
+                            <button>&gt;&gt;</button>                            
                         </div>
-                        <button type="button" class="regist_btn">등록</button>
+                        <button type="button" class="regist_btn" onclick="regist()">등록</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        const table = document.querySelector('.table_list');
+        // const table = document.querySelector('.table_list');
         
-        let jsonDataList;
-        
-        let filteredDataList = jsonDataList; // 필터링된 데이터를 저장할 변수
-        
-        // 초기화
-        function init(){
-            currentPage = 1;
-            totalItems = 1;
-            totalPages = Math.ceil(totalItems / itemsPerPage);
-            pagesPerGroup = 5;
-        }
-        
-        //현재 페이지 데이터출력
-        function displayData() {
-            const dataBody = document.querySelector('.table_list tbody');
-            dataBody.innerHTML = '';
-        
-            if (filteredDataList == null) return;
-        
-            for (let i = 0; i < totalItems; i++) {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${filteredDataList[i].number}</td>
-                    <td>${filteredDataList[i].menu_id}</td>
-                    <td>${filteredDataList[i].menu_name}</td>
-                    <td>${filteredDataList[i].user}</td>
-                    <td>${filteredDataList[i].date}</td>
-                `;
-                dataBody.appendChild(row);
-            }
-        }
-        
-        // 테이블 행 클릭 이벤트 리스너 추가
-        table.addEventListener('click', (event) => {
-            const target = event.target;
-        
-            // 클릭된 요소가 <td> 태그인지 확인
-            if (target.tagName === 'TD') {
-                // 클릭된 <td> 태그의 부모 요소(<tr>) 가져오기
-                const row = target.parentElement;
-        
-                // 두 번째 <td> 태그(메뉴ID)의 텍스트 내용 가져오기
-                const menuId = row.cells[1].textContent;
-        
-                // 메뉴ID 값을 사용하여 다른 함수 호출
-                handleRowClick(menuId);
-            }
-        });
-        
-        // 행 클릭 시 실행될 함수
-        function handleRowClick(menuId) {
-            const url = `bnk_ter/bnk_ter_010101_modify.html`;
-            const scriptUrl = `../js/bnk_ter/bnk_ter_010101_modify.js`;
-        
-            localStorage.setItem('menuId', menuId);
-        
-            // 모듈 로드 및 실행
-            loadAndExecuteModule(menuId, url, scriptUrl);
-        }
-        
-        
-        jsonDataList = [
-            {"number":1, "menu_id":"bit_trn_000000_1", "menu_name":"이체",                 "user":"admin",     "date":"2025.02.05 14:35:19"},
-            {"number":2, "menu_id":"cmc_bcs_010000_1", "menu_name":"뱅크사인 이용신청",     "user":"admin",     "date":"2025.02.05 14:35:19"},
-            {"number":3, "menu_id":"cmc_bcs_040000_1", "menu_name":"뱅크사인 인증수단관리",  "user":"admin",     "date":"2025.02.05 14:35:19"}         
-        ]
-        
-        function select_list(searchstring) {
-            if (searchstring) {
-                filteredDataList = jsonDataList.filter(item => {
-                    const searchLower = searchstring.toLowerCase();
-                    return item.menu_id.toLowerCase().includes(searchLower) || item.menu_name.toLowerCase().includes(searchLower);
-                });
-            } else {
-                filteredDataList = jsonDataList; // 검색 조건이 없으면 전체 데이터 사용
-            }
-        
-            totalItems = filteredDataList.length;
-            displayData(); // 필터링된 결과를 표시
+        function select_list() {
+         alert("검색");
         }
         
         function file_download()
         {
-            console.log('file_down');
+            alert('file_down');
         }
         
         function file_upload()
         {
-            const dataBody = document.querySelector('.table_list tbody');
-            dataBody.innerHTML = '';
-            console.log('file_upload');
+            alert('file_upload');
         }
         
         function updatepage()
         {
             console.log('updatepage');
         }
+        function regist(){
+            alert("등록페이지 이동");
+        }
+
         </script>    
 </body>
 </html>

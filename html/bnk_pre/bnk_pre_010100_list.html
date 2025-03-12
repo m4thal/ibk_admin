@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_pre/bnk_pre_010100_list.css">    
 </head>
 <body>
     <div class="content_container">
-        <div class="screen_title_container">
-            <div class="screen_depth">
-                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">유의사항 관리</span>
-            </div>
-            <h2 class="screen_title">유의사항 관리</h2>
-        </div>
         <div class="main_contents">
             <div class="main_inner_container">
                 <div class="top_container">
                     <div class="search_bar">
                         <input type="text" id="searchInput" placeholder="유의사항ID, 유의사항명">
-                        <button type="button" onclick="select_list()">검색</button>
+                        <button type="button" class="searchButton" onclick="select_list()">검색</button>
                     </div>
                 </div>
                 <div class="table_container">
@@ -24,9 +17,9 @@
                         <table class="table_list">
                             <thead>
                                 <tr>
-                                    <th>번호</th>
-                                    <th>유의사항ID</th>
-                                    <th>유의사항명</th>
+                                    <th style="width: 10%;">번호</th>
+                                    <th style="width: 30%;">유의사항ID</th>
+                                    <th style="width: 60%;">유의사항명</th>
                                 </tr>
                             </thead>
                             <tbody class="cell_width">
@@ -48,7 +41,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="table_btn_container">
+                    <div class="table_btn_container_regist">
                         <div class="pagination" id="pagination">
                             <button>&lt;&lt;</button>
                             <button>&lt;</button>
