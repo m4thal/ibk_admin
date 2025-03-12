@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_met/bnk_met_010100_modify.css">
+    <!-- <link rel="stylesheet" href="../../css/bnk_met/bnk_met_010100_modify.css"> -->
 </head>
 <boody>
     <div class="content_container">
@@ -33,14 +33,14 @@
                      <tr>
                         <th style="width: 150px;">타입</th>
                             <td>
-                                <div class="type-dropdown">
-                                    <button class="type-dropbtn">선택</button>
-                                    <div class="type-dropdown-content">
-                                        <div class="type-item" data-name="선택">선택</div>
-                                        <div class="type-item" data-name="텍스트">텍스트</div>
-                                        <div class="type-item" data-name="예/아니오">예/아니오</div>
-                                        <div class="type-item" data-name="숫자">숫자</div>
-                                        <div class="type-item" data-name="URL">URL</div>
+                                <div class="dropdown-container">
+                                    <button class="dropdown-button">선택</button>
+                                    <div class="dropdown-items">
+                                        <div class="dropdown-item" data-name="선택">선택</div>
+                                        <div class="dropdown-item" data-name="텍스트">텍스트</div>
+                                        <div class="dropdown-item" data-name="예/아니오">예/아니오</div>
+                                        <div class="dropdown-item" data-name="숫자">숫자</div>
+                                        <div class="dropdown-item" data-name="URL">URL</div>
                                     </div>
                                 </div>
                             </td>
@@ -99,17 +99,17 @@
     <script>
 
         // select박스
-        document.querySelector('.type-dropbtn').addEventListener('click', function() {
-            const typedropdown = document.querySelector('.type-dropdown');
+        document.querySelector('.dropdown-button').addEventListener('click', function() {
+            const typedropdown = document.querySelector('.dropdown-container');
             typedropdown.classList.toggle('active');
         });
 
         // select 아이템 선택
-        document.querySelectorAll('.type-item').forEach(item => {
+        document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', function() {
-                const dropdown = document.querySelector('.type-dropdown');
+                const dropdown = document.querySelector('.dropdown-container');
                 dropdown.classList.remove('active');
-                document.querySelector('.type-dropbtn').textContent = this.textContent;
+                document.querySelector('.dropdown-button').textContent = this.textContent;
             });
         });
 

@@ -7,8 +7,6 @@
     background-color: transparent;
 }
 
-
-
 *::before,
 *::after {
     box-sizing: border-box;
@@ -893,6 +891,61 @@ input[type="checkbox"]:checked{
     align-items: center;
 }
 
+/* 버튼 컨테이너 */
+.modal-buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* 취소 버튼 */
+.modal-cancel-button {
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    border: 1px solid var(--gray-500, #737684);
+    background: var(--gray-0, #FFF);
+
+    color: var(--gray-850, #1F2128);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+/* 확인 버튼 */
+.modal-confirm-button {
+    display: flex;
+    height: 36px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    background: var(--blue-500, #1A71E5);
+
+    color: var(--gray-0, #FFF);
+    text-align: center;
+
+    /* 14_20/regular */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+
 /* 검색 버튼 */
 .modal-search-button{
 
@@ -1060,7 +1113,7 @@ input[type="checkbox"]:checked{
 .text_overflow2{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* 줄 수 설정 */
+    line-clamp: 2; /* 줄 수 설정 */
     overflow: hidden;
     text-overflow: ellipsis;
 
