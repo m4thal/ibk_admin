@@ -52,7 +52,7 @@
 
                     <div class="tree_menu_container">
                         <div class="tree_move_container">
-                            <button class="open_modal">메뉴 이동</button>
+                            <button class="menu_move_btn">메뉴 이동</button>
                             <button>하위메뉴 추가</button>
                         </div>
                         <div class="tree_menu">
@@ -376,20 +376,41 @@
         </div>
     </div>
 
-    <!-- 모달을 여는 버튼 -->
-    <button id="openModal">모달 열기</button>
-
     <!-- 모달 구조 -->
-    <div id="" class="modal">
-        <div class="modal_popup">
-            <span class="close">&times;</span>
-            <div class="modal_title"></div>
-            <div class="modal_contents"></div>
-            <div class="bottom_btn"></div>
+    <div class="modal">
+        <div class="menu_move_modal">
+            <div class="modal_title_container">
+                <div class="modal_title_inner">
+                    <h2>메뉴이동</h2>
+                    <img class="close_btn" src="../../img/close.svg"></img>
+                </div>
+
+            </div>
+            <div class="modal_contents_container">
+                <div class="modal_info_container">
+                    <img src="../../img/info_dot_blue.svg">
+                    <span>이동하실 경로의 메뉴 선택 후 저장 시 이동됩니다.</span>
+                </div>
+                <div class="modal_tree_container">
+                    <div class="modal_tree_menu">
+                    </div>
+                    <div class="move_menu_btn_container">
+                        <button class="modal_menu_down_btn"><img src="../../img/triangle_down.svg"></button>
+                        <button class="modal_menu_up_btn"><img src="../../img/triangle_up.svg"></button>
+                    </div>
+                </div>
+            </div>
+            <button class="modal_save_btn">이동 메뉴 저장</button>
         </div>
     </div>
     
 <script>
+
+    let selectedItem;
+
+    window.onload = function(e) {
+    };
+
     const jsonData = {
         "menu": {
             "name": "i-ONE뱅크(개인)",
@@ -501,150 +522,385 @@
         }
     };
 
-function createTree(data, depth = 1) {
-    const ul = document.createElement("ul");
-    ul.style.paddingLeft = "0px"; // 기본 padding 제거
 
-    data.forEach(item => {
-        let li = document.createElement("li");
-        let tree_list_container = document.createElement("div");
-        let tree_item = document.createElement("div");
-        let tree_item_inner = document.createElement("div");
-        let text = document.createElement("span");
-        let tree_icon = document.createElement("div");
 
-        tree_list_container.classList.add("tree_list_container");
-        tree_item.classList.add("tree_item");
-        tree_item_inner.classList.add("tree_item_inner");
+    let isBeforeSelected = false;
+    let isAfterSelected = false;
+    let selectNodeItemList = [];
 
-        // depth에 따라 들여쓰기
-        item.children ? tree_list_container.style.paddingLeft = `${(item.depth -1 ) * 20}px`:
-        tree_list_container.style.paddingLeft = `${item.depth *20}px`;
+    // 트리메뉴 생성
+    function createTree(data, case_by) {
+        const ul = document.createElement("ul");
+        ul.style.paddingLeft = "0px"; // 기본 padding 제거
 
-        // 자식노드가 있으면 폴더 옆 아래화살표 모양
-        tree_item.innerHTML += item.children ? "<div><img src='../../img/triangle_down.svg'></div>" : "";        
+        data.forEach(item => {
+            let li = document.createElement("li");
+            let tree_list_container = document.createElement("div");
+            let tree_item = document.createElement("div");
+            let tree_item_inner = document.createElement("div");
+            let text = document.createElement("span");
+            let tree_icon = document.createElement("div");
+
+            tree_list_container.classList.add("tree_list_container");
+            tree_item.classList.add("tree_item");
+            tree_item_inner.classList.add("tree_item_inner");
+
+            // depth에 따라 들여쓰기
+            item.children ? tree_list_container.style.paddingLeft = `${(item.depth -1 ) * 20}px`:
+            tree_list_container.style.paddingLeft = `${item.depth *20}px`;
+
+            // 자식노드가 있으면 폴더 옆 아래화살표 모양
+            tree_item.innerHTML += item.children ? "<div class='include_icon'><img src='../../img/triangle_down_gray.svg'></div>" : "";        
+
+            tree_icon.classList.add("tree_icon");
+            if(case_by == 1){
+                tree_icon.innerHTML = "<img src='../../img/tree_folder.svg'>"; // 기본 아이콘 (닫힌상태)
+
+                // 폴더(부모노드)랑 파일(자식노드) 구분
+                item.children ? tree_icon.classList.add("folder") : tree_icon.classList.add("file");
+
+                // 자식노드 파일 아이콘 ox
+                item.children ? "visible" : tree_icon.innerHTML = item.children ? 
+                "" : item.use_state ? "<img src='../../img/tree_file.svg''>" : "<img src='../../img/tree_file_no.svg''>";
+            }
+            else if(case_by == 2){
+                tree_icon.innerHTML = "<img src='../../img/draggable_indicator.svg'>"; // 기본 아이콘 (닫힌상태)
+
+            }
+
+            // 트리메뉴 메뉴텍스트
+            text.textContent = item.name;
+
+            // state_1_icon
+            if(item.state_1){
+                let tree_state_icon_1 = document.createElement("div");
+                tree_state_icon_1.classList.add("tree_state_icon");
+                tree_state_icon_1.innerHTML = "<div class='state_inner_box_1'><img src='../../img/tree_state_1.svg'></div>";
+
+                text.appendChild(tree_state_icon_1);
+            }
+
+            // state_2_icon
+            if(item.state_2){
+                let tree_state_icon_2 = document.createElement("div");
+
+                tree_state_icon_2.classList.add("tree_state_icon");
+                tree_state_icon_2.innerHTML = "<div class='state_inner_box_2'><img src='../../img/tree_state_2.svg'></div>";
+
+                text.appendChild(tree_state_icon_2);
+            }
+            
+            //트리메뉴 클릭 이벤트 추가
+            if(case_by == 1){
+                tree_item.onclick = (e) => {
+                    // 현재 요소가 선택된 상태인지 확인
+                    if (tree_item.classList.contains("selected")) {
+                        tree_item.classList.remove("selected"); // 선택 해제
+                    } else {
+                        tree_item.classList.add("selected")
+                        item.use_state ? "" : tree_item.classList.add("file_no")
+                    }
+                };
+            }else if(case_by == 2){     // 메뉴이동 모달 tree
+                tree_item.onclick = (e) => {
+                    let clickNode;
+
+                    // 클릭한 아이템 초기화
+                    data.forEach(item =>{
+                        if(item.name == e.target.textContent)
+                        clickNode = item;
+                    });
+
+                    console.log("클릭한 아이템 : " + clickNode.name);
+                                        
+
+                    if(clickNode.children){
+                        console.log("depth : " + clickNode.depth + " 인 부모노드");
+
+                    }else{
+                        console.log("depth : " + clickNode.depth + " 인 자식노드");
+                    }
+
+                    // 선택된 아이템이 있는지 체크
+                    let beforSelectedCheck = document.querySelectorAll(".menu_move_modal .tree_item.beforSelected");
+                    let selectedCheck = document.querySelectorAll(".menu_move_modal .tree_item.selected");
+                    
+                    if(clickNode.children){     // 부모노드일때 아이템 처리
+                        selectNodeItemList = [];
+                        let itemList = findSelectNodeList(clickNode);
+                    
+                        console.log("### : " , itemList);
+                        if(beforSelectedCheck){
+                        itemList.forEach(item =>{
+                            item.classList.add("beforeSelected");
+                        })
+                    }
+
+
+             
+                    // if(beforSelectedCheck){
+                    //     removeSelectedAll.forEach(node =>{
+                    //     node.classList.remove("selected");
+                    //     node.classList.remove("beforSelected")
+                    // });                    
+                    // }
+
+                    
+
+                    //     if(beforSelectedCheck){
+                    //         beforSelectedCheck.forEach(node =>{
+                    //             node.classList.remove("selected");
+                    //             node.classList.remove("beforSelected")
+                    //         });                    
+                    //     }   
+
+                    //     if(!beforSelectedCheck){
+                    //         itemList.forEach(item => {
+                    //             item.classList.add("beforSelected");
+                    //         });
+                    //     }else{
+                    //     removeSelectedAll.forEach(node =>{
+                    //         node.classList.remove("selected");
+                    //         node.classList.remove("beforSelected")
+                    //     });                    
+                    //         itemList.forEach(item => {
+                    //             item.classList.add("selected");      
+                    //         });
+                        // }
+
+                    }else{      // 자식노드일때 아이템 선택 처리
+                        let removeAll = document.querySelectorAll(".menu_move_modal .tree_item.selected, .tree_item.beforSelected");
+                        console.log("삭제할껏들 " ,removeAll);
+                        removeAll.forEach(item =>{
+                            item.classList.remove("selected");
+                            item.classList.remove("beforSelected")
+                        });                    
+                        e.target.closest(".tree_item").classList.add("selected");
+                    }
+
+                    selectedItem = tree_item;
+                }
+            }
+
+            tree_item_inner.appendChild(tree_icon);
+            tree_item_inner.appendChild(text);
+            tree_item.appendChild(tree_item_inner);
+            tree_list_container.appendChild(tree_item);
+            li.appendChild(tree_list_container);
+
+            if (item.children) {
+                const childUl = createTree(item.children, case_by);
+                // childUl.style.display = "none"; // 기본적으로 숨김
+                li.appendChild(childUl);
+                
+                tree_icon.onclick = (e) => {
+                    e.stopPropagation(); // 부모 div 클릭 이벤트와 겹치지 않도록 방지
+                    if (childUl.style.display === "none") {
+                        childUl.style.display = "block";
+                    } else {
+                        childUl.style.display = "none";
+                    }
+                };
+            }
+            ul.appendChild(li);
+        }); 
+
+        return ul;
+    }
+    
+
+    // 자식노드 선택처리
+    function findSelectNodeList(root){
         
 
-        tree_icon.innerHTML = "<img src='../../img/tree_folder.svg'>"; // 기본 아이콘 (닫힌상태)
-        tree_icon.classList.add("tree_icon");
+        if(root.children){  // root에 자식노드가 있는지 확인
+            selectNodeItemList.push(findSelectItemList(root.name));
 
-        // 폴더(부모노드)랑 파일(자식노드) 구분
-        item.children ? tree_icon.classList.add("folder") : tree_icon.classList.add("file");
-
-        // 자식노드가 없으면 열린파일인지 닫힌파일인지 기본아이콘 선택
-        item.children ? "visible" : tree_icon.innerHTML = item.children ? 
-        "" : item.use_state ? "<img src='../../img/tree_file.svg''>" : "<img src='../../img/tree_file_no.svg''>";
-
-        // 트리메뉴 메뉴텍스트
-        text.textContent = item.name;
-
-        // state_1_icon
-        if(item.state_1){
-            let tree_state_icon_1 = document.createElement("div");
-            tree_state_icon_1.classList.add("tree_state_icon");
-            tree_state_icon_1.innerHTML = "<div class='state_inner_box_1'><img src='../../img/tree_state_1.svg'></div>";
-
-            text.appendChild(tree_state_icon_1);
-        }
-
-        // state_2_icon
-        if(item.state_2){
-            let tree_state_icon_2 = document.createElement("div");
-
-            tree_state_icon_2.classList.add("tree_state_icon");
-            tree_state_icon_2.innerHTML = "<div class='state_inner_box_2'><img src='../../img/tree_state_2.svg'></div>";
-
-            text.appendChild(tree_state_icon_2);
-        }
-
-        //트리메뉴 클릭 이벤트 추가
-
-                    tree_item.onclick = (e) => {
-                // 현재 요소가 선택된 상태인지 확인
-                if (tree_item.classList.contains("selected")) {
-                    tree_item.classList.remove("selected"); // 선택 해제
-                } else {
-                    tree_item.classList.add("selected")
-                    item.use_state ? "" : tree_item.classList.add("file_no")
+            for(item of root.children){
+                
+                if(item.children){
+                    selectNodeItemList.concat(findSelectNodeList(item));
+                }else{
+                    selectNodeItemList.push(findSelectItemList(item.name));
                 }
-            };
-
-        tree_item_inner.appendChild(tree_icon);
-        tree_item_inner.appendChild(text);
-        tree_item.appendChild(tree_item_inner);
-        tree_list_container.appendChild(tree_item);
-        li.appendChild(tree_list_container);
-
-        if (item.children) {
-            const childUl = createTree(item.children, depth + 1);
-            childUl.style.display = "none"; // 기본적으로 숨김
-            li.appendChild(childUl);
-            
-            tree_icon.onclick = (e) => {
-                e.stopPropagation(); // 부모 div 클릭 이벤트와 겹치지 않도록 방지
-                if (childUl.style.display === "none") {
-                    childUl.style.display = "block";
-                } else {
-                    childUl.style.display = "none";
-                }
-            };
+            }
+        }else{
+            let nodeItem = findSelectItemList(root.name);
+            itemNode.classList.add("selected");
+            return;
         }
-
-        ul.appendChild(li);
-    }); 
-
-    return ul;
-}
-
-document.querySelector(".tree_menu").appendChild(createTree([jsonData.menu]));
-
-
-function table_change_btn1(){
-
-    document.querySelector(".table_change_btn2").classList.remove("active");
-    document.querySelector(".table_change_btn1").classList.add("active");
-    document.querySelector(".menu_data_table").classList.remove("hidden");
-    document.querySelector(".service_data_table").classList.add("hidden");
-}
-
-function table_change_btn2(){
-    document.querySelector(".table_change_btn1").classList.remove("active");
-    document.querySelector(".table_change_btn2").classList.add("active");
-    document.querySelector(".service_data_table").classList.remove("hidden");
-    document.querySelector(".menu_data_table").classList.add("hidden")
-}
-
- // 모달 요소
- var modal = document.getElementById("myModal");
-
-// 모달을 여는 버튼
-var btn = document.querySelector(".open_modal");
-
-// 모달을 닫는 버튼
-var span = document.getElementsByClassName("close")[0];
-
-// 버튼 클릭 시 모달 열기
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// 닫기 버튼 클릭 시 모달 닫기
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// 모달 외부 클릭 시 모달 닫기
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+        
+        return selectNodeItemList;
     }
-}
+
+    // 노드의 element 경로의 tree_item 리턴
+    function findSelectItemList(itemName){
+        let itemList = document.querySelectorAll(".menu_move_modal .tree_item span")
+        let tree_item;
+
+        for(item of itemList){
+            if(item.textContent.includes(itemName)){
+                tree_item = item.closest(".tree_item");
+                
+                return tree_item;
+            }
+        }
+    }
 
 
+    // 메뉴 위로 이동 (형제 노드끼리만 이동)
+    function moveUp() {
+        if (!selectedItem) return;
+
+        let itemName = selectedItem.textContent.trim();     // 선택한 아이템 이름
+        let itemNode = findNode(jsonData.menu, itemName);   // 선택한 아이템 노드
+
+        if(itemNode.children) return alert("변경할 수 없는 목록 입니다.");
+
+        parentNode = findParentNode(jsonData.menu, itemNode);   //선택한 아이템의 직계부모노드
+
+        let siblings = parentNode.children;     //부모노드가 가진 형제노드
+        let index = siblings.indexOf(itemNode); // 선택한 아이템의 부모의 n번째 자식노드
+
+        if(index == 0){
+            alert("위로 더이상 변경 할 수 없습니다.");
+        }
+
+        if (index > 0) {
+            // 형제 노드가 있으면 위치 변경
+            swapNodes(siblings, index, index - 1);
+        }
+
+        refreshTree(itemName);
+    }
+
+    // 메뉴 아래로 이동 (형제 노드끼리만 이동)
+    function moveDown() {
+        if (!selectedItem) return;
+
+        let itemName = selectedItem.textContent.trim();     // 선택한 아이템 이름
+        let itemNode = findNode(jsonData.menu, itemName);   // 선택한 아이템 객체
+        
+        if(itemNode.children) return alert("변경할 수 없는 목록 입니다.");
+
+        parentNode = findParentNode(jsonData.menu, itemNode);   //선택된 아이템의 부모노드
+
+        let siblings = parentNode.children;     //부모노드의 자식노드 (형제노드)
+        let index = siblings.indexOf(itemNode); //부모노드의 n번째 자식노드 인지
+
+        if(index == siblings.length - 1){
+            alert("아래로 더이상 변경 할 수 없습니다.");
+        }
+        if (index < siblings.length - 1) {
+            // 형제 노드가 있으면 위치 변경
+            swapNodes(siblings, index, index + 1);
+        }
+     
+        refreshTree(itemName);
+    }
+
+    // **두 개의 노드 위치 변경 (swap)**
+    function swapNodes(arr, index1, index2) {
+        [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+    }
+
+    // 클릭한 아이템의 노드찾기
+    function findNode(node, name) {
+        if (node.name === name) return node;
+        if (!node.children) return;
+
+        for (child of node.children) {
+            let found = findNode(child, name);
+            if (found) return found;
+        };
+    }
+
+    // **부모노드 찾기**
+
+    function findParentNode(root, targetNode, parent = null) {
+        if (!root.children) return null;
+
+        for (let i = 0; i < root.children.length; i++) {
+            let child = root.children[i];
+
+            if (child.name === targetNode.name) {
+                return parent; // 부모 반환
+            }
+
+            let found = findParentNode(child, targetNode, child);
+            if (found) return found;
+        }
+
+        return null;
+    }
+
+    // 부모노드의 형제노드 혹은 조상노드 찾기
+    function findParentNodeSibling(root, targetNode, parent = null) {
+        for (let i = 0; i < root.children.length; i++) {
+            let child = root.children[i];
+
+            if (child.name === targetNode.name) {
+                return parent; // 부모 반환
+            }
+
+            let found = findSelectedNode(child, targetNode, child);
+            if (found) return found;
+        }
+
+        return null;
+    }
+
+    // **트리 새로고침**
+    function refreshTree(itemName) {
+        document.querySelector(".modal_tree_menu").innerHTML = "";
+        document.querySelector(".modal_tree_menu").appendChild(createTree([jsonData.menu], 2));
+        
+        let refreshNode = findSelectNode(itemName);
+        refreshNode.classList.add("selected");
+    }
+
+    // 초기 트리 생성
+    document.querySelector(".tree_menu").appendChild(createTree([jsonData.menu], 1));
+    document.querySelector(".modal_tree_menu").appendChild(createTree([jsonData.menu], 2));
 
 
+    function table_change_btn1(){
+        document.querySelector(".table_change_btn2").classList.remove("active");
+        document.querySelector(".table_change_btn1").classList.add("active");
+        document.querySelector(".menu_data_table").classList.remove("hidden");
+        document.querySelector(".service_data_table").classList.add("hidden");
+    }
 
+    function table_change_btn2(){
+        document.querySelector(".table_change_btn1").classList.remove("active");
+        document.querySelector(".table_change_btn2").classList.add("active");
+        document.querySelector(".service_data_table").classList.remove("hidden");
+        document.querySelector(".menu_data_table").classList.add("hidden")
+    }
 
+    // 모달 요소
+    let modal = document.querySelector(".modal");
+    // 모달을 여는 버튼
+    let btn = document.querySelector(".menu_move_btn");
+    // 모달을 닫는 버튼
+    var span = document.querySelector(".close_btn");
+
+    // 버튼 클릭 시 모달 열기
+    btn.onclick = function() {
+        modal.classList.add("open");
+
+    }
+    document.querySelector(".modal_menu_down_btn").onclick = function(){
+        moveDown();    
+    }
+    document.querySelector(".modal_menu_up_btn").onclick = function(){
+        moveUp();
+    };
+
+    // 닫기 버튼 클릭 시 모달 닫기
+    span.onclick = function() {
+        modal.classList.remove("open");
+    }
 
 </script>
     
