@@ -541,8 +541,6 @@ input[type="checkbox"]:checked{
     background-image: url(../img/close.svg);
 }
 
-
-
 /* 검색 필터 팝업 */
 .searchmodal-container{
     width: 500px;
@@ -1413,8 +1411,14 @@ input::-webkit-inner-spin-button {
 
 .btn_container{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 8px;
+}
+
+.btn_containers{
+    display: grid;
+    gap: 8px;
+    /* justify-items: center; 가운데정렬 */
 }
 
 .list-button{
@@ -1482,6 +1486,45 @@ input::-webkit-inner-spin-button {
 .textarea-div{
     display: flex;
     height: 172px;
+}
+
+/* 결재자 */
+.approval-list{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.table_list_type2 .approval-td{
+    align-items: flex-start;
+    display: flex;
+    padding: 16px 12px;
+    flex-direction: column;
+    justify-content: center;    
+    gap: 12px;
+    flex: 1 0 0;
+
+    align-items: none;
+
+}
+
+.input-name{
+
+    display: flex;
+    width: 176px;
+    max-width: 560px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px;
+    
+    color: var(--gray-850, #1F2128);
+
+    border: 1px solid var(--gray-100, #E1E3EA); /* 테두리 설정 */
+    border-radius: 4px; /* 모서리 둥글게 */
+
 }
 
 

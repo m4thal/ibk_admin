@@ -34,13 +34,13 @@
                         <th style="width: 150px;">타입</th>
                             <td>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">선택</button>
+                                    <button class="dropdown-button" data-value="01">선택</button>
                                     <div class="dropdown-items">
-                                        <div class="dropdown-item" data-name="선택">선택</div>
-                                        <div class="dropdown-item" data-name="텍스트">텍스트</div>
-                                        <div class="dropdown-item" data-name="예/아니오">예/아니오</div>
-                                        <div class="dropdown-item" data-name="숫자">숫자</div>
-                                        <div class="dropdown-item" data-name="URL">URL</div>
+                                        <div class="dropdown-item" data-value="01">선택</div>
+                                        <div class="dropdown-item" data-value="02">텍스트</div>
+                                        <div class="dropdown-item" data-value="03">예/아니오</div>
+                                        <div class="dropdown-item" data-value="04">숫자</div>
+                                        <div class="dropdown-item" data-value="05">URL</div>
                                     </div>
                                 </div>
                             </td>
@@ -101,16 +101,28 @@
         // select박스
         document.querySelector('.dropdown-button').addEventListener('click', function() {
             const typedropdown = document.querySelector('.dropdown-container');
+            const dorpdownbtn = document.querySelector('.dropdown-button');
             typedropdown.classList.toggle('active');
         });
 
         // select 아이템 선택
         document.querySelectorAll('.dropdown-item').forEach(item => {
+            const dorpbtn = document.querySelector('.dropdown-button');
+
             item.addEventListener('click', function() {
-                const dropdown = document.querySelector('.dropdown-container');
+                const dropdown = document.querySelector('.dropdown-container');                
                 dropdown.classList.remove('active');
-                document.querySelector('.dropdown-button').textContent = this.textContent;
+                dorpbtn.textContent = this.textContent;
+                dorpbtn.setAttribute("data-value", item.getAttribute("data-value"));
+                
+                console.log(dorpbtn.getAttribute("data-value"));
             });
+
+            if(dorpbtn.getAttribute("data-value") == item.getAttribute("data-value"))
+            {
+                dorpbtn.setAttribute("data-value", item.getAttribute("data-value"));
+                dorpbtn.textContent = item.textContent;
+            }
         });
 
         // 버튼 이벤트
