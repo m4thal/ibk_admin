@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_mes/bnk_mes_010100_list.css">    
+    <!-- <link rel="stylesheet" href="../../css/bnk_mes/bnk_mes_010100_list.css">     -->
 </head>
 <body>
     <div class="content_container">
-        <div class="screen_title_container">
-            <div class="screen_depth">
-                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">오류메시지관리</span>
-            </div>
-            <h2 class="screen_title">오류메시지관리</h2>
-        </div>
         <div class="main_contents">
             <div class="main_inner_container">
                 <div class="top_container">
                     <div class="search_bar">
                         <input type="text" id="searchInput" placeholder="에러코드, 대외계에러코드, 에러제목">
-                        <button type="button" onclick="select_list()">검색</button>
+                        <button type="button" class="searchButton" onclick="select_list()">검색</button>
                     </div>
                 </div>
                 <div class="table_container">
@@ -24,10 +18,10 @@
                         <table class="table_list">
                             <thead>
                                 <tr>
-                                    <th>에러코드</th>
-                                    <th>대외계 에러코드</th>
-                                    <th>에러제목</th>
-                                    <th>Locale 코드</th>
+                                    <th style="width: 10%;">에러코드</th>
+                                    <th style="width: 20%;">대외계 에러코드</th>
+                                    <th style="width: 55%;">에러제목</th>
+                                    <th style="width: 15%;">Locale 코드</th>
                                 </tr>
                             </thead>
                             <tbody class="cell_width">
@@ -52,7 +46,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="table_btn_container">
+                    <div class="table_btn_container_regist">
                         <div class="pagination" id="pagination">
                             <button>&lt;&lt;</button>
                             <button>&lt;</button>

@@ -6,12 +6,6 @@
     <title>관리자</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        #menuList {
-            list-style-type: none; /* 기본 리스트 스타일 제거 */
-            padding: 0; /* 패딩 제거 */
-            margin: 0; /* 마진 제거 */
-        }
-
         .dept2-group{
             display: flex;
             width: 180px;
@@ -432,8 +426,8 @@
         /* 팝업 컨테이너 */
         .modal-container {
             display: flex;
-            width: 301px;
-            height: 154px;
+            /* width: 301px; */
+            /* height: 154px; */
             padding: 32px 24px;
             flex-direction: column;
             align-items: center;
@@ -586,7 +580,7 @@
                                 <button type="button" class="header_login_btn">로그아웃</button>
                             </div>
                             <div>
-                                <button id="openModalButton">팝업 열기</button>
+                                <!-- <button id="openModalButton">팝업 열기</button> -->
                             </div>
                         </div>
                     </div>
@@ -602,9 +596,28 @@
                 
                               
                 <div class="content-container" id="content-container">
+                    <div class="modal-background">
+                        <div class="modal-container">
+                            <div class="modal-content">
+                                알렛팝업 가이드입니다. 알렛팝업 가이드입니다. 알렛팝업 가이드입니다.
+                            </div>
+                        <div class="modal-buttons">
+                            <button class="modal-cancel-button">취소</button>
+                            <button class="modal-confirm-button">확인</button>
+                        </div>
+                        </div>
+                        <div class="modal-container">
+                        <div class="modal-content">
+                            알렛팝업 가이드입니다. 알렛팝업 가이드입니다. 알렛팝업 가이드입니다.
+                        </div>
+                        <div class="modal-buttons">
+                            <button class="modal-confirm-button">확인</button>
+                        </div>
+                        </div>
+                    </div>
                     <!-- 첫번째 탭 보여주기 위해 생성 -->
                     <!-- test2-->
-                    <div class="tab-content is_active" data-name="약관관리">
+                    <div class="tab-content is_active" data-name="아이폰">
                         <div class="contents" style="display: flex;">
                             <div class="side_menu">
                                 <div class="side_menu_dep1">
@@ -728,40 +741,8 @@
             setActiveTab(tab);
             checkCloseAllTabsButton();
 
-            loadAndExecuteModule('bnk_ter_010101_write', 'bnk_ter/bnk_ter_010101_write.html', '../js/bnk_ter/bnk_ter_010101_write.js');
-
         }
 
-        // 모듈 로드 및 실행
-        function loadAndExecuteModule(moduleName, url, scriptUrl) {
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('content-container').innerHTML = `
-                    ${html} 
-                    <div class="modal-background">
-                        <div class="modal-container">
-                        <div class="modal-content">
-                            알렛팝업 가이드입니다. 알렛팝업 가이드입니다. 알렛팝업 가이드입니다.
-                        </div>
-                        <div class="modal-buttons">
-                            <button class="modal-cancel-button">취소</button>
-                            <button class="modal-confirm-button">확인</button>
-                        </div>
-                        </div>
-                        <div class="modal-container">
-                        <div class="modal-content">
-                            알렛팝업 가이드입니다. 알렛팝업 가이드입니다. 알렛팝업 가이드입니다.
-                        </div>
-                        <div class="modal-buttons">
-                            <button class="modal-confirm-button">확인</button>
-                        </div>
-                        </div>
-                    </div>
-                    `;
-                })
-                .catch(error => console.error('에러:', error));
-        }
 
         // 탭 활성화
         function setActiveTab(tab) {
@@ -854,6 +835,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             const managementType = Object.keys(dummyData)[0];
             createMenu(managementType);
+            addTab("아이폰");
         });
 
         // 탑 메뉴 클릭 시 왼쪽메뉴 추가
@@ -866,15 +848,6 @@
                 item.classList.add('active');
             });
         });
-
-        // document.getElementById('menuToggle').addEventListener('click', function() {
-        //     const menuList = document.getElementById('menuList');
-        //     if (menuList.style.display === 'none' || menuList.style.display === '') {
-        //         menuList.style.display = 'block'; // 메뉴 보이기
-        //     } else {
-        //         menuList.style.display = 'none'; // 메뉴 숨기기
-        //     }
-        // });
 
         const dummyData = {
             '뱅킹관리(앱)': {
