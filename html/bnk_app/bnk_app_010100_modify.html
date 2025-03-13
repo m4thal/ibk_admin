@@ -44,7 +44,9 @@
 
                     <div class="tree_menu_container">
                         <div class="tree_move_container">
+                          
                             <button class="menu-move-modal-btn">메뉴 이동</button>
+
                             <button>하위메뉴 추가</button>
                         </div>
                         <div class="tree_menu">
@@ -372,6 +374,7 @@
         </div>
     </div>
 
+
     <!-- 모달 구조 -->
     <div class="modal-background" id="modal_1">
         <div class="modal-container">
@@ -390,7 +393,7 @@
                 <div class="modal_tree_container">
 
                     <div id="jstree"></div>
-<!-- 
+
                     <div class="modal_tree_menu"></div>
                     </div> -->
                     <!-- <div class="move_menu_btn_container">
@@ -400,6 +403,7 @@
                 </div>
             </div>
             <button class="modal_save_btn">이동 메뉴 저장</button>
+
         </div>
     </div>
     
@@ -413,6 +417,7 @@
                             "id": "1",
                             "text": "i-ONE뱅크(개인)"
                         },
+
                         {
                             "parent": "1",
                             "menuOrder": "1",
@@ -553,6 +558,7 @@
                             "id": "21",
                             "text": "체크카드신청"
                         }
+
 
                     ];
 
@@ -955,6 +961,9 @@
     //     }
     // }
 
+        // 폴더(부모노드)랑 파일(자식노드) 구분
+        item.children ? tree_icon.classList.add("folder") : tree_icon.classList.add("file");
+
 
     // // 메뉴 위로 이동 (형제 노드끼리만 이동)
     // function moveUp() {
@@ -1085,7 +1094,6 @@
     //     document.querySelector(".service_data_table").classList.remove("hidden");
     //     document.querySelector(".menu_data_table").classList.add("hidden")
     // }
-
     
 </script>
     

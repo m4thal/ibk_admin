@@ -15,43 +15,42 @@
             <div class="table_list_type2_container">
                 <table class="table_list_type2">
                     <tr>
-                        <th style="width: 150px;">에러코드*</th>
+                        <th>에러코드*</th>
                         <td>TC0014</td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">대외계 에러코드</th>
+                        <th>대외계 에러코드</th>
                         <td><input type="text" class="input-style half" value=""></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">에러제목</th>
+                        <th>에러제목</th>
                         <td><input type="text" class="input-style" value="요청한 휴대전화번호는 잘못 입력된 정보입니다."></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">Locale 코드</th>
+                        <th>Locale 코드</th>
                             <td>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">한국어</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item" data-name="선택">선택</div>
-                                        <div class="dropdown-item" data-name="한국어">한국어</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option class="dropdown-item" value="선택">선택</option>
+                                        <option class="dropdown-item" value="한국어">한국어</option>
+                                    </select>
                                 </div>
                             </td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">오류원인</th>
+                        <th>오류원인</th>
                         <td><input type="text" class="input-style" value="요청한 휴대전화번호는 잘못 입력된 정보입니다."></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">도움말경로</th>
+                        <th>도움말경로</th>
                         <td><input type="text" class="input-style" value=""></td>
                     </tr>
                     <tr class="textarea-div">
-                        <th style="width: 150px;">오류메세지</th>
+                        <th>오류메세지</th>
                         <td><textarea type="textarea" class="textarea-style">휴대전화번호가 잘못 입력되었습니다. 확인후 이용해주세요.</textarea></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">최종수정</th>
+                        <th>최종수정</th>
                         <td>X12345 (2025.02.05 14:35:19)</td>
                     </tr>
                 </table>
@@ -88,21 +87,6 @@
         function update(){
             alert("수정");
         }
-
-        // select박스
-        document.querySelector('.dropdown-button').addEventListener('click', function() {
-            const typedropdown = document.querySelector('.dropdown-container');
-            typedropdown.classList.toggle('active');
-        });
-
-        // select 아이템 선택
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const dropdown = document.querySelector('.dropdown-container');
-                dropdown.classList.remove('active');
-                document.querySelector('.dropdown-button').textContent = this.textContent;
-            });
-        });
 
     </script>
 </boody>
