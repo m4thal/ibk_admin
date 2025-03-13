@@ -78,6 +78,14 @@
                             <span class="radio-label"></span>아니오
                         </label></div></td>
                     </tr>
+                    <tr class="textarea-div">
+                        <th>유의사항내용</th>
+                        <td>
+                            <textarea type="textarea" class="textarea-style" name="RMRK_CON" onkeyup="admUtil.maxLenghCheck(this, 2000)">
+                            <%= rowMap.getStrForHtml("RMRK_CON")%>
+                            </textarea>
+                        </td>
+                    </tr>
                     <tr>
                         <th>최종수정</th>
                         <td>Admin (2025.02.05 14:35:19)</td>
