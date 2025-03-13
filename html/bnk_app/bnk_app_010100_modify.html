@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../lib/Sortable.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="../../css/bnk_app/bnk_app_010100_modify.css"> -->
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bnk_app/bnk_app_010100_modify.css">
 </head>
 <body>
-    <div class="tab_container">
-        <div class="screen_title_container">
-            <div class="menu_depth_container">
-                <span>뱅킹관리</span>
-                <img src="../../img/Filled.svg">
-                <span>메뉴관리</span>
-                <img src="../../img/Filled.svg">
-                <span>아이폰</span>
-            </div>
-            <h2>아이폰</h2>
-        </div>
-        <div class="main_container">
-            <div class="inner_container">
+    <div class="content_container">
+        <div class="main_contents_type2">
+            <div>
                 <div class="left_menu_container">
                     <div class="menu_state_container">
                         <div class="menu_title_container">
@@ -52,600 +44,1049 @@
 
                     <div class="tree_menu_container">
                         <div class="tree_move_container">
-                            <button class="open_modal">메뉴 이동</button>
+                            <button class="menu-move-modal-btn">메뉴 이동</button>
                             <button>하위메뉴 추가</button>
                         </div>
                         <div class="tree_menu">
                         </div>
                     </div>
                 </div>
-                <div class="right_contents_container">
-                    <table class="data_table_1">
+            </div>
+            <div class="right_contents_container">
+                <table class="table_list_type2">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px" class="table_header_col">상위항목</th>
+                            <td class="table_data_col">바이오인증</td>
+                        </tr>
+                        <tr>
+                            <th style="min-width: 180px" class="table_header_col">메뉴 사용여부</th>
+                            <td class="table_data_col menu_use_radio">
+                                <div class="radio-group">
+                                    <label class="radio-container">
+                                        <input type="radio" name="reservation" value="yes" id="yes">
+                                        <div class="radio-label"></div>사용
+                                    </label>
+                                    <label class="radio-container">
+                                    <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
+                                        <div class="radio-label"></div>미사용
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="min-width: 180px" class="table_header_col">메뉴ID</th>
+                            <td class="table_data_col">AIB_GATE1</td>
+                        </tr>
+                        <tr>
+                            <th style="min-width: 180px" class="table_header_col">메뉴명</th>
+                            <td class="table_data_col">
+                                <input class="table_input_col" type="text" value="i-ONE뱅크(개인)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="min-width: 180px" class="table_header_col">메뉴종류</th>
+                            <td class="table_data_col">앱</td>
+                        </tr>
+                        <tr>
+                            <th style="min-width: 180px" class="table_header_col">최종수정</th>
+                            <td class="table_data_col">admin (2019-04-15 22:30:04)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table_list_type3_container">
+                    <div class="data_table_2_btn_container">
+                        <button class="table_change_btn1 active" onclick="table_change_btn1()">메뉴 속성 설정</button>
+                        <button class="table_change_btn2" onclick="table_change_btn2()" class="active">서비스 시간설정</button>
+                    </div>
+                    <table class="table_list">
+                        <thead>
+                            <tr>
+                                <th>속성명</th>
+                                <th>속성ID</th>
+                                <th>설정</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td class="table_header_col">상위항목</td>
-                                <td class="table_data_col">바이오인증</td>
+                                <td>메뉴구분
+                                    |
+                                    <span style="color: blue;">  필수</span>
+                                </td>
+                                <td>c_view_tpye</td>
+                                <td>
+                                    <input class="input-space" type="text" value="2" placeholder="숫자">
+                                </td>
                             </tr>
                             <tr>
-                                <td class="table_header_col">메뉴 사용여부</td>
-                                <td class="table_data_col menu_use_radio">
+                                <td>큰글씨 전환버튼 표기여부</td>
+                                <td>c_big_menu_yn</td>
+                                <td class="menu_use_radio">
                                     <div class="radio-group">
                                         <label class="radio-container">
                                             <input type="radio" name="reservation" value="yes" id="yes">
-                                            <div class="radio-label"></div>사용
+                                            <div class="radio-label"></div>예
                                         </label>
                                         <label class="radio-container">
                                         <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
-                                            <div class="radio-label"></div>미사용
+                                            <div class="radio-label"></div>아니오
                                         </label>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="table_header_col">메뉴ID</td>
-                                <td class="table_data_col">AIB_GATE1</td>
-                            </tr>
-                            <tr>
-                                <td class="table_header_col">메뉴명</td>
-                                <td class="table_data_col">
-                                    <input class="table_input_col" type="text" value="i-ONE뱅크(개인)">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table_header_col">메뉴종류</td>
-                                <td class="table_data_col">앱</td>
-                            </tr>
-                            <tr>
-                                <td class="table_header_col">최종수정</td>
-                                <td class="table_data_col">admin (2019-04-15 22:30:04)</td>
-                            </tr>
+
                         </tbody>
                     </table>
-
-                    <div class="data_table_2_container">
-                        <div class="data_table_2_btn_container">
-                            <button class="table_change_btn1 active" onclick="table_change_btn1()">메뉴 속성 설정</button>
-                            <button class="table_change_btn2" onclick="table_change_btn2()" class="active">서비스 시간설정</button>
-                        </div>
-                        <table class="menu_data_table">
-                            <thead>
-                                <tr>
-                                    <td>속성명</td>
-                                    <td>속성ID</td>
-                                    <td>설정</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>메뉴구분
-                                        |
-                                        <span style="color: blue;">  필수</span></td>
-                                    <td>c_view_tpye</td>
-                                    <td>
-                                        <input class="table_input_col" type="text" value="2" placeholder="숫자">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>큰글씨 전환버튼 표기여부</td>
-                                    <td>c_big_menu_yn</td>
-                                    <td class="menu_use_radio">
-                                        <div class="radio-group">
-                                            <label class="radio-container">
-                                                <input type="radio" name="reservation" value="yes" id="yes">
-                                                <div class="radio-label"></div>예
-                                            </label>
-                                            <label class="radio-container">
-                                            <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
-                                                <div class="radio-label"></div>아니오
-                                            </label>
+                    <table class="table_list_type2">
+                        <tbody>
+                            <tr>
+                                <th class="table_header_col">사용여부*</th>
+                                <td class="table_data_col menu_use_radio">
+                                <div class="radio-group">
+                                    <label class="radio-container">
+                                        <input type="radio" name="reservation" value="yes" id="yes">
+                                        <div class="radio-label"></div>사용
+                                    </label>
+                                    <label class="radio-container">
+                                    <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
+                                        <div class="radio-label"></div>미사용
+                                    </label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="table_header_col">거래제어 시간*</th>
+                                <td class="table_data_col">
+                                    <div class="multi_row_container">영업일
+                                        <div class="input_container">
+                                            <input class="input-space" type="text" placeholder="HHmm">~<input class="input-space" type="text" placeholder="HHmm">
                                         </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                        <table class="service_data_table hidden">
-                            <tbody>
-                                <tr>
-                                    <td class="table_header_col">사용여부*</td>
-                                    <td class="table_data_col menu_use_radio">
-                                    <div class="radio-group">
-                                        <label class="radio-container">
-                                            <input type="radio" name="reservation" value="yes" id="yes">
-                                            <div class="radio-label"></div>사용
-                                        </label>
-                                        <label class="radio-container">
-                                        <input type="radio" class="radio-space" name="reservation" value="no" id="no" checked>
-                                            <div class="radio-label"></div>미사용
-                                        </label>
                                     </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="table_header_col">거래제어 시간*</td>
-                                    <td class="table_data_col">
-                                        <div class="multi_row_container">영업일
-                                            <div class="input_container">
-                                                <input type="text" placeholder="HHmm">~<input type="text" placeholder="HHmm">
-                                            </div>
+                                    <div class="multi_row_container">토요일
+                                        <div class="input_container">
+                                            <input class="input-space" type="text" placeholder="HHmm">~<input class="input-space" type="text" placeholder="HHmm">
                                         </div>
-                                        <div class="multi_row_container">토요일
-                                            <div class="input_container"><input type="text" placeholder="HHmm">~<input type="text" placeholder="HHmm">
-                                            </div>
+                                    </div>
+                                    <div class="multi_row_container">공휴일
+                                        <div class="input_container">
+                                            <input class="input-space" type="text" placeholder="HHmm">~<input class="input-space" type="text" placeholder="HHmm">
                                         </div>
-                                        <div class="multi_row_container">공휴일
-                                            <div class="input_container"><input type="text" placeholder="HHmm">~<input type="text" placeholder="HHmm">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                           
-                            </tbody>
-                        </table>
-                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
 
-                    <div class="right_contents_bottom_container">
-                        <div class="right_contents_btn_container">
-                            <button class="delete_btn">삭제</button>
-                            <button class="regist_btn">저장</button>
-                        </div>
-        
-                        <div class="info_container">
-                            <div class="info_inner">
-                                <ul>
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [메뉴뷰 구분]
-                                        </span>
-                                        <span class="info_text">
-                                            1 : 네이티브, 2 : 하이브리드, 3: 외부링크 연동
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [서비스여부]
-                                        </span>
-                                        <span class="info_text">
-                                            false : 서비스 불가 true : 서비스 가능
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [서비스 불가 이유]
-                                        </span>
-                                        <span class="info_text">
-                                            * 해당메뉴 서비스 불사 사유 출력 default reason 사용시 제외 가능("서비스 준비 중입니다.")
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [서비스 불가 대응방법]
-                                        </span>
-                                        <span class="info_text">
-                                            * 해당 값이 있는 경우 c_reason 에 해당 메시지 더해서 보여 줌
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [메뉴숨김여부]
-                                        </span>
-                                        <span class="info_text">
-                                            false : 보임 true : 숨김
-                                        </span>
-                                    </li>
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [수행가능버전]
-                                        </span>
-                                        <span class="info_text">
-                                            현재 기능에서 수행이 가능한 버전
-                                        </span>
-                                    </li>
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [필요 로그인 레벨]
-                                        </span>
-                                        <span class="info_text">
-                                            1 : 로그인, 2 : 로그인/비로그인, 3 : 비로그인 / 로그아웃 후 이동
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [서브타이틀명]
-                                        </span>
-                                        <span class="info_text">
-                                            * 현재 값이 있는경우 사용하고 없는경우 c_menu_title 를 보여줌 (c_menu_title 값 안맞는거 변경 필요)
-                                        </span>
-                                    </li>
-        
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [메뉴 URL]
-                                        </span>
-                                        <span class="info_text">
-                                            메뉴뷰가 image web인 경우 호출할 URL : *개인뱅킹의 경우 Native menu에서 각 메뉴 이동시 사용 현<br>
-                                            기업뱅킹과 같이 gateway.jsp 하나의 통로를 사용 할 경우 삭제 가능
-                                        </span>
-                                    </li>
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [맞춤메뉴대상여부]
-                                        </span>
-                                        <span class="info_text">
-                                            맞춤메뉴 대상여부
-                                        </span>
-                                    </li>
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [통합검색에서 해당메뉴검색가능여부등록]
-                                        </span>
-                                        <span class="info_text">
-                                            합검색에서 해당메뉴검색가능여부등록 트리에서보일경우 여, 숨김메뉴는 부
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [메뉴배치코드]
-                                        </span>
-                                        <span class="info_text">
-                                            전체메뉴트리를 보여질때 메뉴명 옆에 메뉴배지코드에 해당하는 배지표기 0,공백:표기없음, 1:NEW배지,<br>
-                                             2:UPDATE배지, 3: EVENT배지
-                                        </span>
-                                    </li>
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [큰글씨 전환버튼 표기여부]
-                                        </span>
-                                        <span class="info_text">
-                                            해당메뉴에 상단bar에 큰글씨 화면의 전환버튼(큰글씨설정값에 따라) 추가 true: 큰글씨화면<br>
-                                            전환버튼표기 / 공백 or false : 큰글씨화면 전환버튼 표기 안함 
-                                        </span>
-                                    </li>
-                                    
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [큰글씨 메뉴아이디]
-                                        </span>
-                                        <span class="info_text">
-                                            해당메뉴에 상응하는 큰글씨 메뉴아이디 (큰글씨인경우 일반메뉴 아이디)
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [큰글씨 메뉴url]
-                                        </span>
-                                        <span class="info_text">
-                                            해당메뉴에 상응하는 큰글씨 메뉴URL (큰글씨인경우 일반메뉴 URL)
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [쉬운뱅킹 메뉴아이콘 URL]
-                                        </span>
-                                        <span class="info_text">
-                                            뱅크사인 스토어 url
-                                        </span>
-                                    </li>
-        
-                                    <li>
-                                        <img src="../../img/dot.svg">
-                                        <span class="info_title">
-                                            [간편회원 접근불가능 여부]
-                                        </span>
-                                        <span class="info_text">
-                                            간편회원 접근불가능한 메뉴 여부 : true -> 접근불가능(제어) / false -> 접근가능(미 제어)-디폴트
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
+                <div class="right_contents_bottom_container">
+                    <div class="right_contents_btn_container">
+                        <button class="delete_btn">삭제</button>
+                        <button class="regist_btn">저장</button>
+                    </div>
+    
+                    <div class="info_container">
+                        <div class="info_inner">
+                            <ul>
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [메뉴뷰 구분]
+                                    </span>
+                                    <span class="info_text">
+                                        1 : 네이티브, 2 : 하이브리드, 3: 외부링크 연동
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [서비스여부]
+                                    </span>
+                                    <span class="info_text">
+                                        false : 서비스 불가 true : 서비스 가능
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [서비스 불가 이유]
+                                    </span>
+                                    <span class="info_text">
+                                        * 해당메뉴 서비스 불사 사유 출력 default reason 사용시 제외 가능("서비스 준비 중입니다.")
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [서비스 불가 대응방법]
+                                    </span>
+                                    <span class="info_text">
+                                        * 해당 값이 있는 경우 c_reason 에 해당 메시지 더해서 보여 줌
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [메뉴숨김여부]
+                                    </span>
+                                    <span class="info_text">
+                                        false : 보임 true : 숨김
+                                    </span>
+                                </li>
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [수행가능버전]
+                                    </span>
+                                    <span class="info_text">
+                                        현재 기능에서 수행이 가능한 버전
+                                    </span>
+                                </li>
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [필요 로그인 레벨]
+                                    </span>
+                                    <span class="info_text">
+                                        1 : 로그인, 2 : 로그인/비로그인, 3 : 비로그인 / 로그아웃 후 이동
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [서브타이틀명]
+                                    </span>
+                                    <span class="info_text">
+                                        * 현재 값이 있는경우 사용하고 없는경우 c_menu_title 를 보여줌 (c_menu_title 값 안맞는거 변경 필요)
+                                    </span>
+                                </li>
+    
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [메뉴 URL]
+                                    </span>
+                                    <span class="info_text">
+                                        메뉴뷰가 image web인 경우 호출할 URL : *개인뱅킹의 경우 Native menu에서 각 메뉴 이동시 사용 현<br>
+                                        기업뱅킹과 같이 gateway.jsp 하나의 통로를 사용 할 경우 삭제 가능
+                                    </span>
+                                </li>
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [맞춤메뉴대상여부]
+                                    </span>
+                                    <span class="info_text">
+                                        맞춤메뉴 대상여부
+                                    </span>
+                                </li>
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [통합검색에서 해당메뉴검색가능여부등록]
+                                    </span>
+                                    <span class="info_text">
+                                        합검색에서 해당메뉴검색가능여부등록 트리에서보일경우 여, 숨김메뉴는 부
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [메뉴배치코드]
+                                    </span>
+                                    <span class="info_text">
+                                        전체메뉴트리를 보여질때 메뉴명 옆에 메뉴배지코드에 해당하는 배지표기 0,공백:표기없음, 1:NEW배지,<br>
+                                            2:UPDATE배지, 3: EVENT배지
+                                    </span>
+                                </li>
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [큰글씨 전환버튼 표기여부]
+                                    </span>
+                                    <span class="info_text">
+                                        해당메뉴에 상단bar에 큰글씨 화면의 전환버튼(큰글씨설정값에 따라) 추가 true: 큰글씨화면<br>
+                                        전환버튼표기 / 공백 or false : 큰글씨화면 전환버튼 표기 안함 
+                                    </span>
+                                </li>
+                                
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [큰글씨 메뉴아이디]
+                                    </span>
+                                    <span class="info_text">
+                                        해당메뉴에 상응하는 큰글씨 메뉴아이디 (큰글씨인경우 일반메뉴 아이디)
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [큰글씨 메뉴url]
+                                    </span>
+                                    <span class="info_text">
+                                        해당메뉴에 상응하는 큰글씨 메뉴URL (큰글씨인경우 일반메뉴 URL)
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [쉬운뱅킹 메뉴아이콘 URL]
+                                    </span>
+                                    <span class="info_text">
+                                        뱅크사인 스토어 url
+                                    </span>
+                                </li>
+    
+                                <li>
+                                    <img src="../../img/dot.svg">
+                                    <span class="info_title">
+                                        [간편회원 접근불가능 여부]
+                                    </span>
+                                    <span class="info_text">
+                                        간편회원 접근불가능한 메뉴 여부 : true -> 접근불가능(제어) / false -> 접근가능(미 제어)-디폴트
+                                    </span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
+
         </div>
     </div>
 
-    <!-- 모달을 여는 버튼 -->
-    <button id="openModal">모달 열기</button>
-
     <!-- 모달 구조 -->
-    <div id="" class="modal">
-        <div class="modal_popup">
-            <span class="close">&times;</span>
-            <div class="modal_title"></div>
-            <div class="modal_contents"></div>
-            <div class="bottom_btn"></div>
+    <div class="modal-background" id="modal_1">
+        <div class="modal-container">
+            <div class="modal-top">
+                <h2 class="modal-title-text">메뉴이동</h2>
+                <img id="close-modal-popup_1" class="close-modal-popup" src="../../img/Filled.png">
+            </div>
+
+            <div class="modal-content-container">
+                <div class="modal-content-sub-container">
+                    <div class="modal-content">
+                        <div class="modal-comment">
+                            이동하실 경로의 메뉴 선택 후 저장 시 이동됩니다.
+                        </div>
+                    </div>
+                <div class="modal_tree_container">
+
+                    <div id="jstree"></div>
+<!-- 
+                    <div class="modal_tree_menu"></div>
+                    </div> -->
+                    <!-- <div class="move_menu_btn_container">
+                        <button class=""><img src="../../img/triangle_down.svg"></button>
+                        <button class=""><img src="../../img/triangle_up.svg"></button> -->
+                    </div>
+                </div>
+            </div>
+            <button class="modal_save_btn">이동 메뉴 저장</button>
         </div>
     </div>
     
 <script>
-    const jsonData = {
-        "menu": {
-            "name": "i-ONE뱅크(개인)",
-            "depth": 1,
-            "use_state" : true,
-            "state_1" : false,
-            "state_2" : false,
-            "children": [
-                {
-                    "name": "메인",
-                    "depth": 2,
-                    "use_state" : true,
-                    "state_1" : true,
-                    "state_2" : false,
-                    "children": [
-                        {
-                            "name": "개인형IRP링크",
-                            "depth": 3,
-                            "use_state" : true,
-                            "state_1" : true,
-                            "state_2" : false
-                        },
-                        {   
-                            "name": "카드혜택",
-                            "depth": 3,
-                            "use_state" : true,
-                            "state_1" : true,
-                            "state_2" : false
-                        }
-                    ]
-                },
-                {
-                    "name": "로그인",
-                    "depth": 2,
-                    "use_state" : true,
-                    "state_1" : true,
-                    "state_2" : false,
-                    "children": [
-                        {
-                            "name": "바이오인증",
-                            "depth": 3,
-                            "use_state" : true,
-                            "state_1" : true,
-                            "state_2" : false,
-                            "children": [
-                                {
-                                    "name": "얼굴로그인",
-                                    "depth": 4,
-                                    "use_state" : true,
-                                    "state_1" : true,
-                                    "state_2" : true
-                                },
-                                {
-                                    "name": "홍채로그인",
-                                    "depth": 4,
-                                    "use_state" : true,
-                                    "state_1" : true,
-                                    "state_2" : true
-                                }
-                            ]
+    let selectedItem;
+
+    let jsonData = [{
+        "parent": "#",
+                            "menuOrder": "2",
+                            "menuDepth": "2",
+                            "id": "1",
+                            "text": "i-ONE뱅크(개인)"
                         },
                         {
-                            "name": "기타 로그인 수단",
-                            "depth": 3,
-                            "use_state" : true,
-                            "state_1" : true,
-                            "state_2" : false,
-                            "children": [
-                                {
-                                    "name": "ONE아이디",
-                                    "depth": 4,
-                                    "use_state" : false,
-                                    "state_1" : true,
-                                    "state_2" : false
-                                },
-                                {
-                                    "name": "공인인증서",
-                                    "depth": 4,
-                                    "use_state" : false,
-                                    "state_1" : true,
-                                    "state_2" : false
-                                },
-                                {
-                                    "name": "뱅크사인",
-                                    "depth": 4,
-                                    "use_state" : true,
-                                    "state_1" : true,
-                                    "state_2" : false
-                                },
-                                {
-                                    "name": "금융인증서",
-                                    "depth": 4,
-                                    "use_state" : true,
-                                    "state_1" : true,
-                                    "state_2" : true
-                                },
-                                {
-                                    "name": "뱅크아이디",
-                                    "depth": 4,
-                                    "use_state" : false,
-                                    "state_1" : true,
-                                    "state_2" : true
-                                }
-                            ]
+                            "parent": "1",
+                            "menuOrder": "1",
+                            "menuDepth": "2",
+                            "id": "2",
+                            "text": "메인"
+                        },
+                        {
+                            "parent": "2",
+                            "menuOrder": "2",
+                            "menuDepth": "2",
+                            "id": "3",
+                            "text": "개인형IRP링크"
+                        },
+                        {
+                            "parent": "2",
+                            "menuOrder": "3",
+                            "menuDepth": "2",
+                            "id": "4",
+                            "text": "카드혜택"
+                        },
+                        {
+                            "parent": "1",
+                            "menuOrder": "4",
+                            "menuDepth": "2",
+                            "id": "5",
+                            "text": "로그인"
+                        },
+                        {
+                            "parent": "5",
+                            "menuOrder": "1",
+                            "menuDepth": "3",
+                            "id": "6",
+                            "text": "바이오인증"
+                        },
+                        {
+                            "parent": "6",
+                            "menuOrder": "2",
+                            "menuDepth": "3",
+                            "id": "7",
+                            "text": "얼굴로그인"
+                        },
+                        {
+                            "parent": "6",
+                            "menuOrder": "5",
+                            "menuDepth": "2",
+                            "id": "8",
+                            "text": "홍채로그인"
+                        },
+                        {
+                            "parent": "5",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "9",
+                            "text": "기타 로그인 수단"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "10",
+                            "text": "ONE아이디"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "11",
+                            "text": "공인인증서"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "12",
+                            "text": "뱅크사인"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "13",
+                            "text": "금융인증서"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "14",
+                            "text": "뱅크아이디"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "15",
+                            "text": "모바일인증(패턴)"
+                        },
+                        {
+                            "parent": "9",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "16",
+                            "text": "첫계좌"
+                        },
+                        {
+                            "parent": "16",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "17",
+                            "text": "첫계좌만들기"
+                        },
+                        {
+                            "parent": "16",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "18",
+                            "text": "콤보/개인정보입력"
+                        },
+                        {
+                            "parent": "16",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "19",
+                            "text": "스마트뱅킹"
+                        },
+                        {
+                            "parent": "16",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "20",
+                            "text": "모바일인증서발급"
+                        },
+                        {
+                            "parent": "16",
+                            "menuOrder": "6",
+                            "menuDepth": "2",
+                            "id": "21",
+                            "text": "체크카드신청"
                         }
-                    ]
+
+                    ];
+
+        $(function () {
+            $('#jstree').jstree({
+                'core' : {
+                "animation" : 0,
+                "check_callback": true,
+                'data' : jsonData,
+                "dnd": {
+                    "is_draggable": function (nodes){
+                        return !nodes.some(node => node.menuDepth ==="2");
+                    }
                 }
-            ]
-        }
-    };
+                },
+                "plugins": ["types", "dnd"],
+                "types" : {
+                    "default" : {
+                    "icon" : "fa fa-folder text-primary"
+                    },
+                    "file" : {
+                        "icon" : ".jstree-themeicon-custom.ico-file"
+                    }
+                },
+            });
+            $('#jstree').jstree("open_all");
+        });
 
-function createTree(data, depth = 1) {
-    const ul = document.createElement("ul");
-    ul.style.paddingLeft = "0px"; // 기본 padding 제거
 
-    data.forEach(item => {
-        let li = document.createElement("li");
-        let tree_list_container = document.createElement("div");
-        let tree_item = document.createElement("div");
-        let tree_item_inner = document.createElement("div");
-        let text = document.createElement("span");
-        let tree_icon = document.createElement("div");
+        $("#jstree").on('loaded.jstree', function(){
+         $(this).jstree("open_all");
+    });
 
-        tree_list_container.classList.add("tree_list_container");
-        tree_item.classList.add("tree_item");
-        tree_item_inner.classList.add("tree_item_inner");
 
-        // depth에 따라 들여쓰기
-        item.children ? tree_list_container.style.paddingLeft = `${(item.depth -1 ) * 20}px`:
-        tree_list_container.style.paddingLeft = `${item.depth *20}px`;
 
-        // 자식노드가 있으면 폴더 옆 아래화살표 모양
-        tree_item.innerHTML += item.children ? "<div><img src='../../img/triangle_down.svg'></div>" : "";        
+    // 모달 요소
+    let modal = document.querySelector(".modal-background");
+    
+    // // 모달을 여는 버튼
+    let btn = document.querySelector(".menu-move-modal-btn");
+    
+    // // 모달을 닫는 버튼
+    var span = document.querySelector(".close_btn");
+
+    // // 버튼 클릭 시 모달 열기
+    btn.onclick = function() {
+        modal.style.display = 'flex';
+
+    }
+    // document.querySelector(".modal_menu_down_btn").onclick = function(){
+    //     moveDown();    
+    // }
+    // document.querySelector(".modal_menu_up_btn").onclick = function(){
+    //     moveUp();
+    // };
+
+    // // 닫기 버튼 클릭 시 모달 닫기
+    // span.onclick = function() {
+    //     modal.style.display = 'none';
+    // }
+
+
+
+    // window.onload = function(e) {
+    // };
+
+    // const jsonData = {
+    //     "menu": {
+    //         "name": "i-ONE뱅크(개인)",
+    //         "depth": 1,
+    //         "use_state" : true,
+    //         "state_1" : false,
+    //         "state_2" : false,
+    //         "children": [
+    //             {
+    //                 "name": "메인",
+    //                 "depth": 2,
+    //                 "use_state" : true,
+    //                 "state_1" : true,
+    //                 "state_2" : false,
+    //                 "children": [
+    //                     {
+    //                         "name": "개인형IRP링크",
+    //                         "depth": 3,
+    //                         "use_state" : true,
+    //                         "state_1" : true,
+    //                         "state_2" : false
+    //                     },
+    //                     {   
+    //                         "name": "카드혜택",
+    //                         "depth": 3,
+    //                         "use_state" : true,
+    //                         "state_1" : true,
+    //                         "state_2" : false
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "name": "로그인",
+    //                 "depth": 2,
+    //                 "use_state" : true,
+    //                 "state_1" : true,
+    //                 "state_2" : false,
+    //                 "children": [
+    //                     {
+    //                         "name": "바이오인증",
+    //                         "depth": 3,
+    //                         "use_state" : true,
+    //                         "state_1" : true,
+    //                         "state_2" : false,
+    //                         "children": [
+    //                             {
+    //                                 "name": "얼굴로그인",
+    //                                 "depth": 4,
+    //                                 "use_state" : true,
+    //                                 "state_1" : true,
+    //                                 "state_2" : true
+    //                             },
+    //                             {
+    //                                 "name": "홍채로그인",
+    //                                 "depth": 4,
+    //                                 "use_state" : true,
+    //                                 "state_1" : true,
+    //                                 "state_2" : true
+    //                             }
+    //                         ]
+    //                     },
+    //                     {
+    //                         "name": "기타 로그인 수단",
+    //                         "depth": 3,
+    //                         "use_state" : true,
+    //                         "state_1" : true,
+    //                         "state_2" : false,
+    //                         "children": [
+    //                             {
+    //                                 "name": "ONE아이디",
+    //                                 "depth": 4,
+    //                                 "use_state" : false,
+    //                                 "state_1" : true,
+    //                                 "state_2" : false
+    //                             },
+    //                             {
+    //                                 "name": "공인인증서",
+    //                                 "depth": 4,
+    //                                 "use_state" : false,
+    //                                 "state_1" : true,
+    //                                 "state_2" : false
+    //                             },
+    //                             {
+    //                                 "name": "뱅크사인",
+    //                                 "depth": 4,
+    //                                 "use_state" : true,
+    //                                 "state_1" : true,
+    //                                 "state_2" : false
+    //                             },
+    //                             {
+    //                                 "name": "금융인증서",
+    //                                 "depth": 4,
+    //                                 "use_state" : true,
+    //                                 "state_1" : true,
+    //                                 "state_2" : true
+    //                             },
+    //                             {
+    //                                 "name": "뱅크아이디",
+    //                                 "depth": 4,
+    //                                 "use_state" : false,
+    //                                 "state_1" : true,
+    //                                 "state_2" : true
+    //                             }
+    //                         ]
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+    //     }
+    // };
+
+
+
+    // let isBeforeSelected = false;
+    // let isAfterSelected = false;
+    // let selectNodeItemList = [];
+
+    // // 트리메뉴 생성
+    // function createTree(data, case_by) {
+    //     const ul = document.createElement("ul");
+    //     ul.style.paddingLeft = "0px"; // 기본 padding 제거
+
+    //     data.forEach(item => {
+    //         let li = document.createElement("li");
+    //         let tree_list_container = document.createElement("div");
+    //         let tree_item = document.createElement("div");
+    //         let tree_item_inner = document.createElement("div");
+    //         let text = document.createElement("span");
+    //         let tree_icon = document.createElement("div");
+
+    //         tree_list_container.classList.add("tree_list_container");
+    //         tree_item.classList.add("tree_item");
+    //         tree_item_inner.classList.add("tree_item_inner");
+
+    //         // depth에 따라 들여쓰기
+    //         item.children ? tree_list_container.style.paddingLeft = `${(item.depth -1 ) * 20}px`:
+    //         tree_list_container.style.paddingLeft = `${item.depth *20}px`;
+
+    //         // 자식노드가 있으면 폴더 옆 아래화살표 모양
+    //         tree_item.innerHTML += item.children ? "<div class='include_icon'><img src='../../img/triangle_down_gray.svg'></div>" : "";        
+
+    //         tree_icon.classList.add("tree_icon");
+    //         if(case_by == 1){
+    //             tree_icon.innerHTML = "<img src='../../img/tree_folder.svg'>"; // 기본 아이콘 (닫힌상태)
+
+    //             // 폴더(부모노드)랑 파일(자식노드) 구분
+    //             item.children ? tree_icon.classList.add("folder") : tree_icon.classList.add("file");
+
+    //             // 자식노드 파일 아이콘 ox
+    //             item.children ? "visible" : tree_icon.innerHTML = item.children ? 
+    //             "" : item.use_state ? "<img src='../../img/tree_file.svg''>" : "<img src='../../img/tree_file_no.svg''>";
+    //         }
+    //         else if(case_by == 2){
+    //             tree_icon.innerHTML = "<img src='../../img/draggable_indicator.svg'>"; // 기본 아이콘 (닫힌상태)
+
+    //         }
+
+    //         // 트리메뉴 메뉴텍스트
+    //         text.textContent = item.name;
+
+    //         // state_1_icon
+    //         if(item.state_1){
+    //             let tree_state_icon_1 = document.createElement("div");
+    //             tree_state_icon_1.classList.add("tree_state_icon");
+    //             tree_state_icon_1.innerHTML = "<div class='state_inner_box_1'><img src='../../img/tree_state_1.svg'></div>";
+
+    //             text.appendChild(tree_state_icon_1);
+    //         }
+
+    //         // state_2_icon
+    //         if(item.state_2){
+    //             let tree_state_icon_2 = document.createElement("div");
+
+    //             tree_state_icon_2.classList.add("tree_state_icon");
+    //             tree_state_icon_2.innerHTML = "<div class='state_inner_box_2'><img src='../../img/tree_state_2.svg'></div>";
+
+    //             text.appendChild(tree_state_icon_2);
+    //         }
+            
+    //         //트리메뉴 클릭 이벤트 추가
+    //         if(case_by == 1){
+    //             tree_item.onclick = (e) => {
+    //                 // 현재 요소가 선택된 상태인지 확인
+    //                 if (tree_item.classList.contains("selected")) {
+    //                     tree_item.classList.remove("selected"); // 선택 해제
+    //                 } else {
+    //                     tree_item.classList.add("selected")
+    //                     item.use_state ? "" : tree_item.classList.add("file_no")
+    //                 }
+    //             };
+    //         }else if(case_by == 2){     // 메뉴이동 모달 tree
+    //             tree_item.onclick = (e) => {
+    //                 let clickNode;
+
+    //                 // 클릭한 아이템 초기화
+    //                 data.forEach(item =>{
+    //                     if(item.name == e.target.textContent)
+    //                     clickNode = item;
+    //                 });
+
+    //                 console.log("클릭한 아이템 : " + clickNode.name);
+                                        
+
+    //                 if(clickNode.children){
+    //                     console.log("depth : " + clickNode.depth + " 인 부모노드");
+
+    //                 }else{
+    //                     console.log("depth : " + clickNode.depth + " 인 자식노드");
+    //                 }
+
+    //                 // 선택된 아이템이 있는지 체크
+    //                 let beforSelectedCheck = document.querySelectorAll(".menu_move_modal .tree_item.beforSelected");
+    //                 let selectedCheck = document.querySelectorAll(".menu_move_modal .tree_item.selected");
+                    
+    //                 if(clickNode.children){     // 부모노드일때 아이템 처리
+    //                     selectNodeItemList = [];
+    //                     let itemList = findSelectNodeList(clickNode);
+                    
+    //                     console.log("### : " , itemList);
+    //                     if(beforSelectedCheck){
+    //                     itemList.forEach(item =>{
+    //                         item.classList.add("beforeSelected");
+    //                     })
+    //                 }
+
+
+             
+    //                 // if(beforSelectedCheck){
+    //                 //     removeSelectedAll.forEach(node =>{
+    //                 //     node.classList.remove("selected");
+    //                 //     node.classList.remove("beforSelected")
+    //                 // });                    
+    //                 // }
+
+                    
+
+    //                 //     if(beforSelectedCheck){
+    //                 //         beforSelectedCheck.forEach(node =>{
+    //                 //             node.classList.remove("selected");
+    //                 //             node.classList.remove("beforSelected")
+    //                 //         });                    
+    //                 //     }   
+
+    //                 //     if(!beforSelectedCheck){
+    //                 //         itemList.forEach(item => {
+    //                 //             item.classList.add("beforSelected");
+    //                 //         });
+    //                 //     }else{
+    //                 //     removeSelectedAll.forEach(node =>{
+    //                 //         node.classList.remove("selected");
+    //                 //         node.classList.remove("beforSelected")
+    //                 //     });                    
+    //                 //         itemList.forEach(item => {
+    //                 //             item.classList.add("selected");      
+    //                 //         });
+    //                     // }
+
+    //                 }else{      // 자식노드일때 아이템 선택 처리
+    //                     let removeAll = document.querySelectorAll(".menu_move_modal .tree_item.selected, .tree_item.beforSelected");
+    //                     console.log("삭제할껏들 " ,removeAll);
+    //                     removeAll.forEach(item =>{
+    //                         item.classList.remove("selected");
+    //                         item.classList.remove("beforSelected")
+    //                     });                    
+    //                     e.target.closest(".tree_item").classList.add("selected");
+    //                 }
+
+    //                 selectedItem = tree_item;
+    //             }
+    //         }
+
+    //         tree_item_inner.appendChild(tree_icon);
+    //         tree_item_inner.appendChild(text);
+    //         tree_item.appendChild(tree_item_inner);
+    //         tree_list_container.appendChild(tree_item);
+    //         li.appendChild(tree_list_container);
+
+    //         if (item.children) {
+    //             const childUl = createTree(item.children, case_by);
+    //             // childUl.style.display = "none"; // 기본적으로 숨김
+    //             li.appendChild(childUl);
+                
+    //             tree_icon.onclick = (e) => {
+    //                 e.stopPropagation(); // 부모 div 클릭 이벤트와 겹치지 않도록 방지
+    //                 if (childUl.style.display === "none") {
+    //                     childUl.style.display = "block";
+    //                 } else {
+    //                     childUl.style.display = "none";
+    //                 }
+    //             };
+    //         }
+    //         ul.appendChild(li);
+    //     }); 
+
+    //     return ul;
+    // }
+    
+
+    // // 자식노드 선택처리
+    // function findSelectNodeList(root){
         
 
-        tree_icon.innerHTML = "<img src='../../img/tree_folder.svg'>"; // 기본 아이콘 (닫힌상태)
-        tree_icon.classList.add("tree_icon");
+    //     if(root.children){  // root에 자식노드가 있는지 확인
+    //         selectNodeItemList.push(findSelectItemList(root.name));
 
-        // 폴더(부모노드)랑 파일(자식노드) 구분
-        item.children ? tree_icon.classList.add("folder") : tree_icon.classList.add("file");
+    //         for(item of root.children){
+                
+    //             if(item.children){
+    //                 selectNodeItemList.concat(findSelectNodeList(item));
+    //             }else{
+    //                 selectNodeItemList.push(findSelectItemList(item.name));
+    //             }
+    //         }
+    //     }else{
+    //         let nodeItem = findSelectItemList(root.name);
+    //         itemNode.classList.add("selected");
+    //         return;
+    //     }
+        
+    //     return selectNodeItemList;
+    // }
 
-        // 자식노드가 없으면 열린파일인지 닫힌파일인지 기본아이콘 선택
-        item.children ? "visible" : tree_icon.innerHTML = item.children ? 
-        "" : item.use_state ? "<img src='../../img/tree_file.svg''>" : "<img src='../../img/tree_file_no.svg''>";
+    // // 노드의 element 경로의 tree_item 리턴
+    // function findSelectItemList(itemName){
+    //     let itemList = document.querySelectorAll(".menu_move_modal .tree_item span")
+    //     let tree_item;
 
-        // 트리메뉴 메뉴텍스트
-        text.textContent = item.name;
-
-        // state_1_icon
-        if(item.state_1){
-            let tree_state_icon_1 = document.createElement("div");
-            tree_state_icon_1.classList.add("tree_state_icon");
-            tree_state_icon_1.innerHTML = "<div class='state_inner_box_1'><img src='../../img/tree_state_1.svg'></div>";
-
-            text.appendChild(tree_state_icon_1);
-        }
-
-        // state_2_icon
-        if(item.state_2){
-            let tree_state_icon_2 = document.createElement("div");
-
-            tree_state_icon_2.classList.add("tree_state_icon");
-            tree_state_icon_2.innerHTML = "<div class='state_inner_box_2'><img src='../../img/tree_state_2.svg'></div>";
-
-            text.appendChild(tree_state_icon_2);
-        }
-
-        //트리메뉴 클릭 이벤트 추가
-
-                    tree_item.onclick = (e) => {
-                // 현재 요소가 선택된 상태인지 확인
-                if (tree_item.classList.contains("selected")) {
-                    tree_item.classList.remove("selected"); // 선택 해제
-                } else {
-                    tree_item.classList.add("selected")
-                    item.use_state ? "" : tree_item.classList.add("file_no")
-                }
-            };
-
-        tree_item_inner.appendChild(tree_icon);
-        tree_item_inner.appendChild(text);
-        tree_item.appendChild(tree_item_inner);
-        tree_list_container.appendChild(tree_item);
-        li.appendChild(tree_list_container);
-
-        if (item.children) {
-            const childUl = createTree(item.children, depth + 1);
-            childUl.style.display = "none"; // 기본적으로 숨김
-            li.appendChild(childUl);
-            
-            tree_icon.onclick = (e) => {
-                e.stopPropagation(); // 부모 div 클릭 이벤트와 겹치지 않도록 방지
-                if (childUl.style.display === "none") {
-                    childUl.style.display = "block";
-                } else {
-                    childUl.style.display = "none";
-                }
-            };
-        }
-
-        ul.appendChild(li);
-    }); 
-
-    return ul;
-}
-
-document.querySelector(".tree_menu").appendChild(createTree([jsonData.menu]));
+    //     for(item of itemList){
+    //         if(item.textContent.includes(itemName)){
+    //             tree_item = item.closest(".tree_item");
+                
+    //             return tree_item;
+    //         }
+    //     }
+    // }
 
 
-function table_change_btn1(){
+    // // 메뉴 위로 이동 (형제 노드끼리만 이동)
+    // function moveUp() {
+    //     if (!selectedItem) return;
 
-    document.querySelector(".table_change_btn2").classList.remove("active");
-    document.querySelector(".table_change_btn1").classList.add("active");
-    document.querySelector(".menu_data_table").classList.remove("hidden");
-    document.querySelector(".service_data_table").classList.add("hidden");
-}
+    //     let itemName = selectedItem.textContent.trim();     // 선택한 아이템 이름
+    //     let itemNode = findNode(jsonData.menu, itemName);   // 선택한 아이템 노드
 
-function table_change_btn2(){
-    document.querySelector(".table_change_btn1").classList.remove("active");
-    document.querySelector(".table_change_btn2").classList.add("active");
-    document.querySelector(".service_data_table").classList.remove("hidden");
-    document.querySelector(".menu_data_table").classList.add("hidden")
-}
+    //     if(itemNode.children) return alert("변경할 수 없는 목록 입니다.");
 
- // 모달 요소
- var modal = document.getElementById("myModal");
+    //     parentNode = findParentNode(jsonData.menu, itemNode);   //선택한 아이템의 직계부모노드
 
-// 모달을 여는 버튼
-var btn = document.querySelector(".open_modal");
+    //     let siblings = parentNode.children;     //부모노드가 가진 형제노드
+    //     let index = siblings.indexOf(itemNode); // 선택한 아이템의 부모의 n번째 자식노드
 
-// 모달을 닫는 버튼
-var span = document.getElementsByClassName("close")[0];
+    //     if(index == 0){
+    //         alert("위로 더이상 변경 할 수 없습니다.");
+    //     }
 
-// 버튼 클릭 시 모달 열기
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+    //     if (index > 0) {
+    //         // 형제 노드가 있으면 위치 변경
+    //         swapNodes(siblings, index, index - 1);
+    //     }
 
-// 닫기 버튼 클릭 시 모달 닫기
-span.onclick = function() {
-    modal.style.display = "none";
-}
+    //     refreshTree(itemName);
+    // }
 
-// 모달 외부 클릭 시 모달 닫기
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+    // // 메뉴 아래로 이동 (형제 노드끼리만 이동)
+    // function moveDown() {
+    //     if (!selectedItem) return;
+
+    //     let itemName = selectedItem.textContent.trim();     // 선택한 아이템 이름
+    //     let itemNode = findNode(jsonData.menu, itemName);   // 선택한 아이템 객체
+        
+    //     if(itemNode.children) return alert("변경할 수 없는 목록 입니다.");
+
+    //     parentNode = findParentNode(jsonData.menu, itemNode);   //선택된 아이템의 부모노드
+
+    //     let siblings = parentNode.children;     //부모노드의 자식노드 (형제노드)
+    //     let index = siblings.indexOf(itemNode); //부모노드의 n번째 자식노드 인지
+
+    //     if(index == siblings.length - 1){
+    //         alert("아래로 더이상 변경 할 수 없습니다.");
+    //     }
+    //     if (index < siblings.length - 1) {
+    //         // 형제 노드가 있으면 위치 변경
+    //         swapNodes(siblings, index, index + 1);
+    //     }
+     
+    //     refreshTree(itemName);
+    // }
+
+    // // **두 개의 노드 위치 변경 (swap)**
+    // function swapNodes(arr, index1, index2) {
+    //     [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+    // }
+
+    // // 클릭한 아이템의 노드찾기
+    // function findNode(node, name) {
+    //     if (node.name === name) return node;
+    //     if (!node.children) return;
+
+    //     for (child of node.children) {
+    //         let found = findNode(child, name);
+    //         if (found) return found;
+    //     };
+    // }
+
+    // // **부모노드 찾기**
+
+    // function findParentNode(root, targetNode, parent = null) {
+    //     if (!root.children) return null;
+
+    //     for (let i = 0; i < root.children.length; i++) {
+    //         let child = root.children[i];
+
+    //         if (child.name === targetNode.name) {
+    //             return parent; // 부모 반환
+    //         }
+
+    //         let found = findParentNode(child, targetNode, child);
+    //         if (found) return found;
+    //     }
+
+    //     return null;
+    // }
+
+    // // 부모노드의 형제노드 혹은 조상노드 찾기
+    // function findParentNodeSibling(root, targetNode, parent = null) {
+    //     for (let i = 0; i < root.children.length; i++) {
+    //         let child = root.children[i];
+
+    //         if (child.name === targetNode.name) {
+    //             return parent; // 부모 반환
+    //         }
+
+    //         let found = findSelectedNode(child, targetNode, child);
+    //         if (found) return found;
+    //     }
+
+    //     return null;
+    // }
+
+    // // **트리 새로고침**
+    // function refreshTree(itemName) {
+    //     document.querySelector(".modal_tree_menu").innerHTML = "";
+    //     document.querySelector(".modal_tree_menu").appendChild(createTree([jsonData.menu], 2));
+        
+    //     let refreshNode = findSelectNode(itemName);
+    //     refreshNode.classList.add("selected");
+    // }
+
+    // // 초기 트리 생성
+    // document.querySelector(".tree_menu").appendChild(createTree([jsonData.menu], 1));
+    // document.querySelector(".modal_tree_menu").appendChild(createTree([jsonData.menu], 2));
 
 
+    // function table_change_btn1(){
+    //     document.querySelector(".table_change_btn2").classList.remove("active");
+    //     document.querySelector(".table_change_btn1").classList.add("active");
+    //     document.querySelector(".menu_data_table").classList.remove("hidden");
+    //     document.querySelector(".service_data_table").classList.add("hidden");
+    // }
 
+    // function table_change_btn2(){
+    //     document.querySelector(".table_change_btn1").classList.remove("active");
+    //     document.querySelector(".table_change_btn2").classList.add("active");
+    //     document.querySelector(".service_data_table").classList.remove("hidden");
+    //     document.querySelector(".menu_data_table").classList.add("hidden")
+    // }
 
-
-
-
+    
 </script>
     
 </body>
