@@ -15,38 +15,37 @@
             <div class="table_list_type2_container">
                 <table class="table_list_type2">
                     <tr>
-                        <th style="width: 150px;">OS구분*</th>
+                        <th>OS구분*</th>
                         <td>아이폰</td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">메뉴구분*</th>
+                        <th>메뉴구분*</th>
                         <td>하위메뉴</td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">메뉴속성ID*</th>
+                        <th>메뉴속성ID*</th>
                         <td>c_app_version</td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">메뉴속성명*</th>
+                        <th>메뉴속성명*</th>
                         <td><input type="text" class="menuid-input" value="현재APP버전"></td>
                     </tr>
                      <tr>
-                        <th style="width: 150px;">타입</th>
+                        <th>타입</th>
                             <td>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button" data-value="01">선택</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item" data-value="01">선택</div>
-                                        <div class="dropdown-item" data-value="02">텍스트</div>
-                                        <div class="dropdown-item" data-value="03">예/아니오</div>
-                                        <div class="dropdown-item" data-value="04">숫자</div>
-                                        <div class="dropdown-item" data-value="05">URL</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option class="dropdown-item" value="01">선택</option>
+                                        <option class="dropdown-item" value="02">텍스트</option>
+                                        <option class="dropdown-item" value="03">예/아니오</option>
+                                        <option class="dropdown-item" value="04">숫자</option>
+                                        <option class="dropdown-item" value="05">URL</option>
+                                    </select>
                                 </div>
                             </td>
                         </tr>
                     <tr>
-                        <th style="width: 150px;">리소스사용여부</th>
+                        <th>리소스사용여부</th>
                         <td>
                             <div class="radio-group"><label class="radio-container">
                             <input type="radio" name="resource" value="yes" id="resource_yes">
@@ -58,7 +57,7 @@
                         </label></div></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">내부관리여부</th>
+                        <th>내부관리여부</th>
                         <td><div class="radio-group"><label class="radio-container">
                             <input type="radio" name="manage" value="yes" id="manage_yes">
                             <span class="radio-label"></span>예
@@ -69,7 +68,7 @@
                         </label></div></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">필수여부</th>
+                        <th>필수여부</th>
                         <td> <div class="radio-group"><label class="radio-container">
                             <input type="radio" name="required" value="yes" id="required_yes">
                             <span class="radio-label"></span>예
@@ -80,7 +79,7 @@
                         </label></div></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">최종수정</th>
+                        <th>최종수정</th>
                         <td>Admin (2025.02.05 14:35:19)</td>
                     </tr>
                   </table>
@@ -97,33 +96,6 @@
             </div>
         </div>
     <script>
-
-        // select박스
-        document.querySelector('.dropdown-button').addEventListener('click', function() {
-            const typedropdown = document.querySelector('.dropdown-container');
-            const dorpdownbtn = document.querySelector('.dropdown-button');
-            typedropdown.classList.toggle('active');
-        });
-
-        // select 아이템 선택
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            const dorpbtn = document.querySelector('.dropdown-button');
-
-            item.addEventListener('click', function() {
-                const dropdown = document.querySelector('.dropdown-container');                
-                dropdown.classList.remove('active');
-                dorpbtn.textContent = this.textContent;
-                dorpbtn.setAttribute("data-value", item.getAttribute("data-value"));
-                
-                console.log(dorpbtn.getAttribute("data-value"));
-            });
-
-            if(dorpbtn.getAttribute("data-value") == item.getAttribute("data-value"))
-            {
-                dorpbtn.setAttribute("data-value", item.getAttribute("data-value"));
-                dorpbtn.textContent = item.textContent;
-            }
-        });
 
         // 버튼 이벤트
         const saveButton = document.querySelector('.save-button');

@@ -6,6 +6,7 @@
     <div class="content_container">
         <!-- 검색 옵션 팝업-->
         <div class="searchmodal-container">
+            <div class="close-search-popup" id="close-search-popup" ><img src="../../img/Filled.png"></div>
             <table class="searchmodal_table">
                 <tr>
                     <th>구분코드</th>
@@ -87,6 +88,7 @@
         const searchmodal = document.querySelector('.searchmodal-container');
         const filterbutton = document.querySelector('.searchFilter');
 
+        // 팝업 x 버튼 외부
         function optionpopupcontrol(){
             if(filterbutton.classList.contains('active')){
                 filterbutton.classList.remove('active');
@@ -96,6 +98,11 @@
                 searchmodal.style.display = 'block';
             }
         }
+
+        // 팝업 x버튼 내부
+        document.getElementById('close-search-popup').addEventListener('click', () => {
+            searchmodal.style.display = 'none';
+        });
 
         function select_list(){
             alert("검색")
