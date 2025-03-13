@@ -87,6 +87,11 @@ body {
 .content-container{
     position: relative; /* 모달 팝업의 기준 위치 설정 */
     display: flex;
+    
+    min-width: 1052px;
+    min-height: 960px;
+    flex-shrink: 0;
+
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
@@ -431,6 +436,15 @@ input[type="checkbox"]:checked{
     align-items: flex-start;
     gap: 24px;
     align-self: stretch;
+
+    position: relative; /* 모달 팝업의 기준 위치 설정 */
+    
+    min-width: 1052px;
+    min-height: 960px;
+    flex-shrink: 0;
+
+    gap: 12px;
+    align-self: stretch;
 }
 
 .main_contents{
@@ -743,6 +757,46 @@ input[type="checkbox"]:checked{
     box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.20);
 }
 
+.modal-container_type2 {
+    display: flex;
+    width: 860px;
+    padding: 32px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    border-radius: 16px;
+    background: var(--gray-0, #FFF);
+    box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.20);
+}
+
+.modal-content-button-container{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.modal-content-button{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border-radius: 6px;
+    border: 1px solid var(--gray-500, #737684);
+
+    background-image: url(../img/Filled.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center;
+}
+
+
 .modal-top{
     display: flex;
     justify-content: space-between;
@@ -777,7 +831,23 @@ input[type="checkbox"]:checked{
     align-self: stretch;
 }
 
+.modal-content-container_type2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
 .modal-content-sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    align-self: stretch;
+}
+
+.modal-content-sub-container_type2{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -799,6 +869,15 @@ input[type="checkbox"]:checked{
     gap: 12px;
     align-self: stretch;
 }
+
+.modal-content_type2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex;
+    gap: 12px;
+    align-self: stretch;
+}
+
 
 .modal-comment{
     display: flex;
@@ -828,7 +907,27 @@ input[type="checkbox"]:checked{
     border-bottom: 1px solid var(--gray-150, #D3D6DE);
 }
 
+.modal-list-line-type2{
+    width: 280px;
+    height: 510px;
+
+    border-radius: 8px;
+    background: var(--gray-50, #F3F4F7);
+}
+
 .modal-list{
+    margin-top: 2px;
+    min-height: 157px;
+    max-height: 246px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+}
+
+
+.modal-list-type2{
     margin-top: 2px;
     min-height: 157px;
     max-height: 246px;
@@ -1073,11 +1172,124 @@ input[type="checkbox"]:checked{
     align-self: stretch;
 }
 
+.img_container{
+    display: flex;
+    padding: 192px 86px 198px 73px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gray-50, #F3F4F7);
+}
+
 .table_list_container{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+}
+
+.modal-table-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.table_list_type3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.table_list_type3 thead{
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    border-top: var(--gray-900, #101116);
+}
+
+.table_list_type3 th{
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-50, #F3F4F7);
+    border-top: 1px solid var(--gray-900, #101116);
+}
+
+
+.table_list_type3 td{
+    border-bottom: 1px solid var(--gray-100, #E1E3EA);
+    background: var(--gray-0, #FFF);
+}
+
+
+.table_list_type3 tr{
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.table_list_type3 th:nth-child(1) , .table_list_type3 td:nth-child(1){
+    display: flex;
+    width: 128px;
+    height: 42px;
+    padding: 16px;
+    align-items: center;    
+}
+
+.table_list_type3 th:nth-child(2) , .table_list_type3 td:nth-child(2){
+    display: flex;
+    width: 140px;
+    height: 42px;
+    padding: 14px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+}
+
+.table_list_type3 th:nth-child(3) , .table_list_type3 td:nth-child(3){
+    display: flex;
+    width: 192px;
+    height: 42px;
+    padding: 14px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex: 1 0 0;
+    
+}
+
+.modal-pagination-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.modal-pagination{
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.modal-pagination button{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--gray-400, #979BAA);
+    text-align: center;
+
+    /* 14_20/bold */
+    font-family: "Noto Sans CJK KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 142.857% */
 }
 
 .table_list {
@@ -1114,7 +1326,8 @@ input[type="checkbox"]:checked{
 .text_overflow2{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    line-clamp: 2; /* 줄 수 설정 */
+    /* webkit-line-clamp: 2; 줄 수 설정 */
+    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -1234,12 +1447,29 @@ input[type="checkbox"]:checked{
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    width: 100%;
+}
+
+.table_list_type2_container.addimg{
+    
+    display: flex;
+    height: 411px;
+    align-items: flex-start;
+    gap: 28px;
+    align-self: stretch;
+    flex-direction: row;
+
 }
 
 
 .table_list_type2 {
     border-top: 1px solid  var(--gray-850, #1F2128);
     table-layout: fixed;
+    display: flex;
+    width: 100%;
+}
+
+.table_list_type2 tbody{
     width: 100%;
 }
 
