@@ -36,8 +36,8 @@
                     </div>
                     <div class="tree_menu_container">
                         <div class="tree_move_btn_container">
-                            <button>메뉴 이동</button>
-                            <button>하위메뉴 추가</button>
+                            <button class="move-menu-btn">메뉴 이동</button>
+                            <button class="add-menu-btn">하위메뉴 추가</button>
                         </div>
                         <ul class="tree_menu" style="width: 248px; height: 605px"></ul>
                     </div>
@@ -442,6 +442,8 @@ let jsonData = [
                 generateTree(jsonData, document.getElementById("tree")); // 트리 다시 그리기
             }
         });
+
+        
 
 
 
