@@ -15,7 +15,7 @@
             <div class="table_list_type2_container">
                 <table class="table_list_type2">
                     <tr>
-                        <th style="width: 150px;">OS구분*</th>
+                        <th>OS구분*</th>
                         <td>
                             <div class="radio-group">
                                 <label class="radio-container">
@@ -30,7 +30,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">메뉴구분*</th>
+                        <th>메뉴구분*</th>
                         <td>
                             <div class="radio-group">
                                 <label class="radio-container">
@@ -45,30 +45,29 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">메뉴속성ID*</th>
+                        <th>메뉴속성ID*</th>
                         <td><input type="text" class="input-style" placeholder="숫자, 영어, 특수문자(-,_) 가능"></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">메뉴속성명*</th>
+                        <th>메뉴속성명*</th>
                         <td><input type="text" class="input-style"></td>
                     </tr>
                      <tr>
-                        <th style="width: 150px;">타입</th>
+                        <th>타입</th>
                             <td>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">선택</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item" data-name="선택">선택</div>
-                                        <div class="dropdown-item" data-name="텍스트">텍스트</div>
-                                        <div class="dropdown-item" data-name="예/아니오">예/아니오</div>
-                                        <div class="dropdown-item" data-name="숫자">숫자</div>
-                                        <div class="dropdown-item" data-name="URL">URL</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="선택">선택</option>
+                                        <option value="텍스트">텍스트</option>
+                                        <option value="예/아니오">예/아니오</option>
+                                        <option value="숫자">숫자</option>
+                                        <option value="URL">URL</option>
+                                    </select>
                                 </div>
                             </td>
                         </tr>
                     <tr>
-                        <th style="width: 150px;">리소스사용여부</th>
+                        <th>리소스사용여부</th>
                         <td>
                             <div class="radio-group">
                                 <label class="radio-container">
@@ -83,7 +82,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">내부관리여부</th>
+                        <th>내부관리여부</th>
                         <td>
                             <div class="radio-group">
                                 <label class="radio-container">
@@ -98,7 +97,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">필수여부</th>
+                        <th>필수여부</th>
                         <td>
                             <div class="radio-group">
                                 <label class="radio-container">
@@ -125,22 +124,6 @@
             </div>
         </div>
     <script>
-
-        // select박스
-        document.querySelector('.dropdown-button').addEventListener('click', function() {
-            const typedropdown = document.querySelector('.dropdown-container');
-            typedropdown.classList.toggle('active');
-        });
-
-        // select 아이템 선택
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const dropdown = document.querySelector('.dropdown-container');
-                dropdown.classList.remove('active');
-                document.querySelector('.dropdown-button').textContent = this.textContent;
-            });
-        });
-
         // 버튼 이벤트
         const saveButton = document.querySelector('.save-button');
         const listButton = document.querySelector('.list-button');

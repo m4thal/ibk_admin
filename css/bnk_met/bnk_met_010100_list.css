@@ -1096,26 +1096,6 @@ align-self: stretch;
     background: var(--gray-0, #FFF);
 }
 
-.dropdown-container.active .dropdown-items {
-    display: block;
-}
-
-.dropdown-container.active .dropdown-button{
-    border-radius: 6px 6px 0 0; /* 상단만 둥글게 */
-    border-bottom: none;
-    background-image: url('../../img/arrow_up.svg');
-}
-
-.dropdown-container.active .dropdown-items {
-    border-radius: 0 0 6px 6px; /* 하단만 둥글게 */
-    border-top: none;
-
-}
-
-.dropdown-container.active .dropdown-items :hover{
-    background: var(--gray-50, #F3F4F7);
-}
-
 
 .table_list_2 {
     border-top: 1px solid  var(--gray-850, #1F2128);

@@ -32,12 +32,11 @@
                             <th>메뉴구분</th>
                             <td>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">전체</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item" data-name="전체">전체</div>
-                                        <div class="dropdown-item" data-name="앱">앱</div>
-                                        <div class="dropdown-item" data-name="메뉴">메뉴</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="전체">전체</option>
+                                        <option value="앱">앱</option>
+                                        <option value="메뉴">메뉴</option>
+                                    </select>
                                 </div>
                             </td>
                         </tr>
@@ -55,20 +54,18 @@
                         <div class="modal-search">
                             <div class="select-group">
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">플랫폼</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item">플랫폼</div>
-                                        <div class="dropdown-item">아이폰</div>
-                                        <div class="dropdown-item">안드로이드</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="플랫폼">플랫폼</option>
+                                        <option value="아이폰">아이폰</option>
+                                        <option value="안드로이드">안드로이드</option>
+                                    </select>
                                 </div>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">메뉴구분</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item" data-name="app">메뉴구분</div>
-                                        <div class="dropdown-item" data-name="app">앱</div>
-                                        <div class="dropdown-item" data-name="menu">메뉴</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="전체">메뉴구분</option>
+                                        <option value="앱">앱</option>
+                                        <option value="메뉴">메뉴</option>
+                                    </select>
                                 </div>
                             </div>
                             <button class="modal-search-button">검색</button>
@@ -113,20 +110,18 @@
                         <div class="modal-search">
                             <div class="select-group">
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">플랫폼</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item">플랫폼</div>
-                                        <div class="dropdown-item">아이폰</div>
-                                        <div class="dropdown-item">안드로이드</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="플랫폼">플랫폼</option>
+                                        <option value="아이폰">아이폰</option>
+                                        <option value="안드로이드">안드로이드</option>
+                                    </select>
                                 </div>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">메뉴구분</button>
-                                    <div class="dropdown-items">
-                                        <div class="menu-item4" data-name="app">메뉴구분</div>
-                                        <div class="menu-item4" data-name="app">앱</div>
-                                        <div class="menu-item4" data-name="menu">메뉴</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="전체">메뉴구분</option>
+                                        <option value="앱">앱</option>
+                                        <option value="메뉴">메뉴</option>
+                                    </select>
                                 </div>
                             </div>
                             <button class="modal-search-button">검색</button>
@@ -207,7 +202,7 @@
                         </table>
                     </div>
                     <div class="table_btn_container">
-                        <div>
+                        <div class="btn_containers">
                         <button type="button" class="change_btn" id="change_btn1" onclick="changepage()">(내용팝업)순서변경</button>
                         <button type="button" class="change_btn" id="change_btn2" onclick="changepage2()">(빈내용팝업)순서변경</button>
                     </div>
@@ -278,28 +273,6 @@
                         currentItem.parentElement.insertBefore(draggedList, currentItem);
                     }
                 }
-            });
-        });
-
-        // 셀렉스박스 
-        function getparentprev(element){
-            let parent = element.parentElement;
-            return parent ? parent.previousElementSibling : null;
-        }
-
-        document.querySelectorAll('.dropdown-button').forEach(item => {
-            item.addEventListener('click', function() {
-                const dropdown = this.closest('.dropdown-container');
-                dropdown.classList.toggle('active');
-            });
-        })
-
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const dropdown = this.closest('.dropdown-container');
-                const sibling = getparentprev(this);
-                dropdown.classList.remove('active');
-                sibling.textContent = this.textContent;
             });
         });
 

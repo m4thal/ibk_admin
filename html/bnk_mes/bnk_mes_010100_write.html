@@ -15,39 +15,38 @@
             <div class="table_list_type2_container">
                 <table class="table_list_type2">
                     <tr>
-                        <th style="width: 150px;">에러코드*</th>
+                        <th>에러코드*</th>
                         <td><input type="text" class="input-style half"></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">대외계 에러코드</th>
+                        <th>대외계 에러코드</th>
                         <td><input type="text" class="input-style half"></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">에러제목*</th>
+                        <th>에러제목*</th>
                         <td><input type="text" class="input-style"></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">Locale 코드</th>
+                        <th>Locale 코드</th>
                             <td>
                                 <div class="dropdown-container">
-                                    <button class="dropdown-button">한국어</button>
-                                    <div class="dropdown-items">
-                                        <div class="dropdown-item" data-name="선택">선택</div>
-                                        <div class="dropdown-item" data-name="한국어">한국어</div>
-                                    </div>
+                                    <select class="dropdown-select">
+                                        <option value="선택">선택</option>
+                                        <option value="한국어">한국어</option>
+                                    </select>
                                 </div>
                             </td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">오류원인</th>
+                        <th>오류원인</th>
                         <td><input type="text" class="input-style"></td>
                     </tr>
                     <tr>
-                        <th style="width: 150px;">도움말경로</th>
+                        <th>도움말경로</th>
                         <td><input type="text" class="input-style"></td>
                     </tr>
                     <tr class="textarea-div">
-                        <th style="width: 150px;">오류메세지*</th>
+                        <th>오류메세지*</th>
                         <td><textarea type="textarea" class="textarea-style"></textarea></td>
                     </tr>
                 </table>
@@ -71,22 +70,6 @@
         function save(){
             alert("저장");
         }
-
-        // select박스
-        document.querySelector('.dropdown-button').addEventListener('click', function() {
-            const typedropdown = document.querySelector('.dropdown-container');
-            typedropdown.classList.toggle('active');
-        });
-
-        // select 아이템 선택
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const dropdown = document.querySelector('.dropdown-container');
-                dropdown.classList.remove('active');
-                document.querySelector('.dropdown-button').textContent = this.textContent;
-            });
-        });
-
     </script>
 </boody>
 </html>
