@@ -494,10 +494,7 @@
                         </div>
                             <button id="close-all-tabs">전체 닫기<img src="../img/Filled.png"></button>
                     </div> 
-                </div> 
-
-                
-                              
+                </div>                                             
                 <div class="content-container" id="content-container">
                     <div class="modal-background">
                         <div class="modal-container">
@@ -565,11 +562,12 @@
     <script>
         const tabsContainer = document.querySelector('.tabs');
         const contentContainer = document.querySelector('.content-container');
-        const leftPanelButtons = document.querySelectorAll('.left-panel button');
+        const leftPanelButtons = document.querySelectorAll('.dept_container');
         const rightPanelButtons = document.querySelectorAll('.right-panel .side-button');
         const closeAllTabsButton = document.getElementById('close-all-tabs');
         const topMenuButtons = document.querySelectorAll('.menu-item');
         const menuDept3Button = document.querySelectorAll('.dept3_toggle');
+        const guideButton = document.querySelector('.guide_button');
         let draggedTab = null;
 
 
@@ -676,6 +674,10 @@
             
             checkCloseAllTabsButton();
         }
+
+        guideButton.addEventListener('click', () => {
+            alert("관리자 가이드");
+        })
 
 
         // 모든 탭 닫기 버튼 표시 여부 확인
