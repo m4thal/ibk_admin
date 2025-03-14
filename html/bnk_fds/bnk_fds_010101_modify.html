@@ -4,41 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/style.css">
+
     <link rel="stylesheet" href="../../css/bnk_fds/bnk_fds_010101_modify.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    
     <style>
     </style>
 </head>
 <body>
-    <div class="tab_container">
-        <div class="screen_title_container">
-            <div class="menu_depth">
-                <span>뱅킹관리>&nbsp;</span><span class="current_scr_depth">약관관리</span>
-            </div>
-            <h2>FDS관리</h2>
-        </div>
-        <div class="main_contents">
-            <div class="table_container_1">
-                <table class="data_table_1">
+    <div class="content_container">
+        <div class="table_container_tpye3">
+            <div class="table_list_type2_container">
+                <table class="table_list_type2">
                     <tr>
-                        <th>메뉴</th>
+                        <th style="min-width: 180px">메뉴</th>
                         <td>cmc_bio_010300_1</td>
                     </tr>
-                    <th>
+                    <th style="min-width: 180px">
                         메뉴명*
                     </th>
                     <td>
-                        <div class="input_container">
-                            <input type="text" value="">
-                        </div>
+                        <input style="max-width: 560px;" class="input-style" type="text" value="">
                     </td>
                     <tr>
-                        <th>최종수정</span></th>
+                        <th style="min-width: 180px">최종수정</span></th>
                         <td>X12345 (2025.02.05 14:35:19)</td>
                     </tr>
                 </table>
             </div>
-            <div class="table_container_2">
+            <div class="table_list_type2_container">
                 <div class="middle_title_container">
                     <h3>상세설정</h3>
                     <button>
@@ -46,106 +40,102 @@
                         <span>+</span>
                     </button>
                 </div>
-                <div class="table_container_2">
-                    <div class="inner_table_container">
-                        <table class="data_table_2">
-                            <thead>
-                                <tr>
-                                    <td>번호</td>
-                                    <td>NeBsoa 서비스 ID</td>
-                                    <td>Nebsoa 서비스명</td>
-                                    <td>액션플래그</td>
-                                    <td>삭제</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="input_container">
-                                            <input type="text" value="c_available_service">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input_container">
-                                            <input type="text" value="서비스 여부">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <select>
+                <div class="table_list_container">
+                    <table class="table_list">
+                        <thead>
+                            <tr>
+                                <th style="width: 60px">번호</th>
+                                <th style="width: 320px">NeBsoa 서비스 ID</th>
+                                <th style="width: 396px">Nebsoa 서비스명</th>
+                                <th style="width: 132px">액션플래그</th>
+                                <th style="width: 80px">삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cell_width">
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <input style="max-width: 560px;" class="input-style" type="text" value="c_available_service">
+                                </td>
+                                <td>
+                                    <input style="max-width: 560px;" class="input-style" type="text" value="서비스 여부">
+                                </td>
+                                <td>
+                                    <div class="dropdown-container">
+                                        <select class="dropdown-select">
                                             <option>텍스트</option>
+                                            <option>숫자</option>
                                         </select>
-                                    </td>
-                                    <td>
-                                        <img src="../../img/delete_circle.svg"></img>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <div class="input_container">
-                                            <input type="text" value="c_available_service">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input_container">
-                                            <input type="text" value="서비스 여부">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <img src="../../img/delete_circle.svg"></img>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <input style="max-width: 560px;" class="input-style" type="text" value="c_available_service">
+                                </td>
+                                <td>
+                                    <input style="max-width: 560px;" class="input-style" type="text" value="서비스 여부">
+                                </td>
+                                <td>
+                                    <div class="dropdown-container">
+                                        <select class="dropdown-select">
                                             <option>텍스트</option>
+                                            <option>숫자</option>
                                         </select>
-                                    </td>
-                                    <td>
-                                        <img src="../../img/delete_circle.svg"></img>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </td>
+                                <td>
+                                    <img src="../../img/delete_circle.svg"></img>
+                                </td>
+                            </tr>
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="bottom_btn_container">
-                    <button>목록</button>
-                    <div class="right_btn">
-                        <button>삭제</button>
-                        <button>저장</button>
+                    <button type="button" class="list-button">목록</button>
+                    <div class="btn_container">
+                        <button type="button" class="delete-button">삭제</button>
+                        <button type="button" class="save-button">수정</button>
                     </div>
                 </div>
             </div>
             <div class="info_container">
-                <span class="info_title">액션플래그</span>
+                <span class="info-title">액션플래그</span>
                 <ul>
                     <li>
                         <img src="../../img/dot.svg">
-                        <span class="info_code">FP</span>
-                        <span class="info_text">FDSGateway.initAppFDSLog 앱의 Intro에서 초기화시 한번 호출됨 (사전거래(P))</span>
+                        <span class="info-code">FP</span>
+                        <span class="info-text">FDSGateway.initAppFDSLog 앱의 Intro에서 초기화시 한번 호출됨 (사전거래(P))</span>
                     </li>
                     <li>
                         <img src="../../img/dot.svg">
-                        <span class="info_code">SA</span>
-                        <span class="info_text">로그인경우 조회(S) 후 (결과코드 가 차단(0)이 아닌경우는 해제(R)처리 수행) *(원뱅크 기업은 SR 임)</span>
+                        <span class="info-code">SA</span>
+                        <span class="info-text">로그인경우 조회(S) 후 (결과코드 가 차단(0)이 아닌경우는 해제(R)처리 수행) *(원뱅크 기업은 SR 임)</span>
                     </li>
                     <li>
                         <img src="../../img/dot.svg">
-                        <span class="info_code">S</span>
-                        <span class="info_text">조회 탐지서버에서 조회한다.</span>
+                        <span class="info-code">S</span>
+                        <span class="info-text">조회 탐지서버에서 조회한다.</span>
                     </li>
                     <li>
                         <img src="../../img/dot.svg">
-                        <span class="info_code">P</span>
-                        <span class="info_text">사전거래 수취조회 같이 사전거래에서 발생</span>
+                        <span class="info-code">P</span>
+                        <span class="info-text">사전거래 수취조회 같이 사전거래에서 발생</span>
                     </li>
                     <li>
                         <img src="../../img/dot.svg">
-                        <span class="info_code">A</span>
-                        <span class="info_text">해제거래 *(기업은 R 임)</span>
+                        <span class="info-code">A</span>
+                        <span class="info-text">해제거래 *(기업은 R 임)</span>
                     </li>
                     <li>
                         <img src="../../img/dot.svg">
-                        <span class="info_code">R</span>
-                        <span class="info_text">해제거래 + FDS 추가인증에 대한 처리가 있는 화면인인경우 차단정보 해제 전달 및 결좌정보 획득을 한번더 호출 *(기업은 RA임) 개인은 SMS사후통지(3)이 있지만 기업은 없음</span>
+                        <span class="info-code">R</span>
+                        <span class="info-text">해제거래 + FDS 추가인증에 대한 처리가 있는 화면인인경우 차단정보 해제 전달 및 결좌정보 획득을 한번더 호출 *(기업은 RA임) 개인은 SMS사후통지(3)이 있지만 기업은 없음</span>
                     </li>
                 </ul>
             </div>

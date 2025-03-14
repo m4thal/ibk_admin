@@ -9,155 +9,39 @@
 </head>
 
 <body>
-    <div class="tree_menu"></div>
+    <div class="modal-background" id="modal_1">
+        <div class="modal-container">
+            <div class="modal-top">
+                <h2 class="modal-title-text">메뉴이동</h2>
+                <img id="close-modal-popup_1" class="close-modal-popup" src="../../img/Filled.png">
+            </div>
+
+            <div class="modal-content-container">
+                <div class="modal-content-sub-container">
+                    <div class="modal-content">
+                        <div class="modal-comment">
+                            이동하실 경로의 메뉴 선택 후 저장 시 이동됩니다.
+                        </div>
+                    </div>
+                <div class="modal_tree_container">
+
+                    <div id="jstree"></div>
+<!-- 
+                    <div class="modal_tree_menu"></div>
+                    </div> -->
+                    <!-- <div class="move_menu_btn_container">
+                        <button class=""><img src="../../img/triangle_down.svg"></button>
+                        <button class=""><img src="../../img/triangle_up.svg"></button> -->
+                    </div>
+                </div>
+            </div>
+            <button class="modal_save_btn">이동 메뉴 저장</button>
+        </div>
+    </div>
+    
     <script>
-            let jsonData = [
-                {
-                        "name": "i-ONE뱅크(개인)",
-                        "depth": 1,
-                        "use_state" : true,
-                        "state_1" : false,
-                        "state_2" : false,
-                        "children": [
-                            {
-                                "name": "메인",
-                                "depth": 2,
-                                "use_state" : true,
-                                "state_1" : true,
-                                "state_2" : false,
-                                "children": [
-                                    {
-                                        "name": "개인형IRP링크",
-                                        "depth": 3,
-                                        "use_state" : true,
-                                        "state_1" : true,
-                                        "state_2" : false
-                                    },
-                                    {   
-                                        "name": "카드혜택",
-                                        "depth": 3,
-                                        "use_state" : true,
-                                        "state_1" : true,
-                                        "state_2" : false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "로그인",
-                                "depth": 2,
-                                "use_state" : true,
-                                "state_1" : true,
-                                "state_2" : false,
-                                "children": [
-                                    {
-                                        "name": "바이오인증",
-                                        "depth": 3,
-                                        "use_state" : true,
-                                        "state_1" : true,
-                                        "state_2" : false,
-                                        "children": [
-                                            {
-                                                "name": "얼굴로그인",
-                                                "depth": 4,
-                                                "use_state" : true,
-                                                "state_1" : true,
-                                                "state_2" : true
-                                            },
-                                            {
-                                                "name": "홍채로그인",
-                                                "depth": 4,
-                                                "use_state" : true,
-                                                "state_1" : true,
-                                                "state_2" : true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "기타 로그인 수단",
-                                        "depth": 3,
-                                        "use_state" : true,
-                                        "state_1" : true,
-                                        "state_2" : false,
-                                        "children": [
-                                            {
-                                                "name": "ONE아이디",
-                                                "depth": 4,
-                                                "use_state" : false,
-                                                "state_1" : true,
-                                                "state_2" : false
-                                            },
-                                            {
-                                                "name": "공인인증서",
-                                                "depth": 4,
-                                                "use_state" : false,
-                                                "state_1" : true,
-                                                "state_2" : false
-                                            },
-                                            {
-                                                "name": "뱅크사인",
-                                                "depth": 4,
-                                                "use_state" : true,
-                                                "state_1" : true,
-                                                "state_2" : false
-                                            },
-                                            {
-                                                "name": "금융인증서",
-                                                "depth": 4,
-                                                "use_state" : true,
-                                                "state_1" : true,
-                                                "state_2" : true
-                                            },
-                                            {
-                                                "name": "뱅크아이디",
-                                                "depth": 4,
-                                                "use_state" : false,
-                                                "state_1" : true,
-                                                "state_2" : true
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-
-                let list = document.querySelector(".tree_menu");
-        createTree(list, jsonData);
-
-        function createTree(container, nodes){
-            
-            container.innerHTML = "";
-            
-            nodes.forEach(item => {
-                let li = document.createElement("li");
-                li.classList.add("tree-item");
-                li.dataset.id = item.id;
-                li.innerHTML = item.name;
-
-                let ul = document.createElement("ul");
-                ul.classList.add("tree", "nested");
-
-                if(item.children && item.children.length > 0){
-                    createTree(ul, item.children);
-                    li.appendChild(ul);
-                }
-                container.appendChild(li);
-
-                new Sortable(container, {
-                    animation: 150,
-                    group: nodes.depth,
-                    selectedClass: 'selected',
-                    onEnd: updateTreeData
-                });                
-            });
         
-        }
-
-        function updateTreeData(){
-
-        }
     </script>
 </body>
-
 </html>
+    
